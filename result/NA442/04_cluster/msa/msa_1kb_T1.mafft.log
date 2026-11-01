@@ -1,0 +1,65 @@
+inputfile = orig
+12 x 1000 - 1000 d
+outputhat23=16
+treein = 0
+compacttree = 0
+stacksize: 8176 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+All-to-all alignment.
+    0 / 12 (by thread   0)    10 / 12 (by thread   1) tbfast-pair (nuc) Version 7.526
+alg=L, model=DNA200 (2), 2.00 (6.00), -0.10 (-0.30), noshift, amax=0.0
+8 thread(s)
+
+outputhat23=16
+Loading 'hat3.seed' ... 
+done.
+Writing hat3 for iterative refinement
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+tbutree = 1, compacttree = 0
+Constructing a UPGMA tree ... 
+    0 / 12   10 / 12
+done.
+
+Progressive alignment ... 
+STEP     1 /11 (thread    0) STEP     5 /11 (thread    4) STEP     4 /11 (thread    2) STEP     2 /11 (thread    1) STEP     3 /11 (thread    3) STEP     6 /11 (thread    5) STEP     7 /11 (thread    7) STEP     8 /11 (thread    6) 
+Reallocating (by thread 0) ..done. *alloclen = 3002
+STEP     9 /11 (thread    0) STEP    10 /11 (thread    1) STEP    11 /11 (thread    2) 
+done.
+tbfast (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+minimumweight = 0.000010
+autosubalignment = 0.000000
+nthread = 8
+randomseed = 0
+blosum 62 / kimura 200
+poffset = 0
+niter = 16
+sueff_global = 0.100000
+nadd = 16
+Loading 'hat3' ... done.
+generating a scoring matrix for nucleotide (dist=200) ... done
+
+    0 / 12   10 / 12
+Segment   1/  1    1-1007
+001-0000-0 (thread    1) identical     001-0001-1 (thread    8) identical     001-0002-1 (thread    7) identical     001-0003-0 (thread    5) identical     001-0004-0 (thread    1) identical     001-0005-1 (thread    2) identical     001-0006-1 (thread    4) identical     001-0007-0 (thread    3) identical     001-0008-1 (thread    5) identical     001-0009-0 (thread    6) identical     001-0009-0 (thread    7) identical     001-0009-1 (thread    8) identical     001-0012-1 (thread    2) identical     001-0013-0 (thread    1) identical     001-0014-0 (thread    5) identical     001-0015-1 (thread    2) identical     001-0016-1 (thread    3) identical     001-0017-0 (thread    7) identical     001-0018-0 (thread    4) identical     001-0019-1 (thread    6) identical     001-0020-1 (thread    8) identical     
+Converged.
+done
+dvtditr (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+
+Strategy:
+ L-INS-i (Probably most accurate, very slow)
+ Iterative refinement method (<16) with LOCAL pairwise alignment information
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

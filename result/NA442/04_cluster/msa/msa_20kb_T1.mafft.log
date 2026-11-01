@@ -1,0 +1,70 @@
+inputfile = orig
+12 x 20000 - 20000 d
+nthread = 8
+nthreadpair = 8
+nthreadtb = 8
+ppenalty_ex = 0
+stacksize: 8176 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+    1 / 12 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=0) ... 
+    0 / 12   10 / 12
+done.
+
+Progressive alignment 1/2... 
+STEP     1 / 11 (thread    0) fSTEP     4 / 11 (thread    5) fSTEP     5 / 11 (thread    3) f
+Reallocating..done. *alloclen = 41018
+STEP     2 / 11 (thread    2) fSTEP     3 / 11 (thread    1) fSTEP     6 / 11 (thread    4) fSTEP     8 / 11 (thread    6) fSTEP    10 / 11 (thread    2) f
+Reallocating..done. *alloclen = 46289
+STEP     7 / 11 (thread    7) f
+Reallocating..done. *alloclen = 49322
+STEP     9 / 11 (thread    0) f
+Reallocating..done. *alloclen = 55447
+
+len1=31546, len2=22901, Switching to the memsave mode
+STEP    11 / 11 (thread    1) fmDP 00001 / 00034 DP 00002 / 00034 DP 00003 / 00034 DP 00004 / 00034 DP 00005 / 00034 DP 00006 / 00034 DP 00007 / 00034 DP 00008 / 00034 DP 00009 / 00034 DP 00010 / 00034 DP 00011 / 00034 DP 00012 / 00034 DP 00013 / 00034 DP 00014 / 00034 DP 00015 / 00034 DP 00016 / 00034 DP 00017 / 00034 DP 00018 / 00034 DP 00019 / 00034 DP 00020 / 00034 DP 00021 / 00034 DP 00022 / 00034 DP 00023 / 00034 DP 00024 / 00034 DP 00025 / 00034 DP 00026 / 00034 DP 00027 / 00034 DP 00028 / 00034 DP 00029 / 00034 DP 00030 / 00034 DP 00031 / 00034 DP 00032 / 00034 DP 00033 / 00034 DP 00034 / 00034 
+done.
+
+Making a distance matrix from msa.. 
+    0 / 12 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+    0 / 12   10 / 12
+done.
+
+Progressive alignment 2/2... 
+STEP     1 / 11 (thread    0) fSTEP     4 / 11 (thread    2) fSTEP     5 / 11 (thread    5) f
+Reallocating..done. *alloclen = 41018
+STEP     2 / 11 (thread    1) fSTEP     3 / 11 (thread    3) fSTEP     8 / 11 (thread    7) fSTEP     7 / 11 (thread    4) fSTEP     6 / 11 (thread    6) f
+Reallocating..done. *alloclen = 42658
+STEP     9 / 11 (thread    0) f
+Reallocating..done. *alloclen = 45910
+STEP    10 / 11 (thread    1) f
+Reallocating..done. *alloclen = 54813
+STEP    11 / 11 (thread    3) f
+done.
+
+disttbfast (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+
+Strategy:
+ FFT-NS-2 (Fast but rough)
+ Progressive method (guide trees were built 2 times.)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

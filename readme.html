@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>染色体 3′末端構造解析 目次</title><style>
+:root{color-scheme:light;--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--ring:rgba(11,11,11,.10);--accent:#2a78d6;--wash:rgba(42,120,214,.08)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--page:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--ring:rgba(255,255,255,.10);--accent:#3987e5;--wash:rgba(57,135,229,.15)}}
+:root[data-theme=dark]{color-scheme:dark;--page:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--axis:#383835;--ring:rgba(255,255,255,.10);--accent:#3987e5;--wash:rgba(57,135,229,.15)}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:15px/1.7 system-ui,-apple-system,"Hiragino Sans","Segoe UI",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:19px;margin:40px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--grid)}h3{font-size:16px;margin:0 0 6px}
+a{color:var(--accent)}code,.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px}
+.muted{color:var(--muted);font-size:13px}.lead{color:var(--ink2)}
+nav.toc{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:10px 18px;margin:18px 0}
+nav.toc a{margin-right:14px;white-space:nowrap}
+.cta{display:inline-block;background:var(--ink);color:var(--page);padding:9px 16px;border-radius:9px;text-decoration:none;font-weight:600;margin:6px 0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:12px 0}
+.flow .box{background:var(--surface);border:1px solid var(--ring);border-radius:9px;padding:8px 10px;font-size:12.5px;flex:1 1 120px;min-width:120px}
+.flow .box b{display:block;font-size:11.5px;color:var(--muted)}
+.flow .arr{align-self:center;color:var(--muted)}
+.step{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:14px 18px;margin:12px 0}
+.step .num{display:inline-block;background:var(--ink);color:var(--page);border-radius:6px;padding:0 7px;font-size:12px;margin-right:8px;vertical-align:2px}
+.step .script{color:var(--ink2);font-size:13px;margin:0 0 6px}
+.param{font-size:13px;color:var(--ink2);margin:2px 0}.param .k{display:inline-block;min-width:110px;color:var(--muted)}
+ul.files{font-size:13px;margin:8px 0 0;padding-left:20px;columns:2;column-gap:28px}@media (max-width:760px){ul.files{columns:1}}
+.tw{overflow-x:auto;border:1px solid var(--grid);border-radius:8px;margin:8px 0 16px;max-height:520px}
+table{border-collapse:collapse;font-size:12.5px;width:100%}th,td{padding:4px 9px;border-bottom:1px solid var(--grid);text-align:left;white-space:nowrap}
+th{position:sticky;top:0;background:var(--surface);color:var(--ink2);font-weight:600}td.num{text-align:right;font-variant-numeric:tabular-nums}
+.findings li{margin:6px 0}.seq{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;word-break:break-all;background:var(--surface);border:1px solid var(--ring);border-radius:8px;padding:10px 12px}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:2px 16px;font-size:13.5px}.kv div:nth-child(odd){color:var(--muted)}
+pre{background:var(--surface);border:1px solid var(--ring);border-radius:8px;padding:10px 12px;overflow-x:auto;font-size:13px}
+</style></head>
+<body><div class="wrap">
+<h1>染色体 3′末端構造解析</h1>
+<p class="lead">ゲノムごとの解析結果（readme とインタラクティブビューア）。方法の詳細は各 readme を参照。</p>
+<div class="tw"><table><thead><tr><th>ゲノム</th><th>入力</th><th>配列数</th><th>末端エレメントあり</th><th>向き判定（Step00）</th><th>readme</th><th>ビューア</th><th>設定</th></tr></thead>
+<tbody><tr><td><b>Eh_30rc</b></td><td><code>input/Eh_30rc.fna</code></td><td class='num'>36</td><td class='num'>23</td><td>そのまま 23 / 反転 0 / 両端 0 / なし 13（判定のみ）</td><td><a href="readme_Eh_30rc.html">readme</a></td><td><a href="result/Eh_30rc/08_viewer/chrom_end_viewer.html">ビューア</a></td><td><a href="script/config/Eh_30rc.yaml">config</a></td></tr><tr><td><b>NA442</b></td><td><code>input/NA442_chr35p1_masked_rc_capital.smask.fna</code></td><td class='num'>35</td><td class='num'>12</td><td>そのまま 11 / 反転 1 / 両端 0 / なし 23（反転を適用）</td><td><a href="readme_NA442.html">readme</a></td><td><a href="result/NA442/08_viewer/chrom_end_viewer.html">ビューア</a></td><td><a href="script/config/NA442.yaml">config</a></td></tr></tbody></table></div>
+<h2>実行方法</h2>
+<pre>bash script/run_all.sh &lt;ゲノム&gt;            # 例: bash script/run_all.sh NA442
+bash script/run_all.sh &lt;ゲノム&gt; 07 08 09   # 指定ステップのみ
+bash script/run_all.sh                     # 設定済みゲノムの一覧</pre>
+<p>ゲノムを追加するには <code>script/config/</code> の yaml をコピーして <code>input_fasta</code>・<code>genome_label</code>・<code>result_dir</code>（必要なら <code>orient</code>）を書き換える。ログ: <a href="log.txt">log.txt</a></p>
+<p class="muted">更新: 2026-11-01</p>
+</div></body></html>

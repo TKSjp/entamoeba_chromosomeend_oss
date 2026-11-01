@@ -1,0 +1,208 @@
+inputfile = orig
+2 x 5000 - 5000 d
+nthread = 8
+nthreadpair = 8
+nthreadtb = 8
+ppenalty_ex = 0
+stacksize: 8176 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+    1 / 2 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+    0 / 2
+done.
+
+Progressive alignment 1/1... 
+STEP     1 / 1 (thread    0) f
+done.
+
+disttbfast (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+distout=h
+generating a scoring matrix for nucleotide (dist=200) ... done
+    0 / 2 (thread    0)dndpre (nuc) Version 7.526
+alg=X, model=DNA200 (2), 1.53 (4.59), 0.37 (1.11), noshift, amax=0.0
+8 thread(s)
+
+minimumweight = 0.000010
+autosubalignment = 0.000000
+nthread = 8
+randomseed = 0
+blosum 62 / kimura 200
+poffset = 0
+niter = 2
+sueff_global = 0.100000
+nadd = 2
+generating a scoring matrix for nucleotide (dist=200) ... done
+
+    0 / 2
+Segment   1/ 29    1- 979
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   2/ 29  979-1130
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   3/ 29 1130-1281
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   4/ 29 1281-1432
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   5/ 29 1432-1583
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   6/ 29 1583-1734
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   7/ 29 1734-1885
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   8/ 29 1885-2036
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   9/ 29 2036-2187
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  10/ 29 2187-2338
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  11/ 29 2338-2489
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  12/ 29 2489-2640
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  13/ 29 2640-2791
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  14/ 29 2791-2942
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  15/ 29 2942-3093
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  16/ 29 3093-3244
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  17/ 29 3244-3395
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  18/ 29 3395-3546
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  19/ 29 3546-3697
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  20/ 29 3697-3848
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  21/ 29 3848-3999
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  22/ 29 3999-4150
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  23/ 29 4150-4301
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  24/ 29 4301-4452
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  25/ 29 4452-4603
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  26/ 29 4603-4754
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  27/ 29 4754-4905
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  28/ 29 4905-4989
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  29/ 29 4989-5900
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+done
+dvtditr (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+
+Strategy:
+ FFT-NS-i (Standard)
+ Iterative refinement method (max. 2 iterations)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

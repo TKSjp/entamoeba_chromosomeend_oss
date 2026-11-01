@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #ffffff; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10); --wash: rgba(42,120,214,0.10);
+  --sel: rgba(235,104,52,0.22); --selline: #eb6834;
+  --t1: #2a78d6; --t2: #eb6834; --t3: #1baf7a; --t4: #eda100; --t5: #e87ba4; --t6: #008300; --t7: #4a3aa7; --t8: #e34948; --tu: #a9a8a0;
+  --seq0: #f0efec; --seq1: #cde2fb; --seq2: #86b6ef; --seq3: #3987e5; --seq4: #1c5cab; --seq5: #0d366b;
+  --ygr0: #f0efec; --ygr1: #e6f2c5; --ygr2: #c8e388; --ygr3: #9dc943; --ygr4: #6f9a1f; --ygr5: #43630f;
+  --f-softmask: #b5b3aa; --f-tandem_repeat: #4a3aa7; --f-tRNA: #008300; --f-direct_repeat: #1baf7a; --f-inverted_repeat: #e87ba4; --f-terminal_element: #e34948; --f-cons: #0b0b0b;
+  --nA: #1baf7a; --nC: #2a78d6; --nG: #eda100; --nT: #e34948; --nGap: #e1e0d9;
+  --fig-ink: #000000; --fig-cons: #a3a3a3;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10); --wash: rgba(57,135,229,0.18);
+    --sel: rgba(217,89,38,0.30); --selline: #d95926;
+    --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500; --t5: #d55181; --t6: #008300; --t7: #9085e9; --t8: #e66767; --tu: #6b6a64;
+    --seq0: #262624; --seq1: #104281; --seq2: #1c5cab; --seq3: #2a78d6; --seq4: #5598e7; --seq5: #b7d3f6;
+    --ygr0: #262624; --ygr1: #2f3f12; --ygr2: #4b661a; --ygr3: #79a42b; --ygr4: #a6d053; --ygr5: #d8eeae;
+    --f-softmask: #6b6a64; --f-tandem_repeat: #9085e9; --f-tRNA: #0ca30c; --f-direct_repeat: #199e70; --f-inverted_repeat: #d55181; --f-terminal_element: #e66767; --f-cons: #ffffff;
+    --nA: #199e70; --nC: #3987e5; --nG: #c98500; --nT: #e66767; --nGap: #2c2c2a;
+    --fig-ink: #ffffff; --fig-cons: #8c8c8c;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10); --wash: rgba(57,135,229,0.18);
+  --sel: rgba(217,89,38,0.30); --selline: #d95926;
+  --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500; --t5: #d55181; --t6: #008300; --t7: #9085e9; --t8: #e66767; --tu: #6b6a64;
+  --seq0: #262624; --seq1: #104281; --seq2: #1c5cab; --seq3: #2a78d6; --seq4: #5598e7; --seq5: #b7d3f6;
+  --ygr0: #262624; --ygr1: #2f3f12; --ygr2: #4b661a; --ygr3: #79a42b; --ygr4: #a6d053; --ygr5: #d8eeae;
+  --f-softmask: #6b6a64; --f-tandem_repeat: #9085e9; --f-tRNA: #0ca30c; --f-direct_repeat: #199e70; --f-inverted_repeat: #d55181; --f-terminal_element: #e66767; --f-cons: #ffffff;
+  --nA: #199e70; --nC: #3987e5; --nG: #c98500; --nT: #e66767; --nGap: #2c2c2a;
+  --fig-ink: #ffffff; --fig-cons: #8c8c8c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", "Hiragino Sans", sans-serif; }
+.wrap { max-width: 1480px; margin: 0 auto; padding: 20px 20px 60px; }
+header h1 { font-size: 20px; margin: 0 0 2px; font-weight: 650; }
+header p { margin: 0; color: var(--ink2); }
+.tiles { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 10px; }
+.tile { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 10px 14px; min-width: 150px; }
+.tile .v { font-size: 22px; font-weight: 650; }
+.tile .k { color: var(--ink2); font-size: 12px; }
+.controls { position: sticky; top: 0; z-index: 20; background: var(--page); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--grid); }
+.controls label { color: var(--ink2); font-size: 13px; }
+.seg { display: inline-flex; border: 1px solid var(--axis); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); color: var(--ink); padding: 5px 11px; font: inherit; font-size: 13px; cursor: pointer; border-right: 1px solid var(--grid); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); font-weight: 600; }
+button.btn, select, input[type=number], input[type=text] { font: inherit; font-size: 13px; padding: 4px 9px; border: 1px solid var(--axis); border-radius: 7px; background: var(--surface); color: var(--ink); }
+button.btn { cursor: pointer; }
+button.btn:hover, .seg button:hover:not([aria-pressed="true"]) { background: var(--wash); }
+input[type=number] { width: 90px; }
+.tabs { display: flex; gap: 2px; margin-top: 16px; border-bottom: 1px solid var(--grid); flex-wrap: wrap; }
+.tabs button { border: 0; background: none; color: var(--ink2); font: inherit; padding: 8px 14px; cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); font-weight: 600; }
+.panel { display: none; padding-top: 14px; }
+.panel.on { display: block; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px; margin-bottom: 14px; }
+.card h2 { font-size: 15px; margin: 0 0 4px; font-weight: 620; }
+.card .sub { color: var(--ink2); font-size: 12.5px; margin: 0 0 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--fig-ink); font-family: Helvetica, Arial, sans-serif; }
+.legend span.key { display: inline-block; width: 12px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+.legend .ramp { display: inline-block; width: 70px; height: 10px; border-radius: 2px; vertical-align: -1px; margin: 0 5px; }
+.scroll-x { overflow-x: auto; }
+canvas { display: block; }
+#tooltip { position: fixed; z-index: 100; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--ring); box-shadow: 0 4px 16px rgba(0,0,0,0.14); border-radius: 8px; padding: 8px 10px; font-size: 12px; max-width: 380px; display: none; }
+#tooltip .tv { font-weight: 650; font-size: 13px; }
+#tooltip .tk { color: var(--ink2); }
+#tooltip .mono { font-family: var(--mono); word-break: break-all; }
+textarea.seqbox { width: 100%; min-height: 150px; font-family: var(--mono); font-size: 12px; background: var(--page); color: var(--ink); border: 1px solid var(--axis); border-radius: 7px; padding: 8px; resize: vertical; }
+table.tbl { border-collapse: collapse; font-size: 12.5px; width: 100%; }
+table.tbl th, table.tbl td { padding: 4px 8px; border-bottom: 1px solid var(--grid); text-align: left; white-space: nowrap; }
+table.tbl th { position: sticky; top: 0; background: var(--surface); color: var(--ink2); font-weight: 600; cursor: pointer; user-select: none; }
+table.tbl td.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.tbl td.mono { font-family: var(--mono); font-size: 11.5px; }
+table.tbl tr:hover td { background: var(--wash); }
+.chip { display: inline-block; padding: 0 7px; border-radius: 9px; font-size: 11.5px; font-weight: 600; color: #fff; }
+.tblwrap { max-height: 520px; overflow: auto; border: 1px solid var(--grid); border-radius: 8px; }
+.note { color: var(--muted); font-size: 12px; }
+.mono { font-family: var(--mono); }
+.status { color: var(--ink2); font-size: 12.5px; }
+#loading { padding: 60px 0; text-align: center; color: var(--ink2); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>__TITLE__</h1>
+  <p id="subtitle"></p>
+</header>
+<div id="loading">データを展開しています…</div>
+<div id="app" hidden>
+  <div class="tiles" id="tiles"></div>
+  <div class="controls">
+    <label>スケール（3′末端からの窓）</label>
+    <div class="seg" id="scaleSeg"></div>
+    <label>並び順</label>
+    <select id="orderSel">
+      <option value="cluster">類似性クラスタ順（現スケール）</option>
+      <option value="type">末端タイプ順</option>
+      <option value="name">染色体名順</option>
+      <option value="length">長さ順</option>
+    </select>
+    <label>表示する染色体</label>
+    <select id="chromFilter">
+      <option value="all">すべて</option>
+      <option value="element">末端エレメントをもつ染色体のみ（Step06）</option>
+      <option value="nonU">単独型 (U) 以外（現スケールの型）</option>
+    </select>
+    <span class="status" id="globalStatus"></span>
+  </div>
+  <nav class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-tab="tracks" aria-selected="true">末端トラック</button>
+    <button role="tab" data-tab="micro">ミクロ構造 (1 kb)</button>
+    <button role="tab" data-tab="msa">MAFFT アラインメント</button>
+    <button role="tab" data-tab="sim">類似性マトリクス</button>
+    <button role="tab" data-tab="motif">最末端モチーフ</button>
+    <button role="tab" data-tab="internal">ゲノム内コピー</button>
+    <button role="tab" data-tab="table">要約表</button>
+  </nav>
+
+  <!-- TRACKS -->
+  <section class="panel on" id="p-tracks">
+    <div class="card">
+      <h2>3′末端構造トラック</h2>
+      <p class="sub">右端が3′末端（距離 0）。行をドラッグすると範囲選択 → 下のパネルで配列取得。上部の目盛りをドラッグでズーム、ダブルクリックで全体表示。<span class="mono">Alt/⌥ + ホイール</span>でもズーム。</p>
+      <div class="row">
+        <span class="seg"><button class="btn" id="zIn">拡大</button><button class="btn" id="zOut">縮小</button><button class="btn" id="zReset">全体</button></span>
+        <span class="seg"><button class="btn" id="panL">◀ 内側</button><button class="btn" id="panR">末端側 ▶</button></span>
+        <label>表示範囲 (3′末端からの bp)</label>
+        <input type="number" id="vLo" min="1"> – <input type="number" id="vHi" min="1">
+        <button class="btn" id="vApply">適用</button>
+        <span class="status" id="viewStatus"></span>
+        <span style="flex:1"></span>
+        <button class="btn" id="trackPng">PNG (400 dpi) をコピー</button>
+        <span class="status" id="trackPngStatus"></span>
+      </div>
+      <div class="row legend" id="laneToggles"></div>
+      <div class="row">
+        <label><input type="checkbox" id="ribOn"> 隣り合う行の相同領域をリボンで結ぶ（BLAST HSP・現スケール）</label>
+        <label>最小一致率 (%)</label><input type="number" id="ribId" min="50" max="100" style="width:70px">
+        <label>最小長 (bp)</label><input type="number" id="ribLen" min="1" style="width:80px">
+        <label>リボンの高さ (px)</label><input type="number" id="ribGap" min="8" max="200" style="width:70px">
+        <span class="note">並び順を変えると結ぶ相手が変わる</span>
+      </div>
+      <div class="row legend" id="trackLegend"></div>
+      <div id="trackHost"><canvas id="trackCanvas"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>配列の取得</h2>
+      <p class="sub" id="selInfo">トラック上をドラッグして範囲を選択してください。</p>
+      <div class="row">
+        <label><input type="radio" name="caseOpt" value="keep" checked> 大文字小文字を保持（小文字＝ソフトマスク）</label>
+        <label><input type="radio" name="caseOpt" value="upper"> すべて大文字</label>
+        <label><input type="checkbox" id="rcOpt"> 逆相補で出力</label>
+      </div>
+      <div class="row">
+        <button class="btn" id="selZoom">選択範囲にズーム</button>
+        <button class="btn" id="selAll">同じ範囲を表示中の全染色体で</button>
+        <button class="btn" id="selType">同じ範囲を同タイプの染色体で</button>
+        <span style="flex:1"></span>
+        <label>3′末端から</label><input type="number" id="lastN" value="1000" min="1" max="50000"><label>bp を</label>
+        <button class="btn" id="lastNAll">表示中の全染色体で取得</button>
+      </div>
+      <textarea class="seqbox" id="seqOut" spellcheck="false" readonly></textarea>
+      <div class="row" style="margin-top:8px">
+        <button class="btn" id="copySeq">コピー</button>
+        <button class="btn" id="dlSeq">FASTA を保存</button>
+        <span class="status" id="seqStatus"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MICRO -->
+  <section class="panel" id="p-micro">
+    <div class="card">
+      <h2>末端エレメント近傍のミクロ構造（Step07）</h2>
+      <p class="sub" id="microSub"></p>
+      <div class="row">
+        <label>表示範囲（エレメント 3′端から）</label><select id="microExtent"></select>
+        <label><input type="checkbox" id="microStripes" checked> 変異位置を表示</label>
+        <label><input type="checkbox" id="microNonEl" checked> エレメントのない末端も表示</label>
+        <span style="flex:1"></span>
+        <button class="btn" id="microSvg">SVG を保存</button>
+      </div>
+      <div class="row legend" id="microLegend"></div>
+      <div class="scroll-x" id="microHost"></div>
+    </div>
+    <div class="card">
+      <h2>セグメント配列の取得</h2>
+      <p class="sub" id="microSelInfo">図のセグメントをクリックすると、その配列が表示されます。</p>
+      <div class="row">
+        <button class="btn" id="microSegAll">選択中のセグメントを全染色体で</button>
+        <button class="btn" id="microTypeAll">選択中の染色体と同じミクロ型の全セグメント</button>
+      </div>
+      <textarea class="seqbox" id="microOut" spellcheck="false" readonly></textarea>
+      <div class="row" style="margin-top:8px"><button class="btn" id="microCopy">コピー</button><button class="btn" id="microDl">FASTA を保存</button><span class="status" id="microStatus"></span></div>
+    </div>
+    <div class="split">
+      <div class="card"><h2>セグメント定義</h2><p class="sub">行クリックで全染色体の配列を取得。</p><div class="row"><button class="btn" id="microSegTsv">TSV を保存</button></div><div class="tblwrap"><table class="tbl" id="microSegTbl"></table></div></div>
+      <div class="card"><h2>ファミリーとミクロ型</h2><p class="sub">ミクロ型＝末端から最初のホモポリマーまでのセグメントのバリアントの組合せ。</p><div class="row"><button class="btn" id="microTypeTsv">TSV を保存</button></div><div class="tblwrap"><table class="tbl" id="microTypeTbl"></table></div></div>
+    </div>
+  </section>
+
+  <!-- MSA -->
+  <section class="panel" id="p-msa">
+    <div class="card">
+      <h2>MAFFT アラインメント</h2>
+      <p class="sub">スケール（上部で選択）× グループごとの多重整列。横軸は基準染色体の bp 座標（末端エレメント 3′端 = 0、内側が負、外側が正。基準に塩基のない列は列数で数える）。概観をドラッグで詳細表示の範囲を選択。「ミクロ構造で色分け」は各塩基を Step07 のセグメント（ミクロ構造タブと同じ色）で塗る。対象は Step07 の解析窓（エレメント 3′端から内側）＋extension で、それより内側は未分類。</p>
+      <div class="row">
+        <label>グループ</label><select id="msaGroup"></select>
+        <label>表示</label>
+        <div class="seg" id="msaModeSeg">
+          <button data-m="micro" aria-pressed="true">ミクロ構造で色分け</button>
+          <button data-m="diff" aria-pressed="false">コンセンサスとの差</button>
+          <button data-m="base" aria-pressed="false">塩基で色分け</button>
+        </div>
+        <label><input type="checkbox" id="msaReorder" checked> 並び順を上部設定に合わせる</label>
+      </div>
+      <div class="row">
+        <label>行の高さ (px)</label><input type="number" id="msaRowH" min="1" max="40" style="width:64px">
+        <label>行間 (px)</label><input type="number" id="msaRowGap" min="0" max="40" style="width:64px">
+        <label><input type="checkbox" id="msaProj"> 基準配列のギャップ列を詰める（基準の bp 座標に投影。他配列の挿入は非表示）</label>
+        <span class="status" id="msaStatus"></span>
+      </div>
+      <div class="row legend" id="msaLegend"></div>
+      <div id="msaOverHost"><canvas id="msaOver"></canvas></div>
+      <div class="row" style="margin-top:10px">
+        <span class="seg"><button class="btn" id="msaLeft">◀</button><button class="btn" id="msaRight">▶</button></span>
+        <label>基準座標 (bp)</label><input type="number" id="msaC0"> – <input type="number" id="msaC1">
+        <button class="btn" id="msaApply">表示</button>
+        <span class="status" id="msaDetailStatus"></span>
+      </div>
+      <div class="scroll-x" id="msaDetailHost"><canvas id="msaDetail"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>アラインメントの取得</h2>
+      <div class="row">
+        <button class="btn" id="msaGetSel">詳細表示中の範囲（ギャップ付き）</button>
+        <button class="btn" id="msaGetSelUng">同（ギャップ除去）</button>
+        <button class="btn" id="msaGetCons">コンセンサス配列</button>
+        <button class="btn" id="msaGetAll">アラインメント全体</button>
+      </div>
+      <textarea class="seqbox" id="msaOut" spellcheck="false" readonly></textarea>
+      <div class="row" style="margin-top:8px">
+        <button class="btn" id="msaCopy">コピー</button>
+        <button class="btn" id="msaDl">FASTA を保存</button>
+        <span class="status" id="msaOutStatus"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIM -->
+  <section class="panel" id="p-sim">
+    <div class="split">
+      <div class="card">
+        <h2>3′末端どうしの類似度</h2>
+        <p class="sub">BLASTN（megablast）で、相手染色体と同一な塩基が窓長に占める割合（双方向平均）。クラスタ順・平均連結法。セルをクリックで HSP 詳細。</p>
+        <div class="row legend" id="simLegend"></div>
+        <div class="scroll-x"><canvas id="simCanvas"></canvas></div>
+      </div>
+      <div class="card">
+        <h2 id="pairTitle">ペア詳細</h2>
+        <p class="sub" id="pairSub">ヒートマップのセルをクリックしてください。</p>
+        <canvas id="pairPlot"></canvas>
+        <div class="tblwrap" style="max-height:300px;margin-top:10px"><table class="tbl" id="pairTbl"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTIF -->
+  <section class="panel" id="p-motif">
+    <div class="card">
+      <h2>共通末端エレメント（Step06）</h2>
+      <p class="sub" id="elemSub"></p>
+      <div class="mono" id="elemSeq" style="font-size:12.5px;line-height:1.9;word-break:break-all"></div>
+      <div class="tblwrap" style="max-height:200px;margin-top:10px"><table class="tbl" id="elemIrTbl"></table></div>
+      <div class="row" style="margin-top:8px"><button class="btn" id="elemGet">エレメント配列を取得</button><span class="status" id="elemStatus"></span></div>
+    </div>
+    <div class="card">
+      <h2>最末端の配列（末端揃え・ギャップなし）</h2>
+      <p class="sub">各染色体の 3′ 末端 N bp を右端で揃えて表示。上段は位置ごとの塩基組成（全染色体または表示中の染色体）。</p>
+      <div class="row">
+        <label>N =</label><input type="number" id="motifN" value="80" min="10" max="400">
+        <button class="btn" id="motifApply">更新</button>
+        <button class="btn" id="motifGet">この N bp を FASTA で取得</button>
+      </div>
+      <div class="row legend" id="motifLegend"></div>
+      <div class="scroll-x"><canvas id="motifCanvas"></canvas></div>
+    </div>
+  </section>
+
+  <!-- INTERNAL -->
+  <section class="panel" id="p-internal">
+    <div class="card">
+      <h2>3′末端配列のゲノム内コピー</h2>
+      <p class="sub" id="internalSub"></p>
+      <div class="row">
+        <label>クエリ染色体</label><select id="intQuery"></select>
+        <label>クエリ上の位置 (3′末端からの bp)</label><input type="number" id="intQLo" value="1"> – <input type="number" id="intQHi" value="5000">
+        <span class="legend" id="intClassToggles"></span>
+        <button class="btn" id="intDl">表示中のヒットを TSV 保存</button>
+      </div>
+      <div class="scroll-x"><canvas id="karyo"></canvas></div>
+      <div class="tblwrap" style="margin-top:10px"><table class="tbl" id="intTbl"></table></div>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="panel" id="p-table">
+    <div class="card">
+      <h2>染色体ごとの要約</h2>
+      <p class="sub">列見出しクリックで並べ替え。保存領域 = k-mer が自分以外の 2 本以上と共有される領域（Step02）。</p>
+      <div class="row"><button class="btn" id="sumDl">TSV を保存</button></div>
+      <div class="tblwrap"><table class="tbl" id="sumTbl"></table></div>
+    </div>
+  </section>
+</div>
+</div>
+<div id="tooltip"></div>
+<script id="payload" type="application/octet-stream">__DATA_B64__</script>
+<script>
+"use strict";
+addEventListener("error", (e) => { const b = document.createElement("pre"); b.id = "jsError"; b.style.cssText = "color:#d03b3b;white-space:pre-wrap"; b.textContent = "JS error: " + e.message + " @" + e.lineno; document.body.prepend(b); });
+// ---------- utilities ----------
+const $ = (id) => document.getElementById(id);
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const fmt = (n) => n.toLocaleString("en-US");
+// all text inside figures: Helvetica, black (white in dark mode so it stays readable)
+const FIG_FONT = "Helvetica, Arial, sans-serif";
+const figInk = () => css("--fig-ink");
+const el = (tag, attrs = {}, text) => { const e = document.createElement(tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; };
+const RC = { A: "T", C: "G", G: "C", T: "A", a: "t", c: "g", g: "c", t: "a", N: "N", n: "n", "-": "-" };
+const revcomp = (s) => { let o = ""; for (let i = s.length - 1; i >= 0; i--) o += RC[s[i]] || s[i]; return o; };
+const wrap60 = (s) => s.replace(/(.{60})/g, "$1\n").replace(/\n$/, "");
+let EXPORT_SCALE = 0; // > 0 while a figure is redrawn for PNG export (pixels per CSS px)
+function fitCanvas(cv, w, h) {
+  const dpr = EXPORT_SCALE || window.devicePixelRatio || 1;
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+  cv.style.width = w + "px"; cv.style.height = h + "px";
+  const ctx = cv.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); return ctx;
+}
+const tip = $("tooltip");
+function showTip(ev, rows) {
+  tip.replaceChildren();
+  for (const r of rows) { const d = el("div", r.cls ? { class: r.cls } : {}, r.t); tip.appendChild(d); }
+  tip.style.display = "block";
+  const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + w > innerWidth - 4) x = ev.clientX - w - pad;
+  if (y + h > innerHeight - 4) y = ev.clientY - h - pad;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+const hideTip = () => { tip.style.display = "none"; };
+function download(name, text) {
+  const blob = new Blob([text], { type: "text/plain" });
+  const a = el("a", { href: URL.createObjectURL(blob), download: name });
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+async function copyText(text, statusEl) {
+  try { await navigator.clipboard.writeText(text); statusEl.textContent = "コピーしました（" + fmt(text.length) + " 文字）"; }
+  catch (e) { const ta = el("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); statusEl.textContent = "コピーしました"; }
+}
+function rleDecode(r, n) { const a = new Uint16Array(n); let p = 0; for (let i = 0; i < r.length; i += 2) { a.fill(r[i], p, p + r[i + 1]); p += r[i + 1]; } return a; }
+function typeColor(t) { if (!t || t === "U") return css("--tu"); const i = parseInt(t.slice(1)); return css("--t" + (((i - 1) % 8) + 1)); }
+function ramp(prefix, v, vmax) { if (v <= 0) return css(prefix + "0"); const k = Math.min(5, 1 + Math.floor((v / vmax) * 4.999)); return css(prefix + k); }
+
+// ---------- state ----------
+let D, CH, CHI, S;   // data, chrom list, chrom index, state
+async function load() {
+  const b64 = $("payload").textContent.trim();
+  const bin = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  const stream = new Blob([bin]).stream().pipeThrough(new DecompressionStream("gzip"));
+  D = await new Response(stream).json();
+  CH = D.chroms; CHI = Object.fromEntries(CH.map((c, i) => [c.name, i]));
+  for (const c of CH) {
+    const n = D.seq[c.name].length;
+    c.winLen = n;
+    c.share = rleDecode(D.share[c.name], n);
+    c.inter = rleDecode(D.inter[c.name], n);
+    c.intra = rleDecode(D.intra[c.name], n);
+    c.feats = D.feats[c.name] || [];
+  }
+  S = { scale: D.meta.primaryScale, order: "cluster", filter: "all", lo: 1, hi: 0, sel: null, lanes: {},
+        rib: { on: false, id: 85, len: 200, gap: 34 },
+        msaGroup: "all", msaMode: "micro", msaProj: false, msaRowH: 8, msaRowGap: 2, msaC0: 1, msaC1: 0, motifN: 80, intClasses: new Set(D.internalClasses) };
+  S.hi = scaleBp(S.scale);
+  init();
+}
+const scaleBp = (lab) => parseInt(lab) * 1000;
+function visibleChroms() {
+  let list = CH.slice();
+  const typeOf = (c) => c.types[S.scale];
+  if (S.filter === "nonU") list = list.filter((c) => typeOf(c) !== "U");
+  else if (S.filter === "element") list = list.filter((c) => c.elemEdge); // element 3' edge found by Step06
+  if (S.order === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+  else if (S.order === "length") list.sort((a, b) => b.length - a.length);
+  else {
+    const ord = D.sim[S.scale].order; const rank = Object.fromEntries(ord.map((n, i) => [n, i]));
+    if (S.order === "cluster") list.sort((a, b) => rank[a.name] - rank[b.name]);
+    else { const tk = (t) => (t === "U" ? 999 : parseInt(t.slice(1))); list.sort((a, b) => tk(typeOf(a)) - tk(typeOf(b)) || rank[a.name] - rank[b.name]); }
+  }
+  return list;
+}
+
+// ---------- init ----------
+function init() {
+  $("loading").hidden = true; $("app").hidden = false;
+  $("subtitle").textContent = `${D.meta.genome} ・ ${CH.length} 配列 ・ 解析日 ${D.meta.generated} ・ 3′末端の窓: ${D.meta.windows.join(" / ")}`;
+  const nCons = CH.filter((c) => c.consLen > 0).length;
+  const typesP = D.meta.typeCounts;
+  const tiles = [
+    [CH.length, "染色体（配列）数"],
+    [`${nCons} / ${CH.length}`, "3′末端 2 kb 以内に保存領域をもつ"],
+    [`${CH.filter((c) => c.element && c.elemOverhang <= D.element.maxOverhang).length} / ${CH.length}`, `末端エレメントで終わる（はみ出し ≤${D.element.maxOverhang} bp）`],
+    [Object.keys(typesP).filter((t) => t !== "U").length + " 型", `末端タイプ（${D.meta.primaryScale} で分類, U=単独 ${typesP.U || 0}）`],
+    [fmt(Math.round(median(CH.filter((c) => c.consLen > 0).map((c) => c.consLen)))) + " bp", "保存領域長の中央値"],
+    [fmt(D.meta.nInterior), `末端 ${D.meta.internalQueryKb} kb のゲノム内部ヒット数`],
+  ];
+  const th = $("tiles");
+  for (const [v, k] of tiles) { const t = el("div", { class: "tile" }); t.appendChild(el("div", { class: "v" }, String(v))); t.appendChild(el("div", { class: "k" }, k)); th.appendChild(t); }
+  const seg = $("scaleSeg");
+  for (const w of D.meta.windows) {
+    const b = el("button", { "aria-pressed": String(w === S.scale) }, w);
+    b.onclick = () => { S.scale = w; S.lo = 1; S.hi = scaleBp(w); S.sel = null; for (const x of seg.children) x.setAttribute("aria-pressed", String(x.textContent === w)); refreshAll(); };
+    seg.appendChild(b);
+  }
+  $("orderSel").onchange = (e) => { S.order = e.target.value; refreshAll(); };
+  $("chromFilter").onchange = (e) => { S.filter = e.target.value; refreshAll(); };
+  for (const b of $("tabs").children) b.onclick = () => {
+    for (const x of $("tabs").children) x.setAttribute("aria-selected", String(x === b));
+    for (const p of document.querySelectorAll(".panel")) p.classList.toggle("on", p.id === "p-" + b.dataset.tab);
+    refreshAll();
+  };
+  $("lastN").max = D.meta.maxW;
+  // lengths that depend on the config (terminal element, Step07 window)
+  $("tabs").querySelector("[data-tab=micro]").textContent = `ミクロ構造 (${fmtLen(D.micro.windowBp)})`;
+  const elL = LANES.find((l) => l.id === "terminal_element"); elL.label = `末端エレメント (${fmt(D.element.seq.length)} bp)`; elL.en = `Terminal element (${fmt(D.element.seq.length)} bp)`;
+  initTracks(); initMicro(); initMsa(); initSim(); initMotif(); initInternal(); initTable();
+  addEventListener("resize", () => refreshAll());
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => refreshAll());
+  new MutationObserver(() => refreshAll()).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  applyHash();
+  refreshAll();
+}
+// deep link: #tab=msa&scale=5kb&group=T1&order=type
+function applyHash() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get("scale") && D.meta.windows.includes(h.get("scale"))) { const w = h.get("scale"); S.scale = w; S.lo = 1; S.hi = scaleBp(w); for (const x of $("scaleSeg").children) x.setAttribute("aria-pressed", String(x.textContent === w)); }
+  if (h.get("order")) { S.order = h.get("order"); $("orderSel").value = S.order; }
+  if (h.get("filter")) { S.filter = h.get("filter"); $("chromFilter").value = S.filter; }
+  if (h.get("group")) S.msaGroup = h.get("group");
+  if (h.get("ribbon") === "1") { S.rib.on = true; $("ribOn").checked = true; }
+  if (h.get("proj") === "1") { S.msaProj = true; $("msaProj").checked = true; }
+  if (h.get("rowh")) { S.msaRowH = +h.get("rowh"); $("msaRowH").value = S.msaRowH; }
+  if (h.get("rowgap")) { S.msaRowGap = +h.get("rowgap"); $("msaRowGap").value = S.msaRowGap; }
+  if (h.get("tab")) { const b = $("tabs").querySelector(`[data-tab="${h.get("tab")}"]`); if (b) { for (const x of $("tabs").children) x.setAttribute("aria-selected", String(x === b)); for (const p of document.querySelectorAll(".panel")) p.classList.toggle("on", p.id === "p-" + b.dataset.tab); } }
+  if (h.get("pair")) { const [a, b] = h.get("pair").split(","); if (a in CHI && b in CHI) setTimeout(() => showPair(CH[CHI[a]], CH[CHI[b]]), 0); }
+  if (h.get("view")) { const [lo, hi] = h.get("view").split("-").map(Number); S.lo = lo; S.hi = hi; }
+}
+function median(a) { if (!a.length) return 0; const s = a.slice().sort((x, y) => x - y); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
+function activeTab() { return document.querySelector(".tabs button[aria-selected=true]").dataset.tab; }
+function refreshAll() {
+  $("globalStatus").textContent = `${visibleChroms().length} 本を表示`;
+  const t = activeTab();
+  if (t === "tracks") drawTracks();
+  else if (t === "micro") drawMicro();
+  else if (t === "msa") { fillMsaGroups(); drawMsa(); }
+  else if (t === "sim") drawSim();
+  else if (t === "motif") drawMotif();
+  else if (t === "internal") drawInternal();
+  else if (t === "table") drawTable();
+}
+
+// ================= TRACKS =================
+const LANES = [  // label: controls / tooltips, en: figure legend
+  { id: "seq", label: "塩基", en: "Bases", h: 13, auto: true },
+  { id: "inter", label: "染色体間の類似（他染色体の本数）", en: "Interchromosomal similarity", h: 8 },
+  { id: "intra", label: "染色体内の類似（同一染色体内のコピー数）", en: "Intrachromosomal similarity", h: 8 },
+  { id: "cons", label: "末端保存領域", en: "Conserved terminal region", h: 3 },
+  { id: "terminal_element", label: "末端エレメント", en: "Terminal element", h: 6 }, // length added in init()
+  { id: "softmask", label: "ソフトマスク", en: "Soft-masked", h: 4 },
+  { id: "tandem_repeat", label: "縦列反復 (TRF)", en: "Tandem repeat (TRF)", h: 5 },
+  { id: "tRNA", label: "tRNA", en: "tRNA", h: 6 },
+  { id: "direct_repeat", label: "直列反復（自己 BLAST）", en: "Direct repeat (self-BLAST)", h: 4 },
+  { id: "inverted_repeat", label: "逆位反復（自己 BLAST）", en: "Inverted repeat (self-BLAST)", h: 4 },
+];
+const LABEL_W = 150, AXIS_H = 30, ROW_PAD = 6;
+let trackGeom = null;
+function initTracks() {
+  const host = $("laneToggles");
+  for (const L of LANES) {
+    if (L.auto) continue;
+    S.lanes[L.id] = true;
+    const lab = el("label"); const cb = el("input", { type: "checkbox" }); cb.checked = true;
+    cb.onchange = () => { S.lanes[L.id] = cb.checked; drawTracks(); };
+    lab.appendChild(cb); lab.appendChild(document.createTextNode(" " + L.label)); host.appendChild(lab);
+  }
+  $("ribOn").checked = S.rib.on; $("ribId").value = S.rib.id; $("ribLen").value = S.rib.len; $("ribGap").value = S.rib.gap;
+  $("ribOn").onchange = (e) => { S.rib.on = e.target.checked; drawTracks(); };
+  $("ribId").onchange = (e) => { S.rib.id = Math.max(50, Math.min(100, +e.target.value || 85)); e.target.value = S.rib.id; drawTracks(); };
+  $("ribLen").onchange = (e) => { S.rib.len = Math.max(1, +e.target.value || 200); e.target.value = S.rib.len; drawTracks(); };
+  $("ribGap").onchange = (e) => { S.rib.gap = Math.max(8, Math.min(200, +e.target.value || 34)); e.target.value = S.rib.gap; drawTracks(); };
+  const cv = $("trackCanvas");
+  let drag = null;
+  cv.addEventListener("mousedown", (ev) => {
+    const g = trackGeom; if (!g) return; const r = cv.getBoundingClientRect(); const x = ev.clientX - r.left, y = ev.clientY - r.top;
+    if (x < g.plotL) return;
+    if (y < AXIS_H) drag = { kind: "zoom", x0: x, x1: x };
+    else { const row = g.rows.find((rw) => y >= rw.y && y < rw.y + rw.h); if (row) drag = { kind: "sel", row, x0: x, x1: x }; }
+  });
+  addEventListener("mousemove", (ev) => {
+    if (!drag || !trackGeom) return; const r = cv.getBoundingClientRect();
+    drag.x1 = Math.max(trackGeom.plotL, Math.min(trackGeom.plotL + trackGeom.plotW, ev.clientX - r.left)); drawTracks(drag);
+  });
+  addEventListener("mouseup", () => {
+    if (!drag) return; const g = trackGeom; const d = drag; drag = null;
+    const a = g.x2d(Math.min(d.x0, d.x1)), b = g.x2d(Math.max(d.x0, d.x1));
+    const hi = Math.ceil(a), lo = Math.max(1, Math.floor(b) + 1);
+    if (Math.abs(d.x1 - d.x0) < 3) { drawTracks(); return; }
+    if (d.kind === "zoom") { setView(lo, hi); }
+    else { S.sel = { chrom: d.row.c.name, lo, hi: Math.min(hi, d.row.c.winLen) }; showSelection([d.row.c], S.sel.lo, S.sel.hi); drawTracks(); }
+  });
+  cv.addEventListener("dblclick", (ev) => { const r = cv.getBoundingClientRect(); if (ev.clientY - r.top < AXIS_H) setView(1, scaleBp(S.scale)); });
+  cv.addEventListener("wheel", (ev) => {
+    if (!ev.altKey || !trackGeom) return; ev.preventDefault();
+    const r = cv.getBoundingClientRect(); const d = trackGeom.x2d(ev.clientX - r.left); const f = ev.deltaY > 0 ? 1.25 : 0.8;
+    setView(Math.round(d - (d - S.lo) * f), Math.round(d + (S.hi - d) * f));
+  }, { passive: false });
+  cv.addEventListener("mousemove", (ev) => trackHover(ev));
+  cv.addEventListener("mouseleave", hideTip);
+  $("zIn").onclick = () => { const m = (S.lo + S.hi) / 2, w = (S.hi - S.lo) / 4; setView(Math.round(m - w), Math.round(m + w)); };
+  $("zOut").onclick = () => { const m = (S.lo + S.hi) / 2, w = (S.hi - S.lo); setView(Math.round(m - w), Math.round(m + w)); };
+  $("zReset").onclick = () => setView(1, scaleBp(S.scale));
+  $("panL").onclick = () => { const w = S.hi - S.lo; setView(S.lo + Math.round(w / 2), S.hi + Math.round(w / 2)); };
+  $("panR").onclick = () => { const w = S.hi - S.lo; setView(S.lo - Math.round(w / 2), S.hi - Math.round(w / 2)); };
+  $("vApply").onclick = () => setView(+$("vLo").value, +$("vHi").value);
+  $("trackPng").onclick = () => copyTracksPng();
+  $("selZoom").onclick = () => { if (S.sel) setView(S.sel.lo, S.sel.hi); };
+  $("selAll").onclick = () => { if (S.sel) showSelection(visibleChroms(), S.sel.lo, S.sel.hi); };
+  $("selType").onclick = () => { if (!S.sel) return; const t = CH[CHI[S.sel.chrom]].types[S.scale]; showSelection(visibleChroms().filter((c) => c.types[S.scale] === t), S.sel.lo, S.sel.hi); };
+  $("lastNAll").onclick = () => { const n = Math.max(1, Math.min(D.meta.maxW, +$("lastN").value)); showSelection(visibleChroms(), 1, n); };
+  for (const r of document.querySelectorAll("input[name=caseOpt]")) r.onchange = () => lastSel && showSelection(...lastSel);
+  $("rcOpt").onchange = () => lastSel && showSelection(...lastSel);
+  $("copySeq").onclick = () => copyText($("seqOut").value, $("seqStatus"));
+  $("dlSeq").onclick = () => download(lastSelName || "selection.fna", $("seqOut").value);
+}
+function setView(lo, hi) {
+  const W = scaleBp(S.scale); lo = Math.max(1, lo); hi = Math.min(W, hi);
+  if (hi - lo < 20) { const m = Math.round((lo + hi) / 2); lo = Math.max(1, m - 10); hi = Math.min(W, lo + 20); }
+  S.lo = lo; S.hi = hi; drawTracks();
+}
+// legend entries of the lanes currently shown (HTML legend and PNG export)
+function trackLegendItems() {
+  const it = [], ramp = (pre) => [0, 1, 2, 3, 4, 5].map((i) => css(pre + i));
+  if (S.lanes.inter) it.push({ ramp: ramp("--seq"), a: "Interchromosomal similarity: 0", b: `${D.meta.maxInter} other chromosomes` });
+  if (S.lanes.intra) it.push({ ramp: ramp("--ygr"), a: "Intrachromosomal similarity: 0", b: `≥${D.meta.intraCap} copies on the same chromosome` });
+  if (S.lanes.inter || S.lanes.intra) it.push({ text: "(exact 25-mer matches, both strands; low-complexity k-mers excluded)" });
+  for (const f of ["terminal_element", "softmask", "tandem_repeat", "tRNA", "direct_repeat", "inverted_repeat"])
+    if (!S.lanes[f]) continue;
+    else if (f === "terminal_element") it.push({ ramp: [60, 70, 80, 90, 100].map((p) => blendHex(css("--f-" + f), css("--surface"), identityAlpha(p))),
+                                                 a: `Hits of the terminal element (${fmt(D.element.seq.length)} bp), identity 60%`, b: "100%" });
+    else it.push({ key: css("--f-" + f), label: LANES.find((l) => l.id === f).en });
+  if (S.lanes.cons) it.push({ key: css("--f-cons"), label: "Conserved terminal region" });
+  if (S.rib.on) it.push({ key: css("--t7"), label: `Ribbon: homologous region, same orientation (darker = higher identity; ≥${S.rib.id}%, ≥${S.rib.len} bp)` },
+                         { key: css("--t6"), label: "Ribbon: inverted orientation (crossed)" });
+  return it;
+}
+function trackLegend() {
+  const lg = $("trackLegend"); lg.replaceChildren();
+  for (const it of trackLegendItems()) {
+    const s = el("span");
+    if (it.ramp) { s.appendChild(document.createTextNode(it.a)); const g = el("span", { class: "ramp" }); g.style.background = `linear-gradient(90deg, ${it.ramp.join(",")})`; s.appendChild(g); s.appendChild(document.createTextNode(it.b)); }
+    else if (it.key) { const k = el("span", { class: "key" }); k.style.background = it.key; s.appendChild(k); s.appendChild(document.createTextNode(it.label)); }
+    else s.textContent = it.text;
+    lg.appendChild(s);
+  }
+}
+// draws (draw = true) or measures the legend on a canvas; returns its height (CSS px)
+function layoutLegend(ctx, items, maxW, draw) {
+  const RH = 18, GAP = 14; let x = 8, y = 8;
+  ctx.font = `12px ${FIG_FONT}`; ctx.textBaseline = "middle"; ctx.textAlign = "left";
+  for (const it of items) {
+    const tw = (s) => ctx.measureText(s).width;
+    const w = it.ramp ? tw(it.a) + 80 + tw(it.b) : it.key ? 17 + tw(it.label) : tw(it.text);
+    if (x > 8 && x + w > maxW) { x = 8; y += RH; }
+    if (draw) {
+      const ym = y + RH / 2; ctx.fillStyle = figInk();
+      if (it.ramp) {
+        ctx.fillText(it.a, x, ym); const gx = x + tw(it.a) + 5; const g = ctx.createLinearGradient(gx, 0, gx + 70, 0);
+        it.ramp.forEach((c, i) => g.addColorStop(i / (it.ramp.length - 1), c)); ctx.fillStyle = g; ctx.fillRect(gx, ym - 5, 70, 10);
+        ctx.fillStyle = figInk(); ctx.fillText(it.b, gx + 75, ym);
+      } else if (it.key) { ctx.fillStyle = it.key; ctx.fillRect(x, ym - 5, 12, 10); ctx.fillStyle = figInk(); ctx.fillText(it.label, x + 17, ym); }
+      else ctx.fillText(it.text, x, ym);
+    }
+    x += w + GAP;
+  }
+  return y + RH;
+}
+const CRC_TABLE = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function crc32(b) { let c = 0xffffffff; for (const v of b) c = CRC_TABLE[(c ^ v) & 0xff] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; }
+// insert a pHYs chunk (resolution) right after IHDR
+async function setPngDpi(blob, dpi) {
+  const b = new Uint8Array(await blob.arrayBuffer()); const ppm = Math.round(dpi / 0.0254);
+  const ch = new Uint8Array(21); const dv = new DataView(ch.buffer);
+  dv.setUint32(0, 9); ch.set([0x70, 0x48, 0x59, 0x73], 4); dv.setUint32(8, ppm); dv.setUint32(12, ppm); ch[16] = 1; dv.setUint32(17, crc32(ch.subarray(4, 17)));
+  const out = new Uint8Array(b.length + 21); out.set(b.subarray(0, 33)); out.set(ch, 33); out.set(b.subarray(33), 54);
+  return new Blob([out], { type: "image/png" });
+}
+// all shown chromosomes (current range and lanes) + legend as one PNG at 400 dpi (= 400/96 pixels per CSS px)
+let pngInfo = "";
+async function makeTracksPng() {
+  const scale = 400 / 96;
+  EXPORT_SCALE = scale;
+  try {
+    drawTracks(null, true);
+    const tc = $("trackCanvas"); const w = tc.width / scale, h = tc.height / scale;
+    const items = trackLegendItems(); const m = document.createElement("canvas").getContext("2d");
+    const legH = layoutLegend(m, items, w - 8, false) + 6;
+    const out = document.createElement("canvas"); out.width = Math.round(w * scale); out.height = Math.round((legH + h) * scale);
+    const ctx = out.getContext("2d"); ctx.setTransform(scale, 0, 0, scale, 0, 0);
+    ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, w, legH + h);
+    layoutLegend(ctx, items, w - 8, true);
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(tc, 0, Math.round(legH * scale));
+    pngInfo = `${fmt(out.width)} × ${fmt(out.height)} px`;
+    const blob = await new Promise((res) => out.toBlob(res, "image/png"));
+    return setPngDpi(blob, 400);
+  } finally { EXPORT_SCALE = 0; drawTracks(); }
+}
+async function copyTracksPng() {
+  const st = $("trackPngStatus"); st.textContent = "作成中…";
+  const png = makeTracksPng(); // the clipboard item gets the promise so that the click still counts as the user gesture
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
+    st.textContent = `コピーしました（${pngInfo}, 400 dpi）`;
+  } catch (e) {
+    const b = await png; const a = el("a", { href: URL.createObjectURL(b), download: `${D.meta.genome}_tracks_400dpi.png` });
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+    st.textContent = `クリップボードに書き込めなかったため PNG を保存しました（${pngInfo}）`;
+  }
+}
+function drawTracks(drag, exporting) {
+  if (activeTab() !== "tracks") return;
+  trackLegend();
+  const W = scaleBp(S.scale); if (S.hi > W || S.hi <= S.lo) { S.lo = 1; S.hi = W; }
+  $("vLo").value = S.lo; $("vHi").value = S.hi;
+  const host = $("trackHost"); const width = Math.max(600, host.clientWidth);
+  const plotL = LABEL_W, plotW = width - LABEL_W - 8;
+  const span = S.hi - S.lo + 1; const pxPerBp = plotW / span;
+  const showSeq = pxPerBp >= 7;
+  const lanes = LANES.filter((L) => (L.auto ? showSeq : S.lanes[L.id]));
+  const laneH = lanes.reduce((a, L) => a + L.h + 1, 0);
+  const rowH = laneH + ROW_PAD * 2;
+  const list = visibleChroms();
+  const G = S.rib.on ? S.rib.gap : 0; // vertical space between rows for ribbons
+  const height = AXIS_H + list.length * rowH + Math.max(0, list.length - 1) * G + 6;
+  const ctx = fitCanvas($("trackCanvas"), width, height);
+  ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  const x2d = (x) => S.hi + 0.5 - ((x - plotL) / plotW) * span; // continuous dist at x
+  const d2x = (d) => plotL + ((S.hi + 0.5 - d) / span) * plotW;  // left edge of base d is d2x(d+0.5)
+  trackGeom = { plotL, plotW, rows: [], x2d, d2x, lanes };
+  // axis
+  ctx.font = `11px ${FIG_FONT}`; ctx.textBaseline = "top";
+  const step = niceStep(span / 8);
+  ctx.strokeStyle = css("--grid"); ctx.fillStyle = figInk(); ctx.lineWidth = 1;
+  for (let d = Math.ceil(S.lo / step) * step; d <= S.hi; d += step) {
+    const x = Math.round(d2x(d)) + 0.5; ctx.beginPath(); ctx.moveTo(x, AXIS_H - 6); ctx.lineTo(x, height); ctx.stroke();
+    const t = d >= 1000 ? (d / 1000).toFixed(d % 1000 ? (step < 100 ? 2 : 1) : 0) + " kb" : d + " bp";
+    ctx.textAlign = "center"; ctx.fillText(t, x, 6);
+  }
+  ctx.textAlign = "right"; ctx.fillStyle = figInk(); ctx.fillText(S.lo === 1 ? "3′ end →" : "", plotL + plotW, 18);
+  ctx.textAlign = "left"; ctx.fillText("Distance from 3′ end", 4, 6);
+  $("viewStatus").textContent = `${fmt(S.lo)}–${fmt(S.hi)} bp（${fmt(span)} bp, ${pxPerBp >= 1 ? pxPerBp.toFixed(1) + " px/bp" : (1 / pxPerBp).toFixed(1) + " bp/px"}）`;
+  // rows
+  let y = AXIS_H;
+  for (const c of list) {
+    const row = { c, y, h: rowH }; trackGeom.rows.push(row);
+    // label
+    // label block sits at the right of the gutter (next to the plot); text left-aligned and black
+    const nameX = plotL - 70;
+    ctx.fillStyle = figInk(); ctx.font = `12px ${FIG_FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(c.name, nameX, y + rowH / 2 - 6);
+    ctx.fillStyle = figInk(); ctx.font = `10.5px ${FIG_FONT}`; ctx.fillText(fmtLen(c.length), nameX, y + rowH / 2 + 7);
+    let ly = y + ROW_PAD;
+    const dmax = Math.min(S.hi, c.winLen);
+    for (const L of lanes) {
+      drawLane(ctx, L, c, ly, plotL, plotW, span, dmax);
+      ly += L.h + 1;
+    }
+    if (S.sel && S.sel.chrom === c.name && !exporting) {
+      ctx.strokeStyle = css("--selline"); ctx.lineWidth = 2; const xa = d2x(S.sel.hi + 0.5), xb = d2x(S.sel.lo - 0.5);
+      ctx.strokeRect(Math.max(plotL, xa), y + 2, Math.min(plotL + plotW, xb) - Math.max(plotL, xa), rowH - 4);
+    }
+    y += rowH + G;
+  }
+  drawRibbons(ctx, plotL, plotW);
+  if (S.sel && !exporting) { // faint band across all rows for the selected dist range
+    ctx.fillStyle = css("--sel"); const xa = Math.max(plotL, d2x(S.sel.hi + 0.5)), xb = Math.min(plotL + plotW, d2x(S.sel.lo - 0.5));
+    if (xb > xa) { ctx.globalAlpha = 0.35; ctx.fillRect(xa, AXIS_H, xb - xa, height - AXIS_H); ctx.globalAlpha = 1; }
+  }
+  if (drag) {
+    const xa = Math.min(drag.x0, drag.x1), xb = Math.max(drag.x0, drag.x1); ctx.fillStyle = css("--sel");
+    if (drag.kind === "zoom") ctx.fillRect(xa, 0, xb - xa, height);
+    else ctx.fillRect(xa, drag.row.y, xb - xa, drag.row.h);
+  }
+}
+function fmtLen(n) { return n >= 1e6 ? (n / 1e6).toFixed(2) + " Mb" : n >= 1e3 ? (n / 1e3).toFixed(1) + " kb" : n + " bp"; }
+function niceStep(x) { const p = Math.pow(10, Math.floor(Math.log10(x))); for (const m of [1, 2, 5, 10]) if (m * p >= x) return m * p; return 10 * p; }
+function roundRect(ctx, x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
+function drawLane(ctx, L, c, ly, plotL, plotW, span, dmax) {
+  const g = trackGeom;
+  if (dmax < S.lo) return;
+  if (L.id === "inter" || L.id === "intra") {
+    const arr = L.id === "inter" ? c.inter : c.intra; const vmax = Math.max(1, L.id === "inter" ? D.meta.maxInter : D.meta.intraCap); const pre = L.id === "inter" ? "--seq" : "--ygr";
+    const cols = [0, 1, 2, 3, 4, 5].map((i) => css(pre + i));
+    const x0 = Math.max(plotL, Math.floor(g.d2x(dmax + 0.5)));
+    for (let x = x0; x < plotL + plotW; x++) {
+      const dA = Math.max(S.lo, Math.round(g.x2d(x + 1))), dB = Math.min(dmax, Math.round(g.x2d(x)));
+      let v = 0; for (let d = dA; d <= dB; d++) { const t = arr[d - 1]; if (t > v) v = t; }
+      if (dB < dA) { const d = Math.round(g.x2d(x + 0.5)); if (d >= 1 && d <= dmax) v = arr[d - 1]; else continue; }
+      const k = v <= 0 ? 0 : Math.min(5, 1 + Math.floor((Math.min(v, vmax) / vmax) * 4.999));
+      ctx.fillStyle = cols[k]; ctx.fillRect(x, ly, 1, L.h);
+    }
+  } else if (L.id === "seq") {
+    const cols = { A: css("--nA"), C: css("--nC"), G: css("--nG"), T: css("--nT") };
+    ctx.font = `bold 10px ${FIG_FONT}`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    const s = D.seq[c.name]; const n = s.length;
+    for (let d = S.lo; d <= dmax; d++) {
+      const b = s[n - d]; const xa = g.d2x(d + 0.5), xb = g.d2x(d - 0.5);
+      const U = b.toUpperCase(); ctx.fillStyle = cols[U] || css("--muted"); ctx.globalAlpha = b === U ? 1 : 0.55;
+      ctx.fillRect(xa + 0.5, ly, xb - xa - 1, L.h); ctx.globalAlpha = 1; ctx.fillStyle = figInk(); ctx.fillText(b, (xa + xb) / 2, ly + L.h / 2 + 0.5);
+    }
+  } else if (L.id === "cons") {
+    if (c.consLen > 0) {
+      const a = Math.max(S.lo, c.offset + 1), b = Math.min(dmax, c.consEnd);
+      if (b >= a) { ctx.fillStyle = css("--f-cons"); const xa = g.d2x(b + 0.5), xb = g.d2x(a - 0.5); ctx.fillRect(xa, ly, Math.max(1, xb - xa), L.h); }
+    }
+  } else if (L.id === "terminal_element") {
+    // hits of the terminal element: colour intensity = identity to the element; the per-pixel maximum is drawn once,
+    // so overlapping hits do not darken the lane
+    const ti = D.featTypes.indexOf(L.id); const best = new Float32Array(Math.ceil(plotW) + 1);
+    for (const f of c.feats) {
+      if (f[0] !== ti || f[2] < S.lo || f[1] > dmax) continue;
+      const xa = Math.floor(g.d2x(Math.min(f[2], S.hi) + 0.5) - plotL), xb = Math.max(xa + 1, Math.ceil(g.d2x(Math.max(f[1], S.lo) - 0.5) - plotL));
+      for (let x = Math.max(0, xa); x < Math.min(best.length, xb); x++) if (f[5] > best[x]) best[x] = f[5];
+    }
+    const base = css("--f-terminal_element"), bg = css("--surface");
+    for (let x = 0; x < best.length; x++) if (best[x] > 0) { ctx.fillStyle = blendHex(base, bg, identityAlpha(best[x])); ctx.fillRect(plotL + x, ly, 1, L.h); }
+  } else {
+    const ti = D.featTypes.indexOf(L.id); ctx.fillStyle = css("--f-" + L.id);
+    for (const f of c.feats) {
+      if (f[0] !== ti || f[2] < S.lo || f[1] > dmax) continue;
+      const xa = g.d2x(Math.min(f[2], S.hi) + 0.5), xb = g.d2x(Math.max(f[1], S.lo) - 0.5);
+      ctx.fillRect(xa, ly, Math.max(1, xb - xa), L.h);
+    }
+  }
+}
+// ribbons between adjacent rows: BLAST HSPs (current scale) of the upper row (query) vs the lower row (subject)
+function drawRibbons(ctx, plotL, plotW) {
+  const g = trackGeom; g.ribbons = [];
+  if (!S.rib.on) return;
+  const by = new Map();
+  for (const h of D.hsps[S.scale]) {
+    if (h[6] < S.rib.id || h[3] - h[2] + 1 < S.rib.len) continue;
+    const k = h[0] + "," + h[1]; if (!by.has(k)) by.set(k, []); by.get(k).push(h);
+  }
+  const cF = css("--t7"), cR = css("--t6");
+  ctx.save(); ctx.beginPath(); ctx.rect(plotL, 0, plotW, 1e6); ctx.clip();
+  for (let r = 0; r + 1 < g.rows.length; r++) {
+    const A = g.rows[r], B = g.rows[r + 1]; const yT = A.y + A.h - ROW_PAD + 1, yB = B.y + ROW_PAD - 1;
+    const arr = (by.get(CHI[A.c.name] + "," + CHI[B.c.name]) || []).slice().sort((p, q) => p[6] - q[6]); // high identity on top
+    for (const h of arr) {
+      if (Math.max(h[3], h[5]) < S.lo || Math.min(h[2], h[4]) > S.hi) continue;
+      const qa = g.d2x(h[3] + 0.5), qb = g.d2x(h[2] - 0.5), sa = g.d2x(h[5] + 0.5), sb = g.d2x(h[4] - 0.5);
+      // + strand: inner/outer edges connect straight; - strand: they cross (inversion)
+      const poly = h[7] === "+" ? [qa, yT, qb, yT, sb, yB, sa, yB] : [qa, yT, qb, yT, sa, yB, sb, yB];
+      ctx.globalAlpha = 0.12 + 0.6 * Math.max(0, (h[6] - S.rib.id) / Math.max(1, 100 - S.rib.id));
+      ctx.fillStyle = h[7] === "+" ? cF : cR;
+      ctx.beginPath(); ctx.moveTo(poly[0], poly[1]); for (let i = 2; i < 8; i += 2) ctx.lineTo(poly[i], poly[i + 1]); ctx.closePath(); ctx.fill();
+      g.ribbons.push({ poly, h, a: A.c.name, b: B.c.name });
+    }
+  }
+  ctx.globalAlpha = 1; ctx.restore();
+}
+function inPoly(x, y, p) { let inside = false; for (let i = 0, j = p.length - 2; i < p.length; j = i, i += 2) { const xi = p[i], yi = p[i + 1], xj = p[j], yj = p[j + 1]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside; } return inside; }
+function trackHover(ev) {
+  const g = trackGeom; if (!g) return; const r = $("trackCanvas").getBoundingClientRect(); const x = ev.clientX - r.left, y = ev.clientY - r.top;
+  const row = g.rows.find((rw) => y >= rw.y && y < rw.y + rw.h);
+  if (!row && x >= g.plotL && g.ribbons && g.ribbons.length) {
+    const hit = g.ribbons.slice().reverse().find((rb) => inPoly(x, y, rb.poly));
+    if (hit) { const h = hit.h; return showTip(ev, [{ t: `${h[6].toFixed(1)}% 一致 ・ ${fmt(h[3] - h[2] + 1)} bp ・ ${h[7] === "+" ? "同方向" : "逆方向"}`, cls: "tv" },
+      { t: `${hit.a}: 3′末端から ${fmt(h[2])}–${fmt(h[3])} bp`, cls: "tk" }, { t: `${hit.b}: 3′末端から ${fmt(h[4])}–${fmt(h[5])} bp`, cls: "tk" }, { t: `${S.scale} 窓の BLASTN HSP`, cls: "tk" }]); }
+  }
+  if (!row || x < g.plotL) { hideTip(); return; }
+  const c = row.c; const d = Math.round(g.x2d(x));
+  if (d < 1 || d > c.winLen) { showTip(ev, [{ t: c.name, cls: "tv" }, { t: "（染色体長より外側）", cls: "tk" }]); return; }
+  const s = D.seq[c.name]; const n = s.length; const ctxS = s.slice(Math.max(0, n - d - 7), n - d) + "[" + s[n - d] + "]" + s.slice(n - d + 1, Math.min(n, n - d + 8));
+  const rows = [
+    { t: `${c.name}  ・  3′末端から ${fmt(d)} bp`, cls: "tv" },
+    { t: `ゲノム座標 ${fmt(c.length - d + 1)}  ・  タイプ ${c.types[S.scale]}`, cls: "tk" },
+    { t: ctxS, cls: "mono" },
+    { t: `染色体間: 他 ${c.inter[d - 1]} 本の染色体（うち 3′末端 ${c.share[d - 1]} 本）  ・  染色体内: ${c.intra[d - 1] >= D.meta.intraCap ? "≥" : ""}${c.intra[d - 1]} コピー` },
+  ];
+  if (c.consLen > 0) rows.push({ t: `末端保存領域: ${fmt(c.offset + 1)}–${fmt(c.consEnd)} bp`, cls: "tk" });
+  const hits = c.feats.filter((f) => f[1] <= d && f[2] >= d && D.featTypes[f[0]] !== "softmask").slice(0, 5);
+  for (const f of hits) rows.push({ t: `${LANES.find((l) => l.id === D.featTypes[f[0]]).label}: ${fmt(f[1])}–${fmt(f[2])}  ${f[3]}`, cls: "tk" });
+  showTip(ev, rows);
+}
+let lastSel = null, lastSelName = "";
+function showSelection(chroms, lo, hi) {
+  lastSel = [chroms, lo, hi];
+  const upper = document.querySelector("input[name=caseOpt]:checked").value === "upper"; const rc = $("rcOpt").checked;
+  let out = "", total = 0;
+  for (const c of chroms) {
+    const s = D.seq[c.name]; const n = s.length; const h = Math.min(hi, n); if (h < lo) continue;
+    let sub = s.slice(n - h, n - lo + 1); if (upper) sub = sub.toUpperCase(); if (rc) sub = revcomp(sub);
+    const gs = c.length - h + 1, ge = c.length - lo + 1;
+    out += `>${c.name}:${gs}-${ge}${rc ? "(-)" : "(+)"} dist_from_3end=${lo}-${h} type_${S.scale}=${c.types[S.scale]} len=${sub.length}\n${wrap60(sub)}\n`; total++;
+  }
+  $("seqOut").value = out;
+  $("selInfo").textContent = `${total} 配列 ・ 3′末端から ${fmt(lo)}–${fmt(hi)} bp（${fmt(hi - lo + 1)} bp）` + (chroms.length === 1 ? ` ・ ${chroms[0].name}` : "");
+  lastSelName = (chroms.length === 1 ? chroms[0].name : `${total}chroms`) + `_3end_${lo}-${hi}${rc ? "_rc" : ""}.fna`;
+  $("seqStatus").textContent = "";
+}
+
+// ================= MICRO STRUCTURE (Step07) =================
+const SVGNS = "http://www.w3.org/2000/svg";
+const KIND_JA = { module: "保存モジュール", shared_block: "部分共有ブロック", variable: "可変領域", homopolymer: "ホモポリマー", outer: "外側の領域（保存された中心部より内側）" };
+// module colours (T1, T2, ...): avoid the hues reserved for substitution (--t2 orange), homopolymer (--t4 yellow),
+// insertion (--t5 magenta) and unassigned/extension (greys). Palette tokens first, then fixed extra hues.
+const MOD_SLOTS = ["--t8", "--t1", "--t3", "--t7", "--t6", "#8c564b", "#17a2b8", "#9a9a2e", "#1f3a93", "#7b241c", "#2f6f6f", "#6a5acd"];
+const modColor = (i) => { const v = MOD_SLOTS[i % MOD_SLOTS.length]; return v.startsWith("--") ? css(v) : v; };
+let microSel = null, microName = "micro.fna";
+function sv(tag, attrs = {}, text) { const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+function segStyle(sg) {
+  if (sg.kind === "module") return { fill: modColor(parseInt(sg.name.slice(1)) - 1), op: 0.8 };
+  if (sg.kind === "homopolymer") return { fill: css("--t4"), op: 0.8 };
+  if (sg.kind === "shared_block") return { fill: css("--seq2"), op: 0.8 };
+  if (sg.kind === "outer") return { fill: css("--muted"), op: 0.3 };
+  return { fill: css("--t3"), op: 0.35 };
+}
+function lenLabel(sg) { return sg.len_min === sg.len_max ? `${sg.len_min} bp` : `${sg.len_min}–${sg.len_max} bp`; }
+function initMicro() {
+  const M = D.micro; const sel = $("microExtent");
+  const extents = [[M.coreBp, `保存された中心部（${fmt(M.coreBp)} bp）`]];
+  for (const v of [500, 1000]) if (v < M.windowBp && v !== M.coreBp) extents.push([v, `${fmt(v)} bp`]);
+  extents.push([M.windowBp, `${fmt(M.windowBp)} bp（全体）`]);
+  extents.sort((a, b) => a[0] - b[0]);
+  for (const [v, t] of extents) sel.appendChild(el("option", { value: v }, t));
+  // default: the micro-type region when it ends at a homopolymer tract (as in the paper-style figure), else the whole window
+  sel.value = String(M.windowBp);
+  sel.onchange = drawMicro; $("microStripes").onchange = drawMicro; $("microNonEl").onchange = drawMicro;
+  const n = Object.keys(M.chroms).length;
+  $("microSub").textContent = `末端エレメントをもつ ${n} 本を、エレメント 3′端で揃えた ${fmt(M.windowBp)} bp（保存された中心部 ${fmt(M.coreBp)} bp＋余白）で MAFFT L-INS-i 整列。中心部は列支持率から保存モジュール（T1, T2…）・可変領域（V1, V2…）に自動分割し（番号は 3′側から）、中心部より内側は外側の領域（O）としてまとめる。部分共有ブロック（S1, S2…）とホモポリマー（PolyT など）は両方で検出。破線＝中心部の境界。ファミリー＝中心部の一致率によるクラスタ、ミクロ型＝中心部のセグメントのバリアント（a, b…）の組合せ。エレメントより外側の配列（extension）は右端の枠で示す（枠の長さは非比例）。`;
+  $("microSvg").onclick = () => { const svg = $("microHost").querySelector("svg"); if (!svg) return; const c = svg.cloneNode(true); c.setAttribute("xmlns", SVGNS);
+    download(`${D.meta.genome}_micro_structure.svg`, new XMLSerializer().serializeToString(c)); };
+  $("microSegAll").onclick = () => { if (!microSel) return; microFasta(Object.keys(M.chroms).map((c) => [c, microSel.seg])); };
+  $("microTypeAll").onclick = () => { if (!microSel) return; const t = M.chroms[microSel.chrom].microType;
+    const out = []; for (const [c, v] of Object.entries(M.chroms)) if (v.microType === t) for (const g of v.segs) if (g.present) out.push([c, g.name]); microFasta(out); };
+  $("microCopy").onclick = () => copyText($("microOut").value, $("microStatus"));
+  $("microDl").onclick = () => download(microName, $("microOut").value);
+  $("microSegTsv").onclick = () => { const cols = ["name", "kind", "cons_len", "cons_dist_from", "cons_dist_to", "support", "n_present", "len_min", "len_max", "mean_identity", "n_variants", "cons_seq"];
+    download("micro_segments.tsv", cols.join("\t") + "\n" + M.segments.map((g) => cols.map((k) => g[k]).join("\t")).join("\n") + "\n"); };
+  $("microTypeTsv").onclick = () => download("micro_types.tsv", "chrom\tfamily\tmicro_type\tcode\textension_bp\n" + Object.entries(M.chroms).map(([c, v]) => [c, v.family, v.microType, v.code, v.ext.length].join("\t")).join("\n") + "\n");
+}
+function microFasta(pairs) {
+  const M = D.micro; let out = "";
+  for (const [c, sn] of pairs) { const v = M.chroms[c]; const g = v && v.segs.find((x) => x.name === sn); if (!g || !g.seq) continue;
+    const L = CH[CHI[c]].length; out += `>${c}_${sn} ${c}:${L - g.to + 1}-${L - g.from + 1}(+) dist_from_3end=${g.from}-${g.to} family=${v.family} micro_type=${v.microType} variant=${g.var} len=${g.seq.length}\n${wrap60(g.seq)}\n`; }
+  $("microOut").value = out; microName = `micro_${pairs.length}seq.fna`; $("microStatus").textContent = `${pairs.length} 配列`;
+}
+function drawMicro() {
+  if (activeTab() !== "micro") return;
+  const M = D.micro; const host = $("microHost"); host.replaceChildren();
+  const extent = +$("microExtent").value; const stripes = $("microStripes").checked;
+  const width = Math.max(900, host.clientWidth); const LW = 150, EXTW = 120, GAP = 26;
+  const plotR = width - EXTW - GAP - 10, plotW = plotR - LW; const px = plotW / extent;
+  const BAR = 24, ROW = 34;
+  const fams = M.families; const types = M.types;
+  const nonEl = $("microNonEl").checked ? M.nonElement.chroms : [];
+  let y = 0; const parts = [];
+  const svg = sv("svg", { width, "font-family": FIG_FONT, "font-size": 12 });
+  const defs = sv("defs"); const cp = sv("clipPath", { id: "mclip" }); cp.appendChild(sv("rect", { x: LW, y: 0, width: plotW, height: 100000 })); defs.appendChild(cp); svg.appendChild(defs);
+  svg.appendChild(sv("rect", { x: 0, y: 0, width, height: 10, fill: css("--surface"), id: "mbg" }));
+  const ink = figInk(), ink2 = ink, muted = css("--muted"), stroke = css("--axis"); // muted: lines only, never text
+  const cSub = css("--t2"), cIns = css("--t5"), cDel = css("--ink");
+  const segX = (to, len) => ({ x: plotR - to * px, w: len * px });
+  // ---- consensus bar (label levels are computed first so the bar sits below the tallest label stack)
+  const placed = [];
+  for (const sg of M.segments) {
+    if (sg.cons_len === 0 || sg.cons_dist_from > extent) continue;
+    const { x, w } = segX(sg.cons_dist_to, sg.cons_len);
+    if (w < 6 && sg.kind === "variable") continue;
+    const cx = Math.max(LW + 2, Math.min(plotR - 2, x + w / 2)); const txt = `${sg.name} ${lenLabel(sg)}`; const tw = txt.length * 6.6;
+    let lvl = 0; while (placed.some((p) => p.l === lvl && Math.abs(p.x - cx) < (p.w + tw) / 2 + 4)) lvl++;
+    placed.push({ x: cx, w: tw, l: lvl, txt });
+  }
+  const maxLvl = placed.reduce((m, p) => Math.max(m, p.l), 0);
+  y = 44 + maxLvl * 16;
+  const yCons = y;
+  svg.appendChild(sv("text", { x: 4, y: 16, fill: ink, "font-weight": 650, "font-size": 13 }, "Consensus structure"));
+  svg.appendChild(sv("text", { x: 4, y: y + BAR / 2 + 4, fill: ink2 }, `n = ${M.nAligned}`));
+  const g0 = sv("g", { "clip-path": "url(#mclip)" }); svg.appendChild(g0);
+  for (const p of placed) {
+    const ly = y - 8 - p.l * 16;
+    svg.appendChild(sv("text", { x: p.x, y: ly, "text-anchor": "middle", fill: ink }, p.txt));
+    if (p.l > 0) svg.appendChild(sv("line", { x1: p.x, y1: ly + 3, x2: p.x, y2: y, stroke: muted }));
+  }
+  for (const sg of M.segments) {
+    if (sg.cons_len === 0 || sg.cons_dist_from > extent) continue;
+    const { x, w } = segX(sg.cons_dist_to, sg.cons_len); const st = segStyle(sg);
+    const r = sv("rect", { x, y, width: Math.max(1, w), height: BAR, fill: st.fill, "fill-opacity": st.op, stroke, "stroke-width": 1 });
+    r.style.cursor = "pointer"; r.addEventListener("mousemove", (ev) => microTipCons(ev, sg)); r.addEventListener("mouseleave", hideTip);
+    g0.appendChild(r);
+    if (stripes) { const cv = M.colVar.find((c) => c[0] === sg.name); if (cv) cv[1].forEach((v, i) => { if (v < 0.15) return;
+      const gx = plotR - (sg.cons_dist_to - i) * px; g0.appendChild(sv("rect", { x: gx, y: y + 1, width: Math.max(1, px), height: BAR - 2, fill: cv[2][i] >= 0.15 ? cIns : cSub, "fill-opacity": cv[2][i] >= 0.15 ? Math.min(1, 0.35 + v) : Math.min(0.9, 0.25 + v) })); }); }
+  }
+  const extLens = Object.values(M.chroms).map((v) => v.ext.length); // all element-bearing ends (no extension = 0 bp)
+  if (Math.max(0, ...extLens) > 0) {
+    svg.appendChild(sv("line", { x1: plotR + 2, y1: y + BAR / 2, x2: plotR + GAP + 4, y2: y + BAR / 2, stroke: muted, "stroke-dasharray": "4 3" }));
+    svg.appendChild(sv("text", { x: plotR + GAP / 2 + 2, y: y + BAR / 2 + 4, "text-anchor": "middle", fill: ink }, "//"));
+    svg.appendChild(sv("rect", { x: plotR + GAP + 4, y: y - 2, width: EXTW, height: BAR + 4, rx: 6, fill: css("--page"), stroke }));
+    svg.appendChild(sv("text", { x: plotR + GAP + 4 + EXTW / 2, y: y + 9, "text-anchor": "middle", fill: ink2, "font-size": 11 }, "extension"));
+    svg.appendChild(sv("text", { x: plotR + GAP + 4 + EXTW / 2, y: y + 22, "text-anchor": "middle", fill: ink }, `${Math.min(...extLens)}–${Math.max(...extLens)} bp (n=${extLens.length})`));
+  }
+  // scale bar + axis note
+  const sbBp = niceStep(extent / 6); const sy = y + BAR + 22;
+  svg.appendChild(sv("line", { x1: LW, y1: sy, x2: LW + sbBp * px, y2: sy, stroke: ink2, "stroke-width": 1.5 }));
+  for (const xx of [LW, LW + sbBp * px]) svg.appendChild(sv("line", { x1: xx, y1: sy - 5, x2: xx, y2: sy + 5, stroke: ink2, "stroke-width": 1.5 }));
+  svg.appendChild(sv("text", { x: LW + (sbBp * px) / 2, y: sy + 17, "text-anchor": "middle", fill: ink2 }, `${sbBp} bp`));
+  svg.appendChild(sv("text", { x: plotR, y: sy + 4, "text-anchor": "end", fill: ink, "font-size": 11 }, "← inward      3′ edge of element →|"));
+  if (Math.max(0, ...extLens) > 0) svg.appendChild(sv("text", { x: plotR + GAP + 4 + EXTW / 2, y: y + BAR + 18, "text-anchor": "middle", fill: ink, "font-size": 10.5 }, "box not to scale"));
+  y = sy + 40;
+  // ---- per-chromosome rows
+  const rowsG = sv("g"); svg.appendChild(rowsG);
+  const drawRow = (c, v, yy) => {
+    const info = CH[CHI[c]];
+    rowsG.appendChild(sv("text", { x: 4, y: yy + BAR / 2 + 4, fill: ink, "font-weight": 600 }, c));
+    const chip = sv("rect", { x: 56, y: yy + BAR / 2 - 8, width: 30, height: 16, rx: 8, fill: typeColor(info.type) }); rowsG.appendChild(chip);
+    rowsG.appendChild(sv("text", { x: 71, y: yy + BAR / 2 + 4, "text-anchor": "middle", fill: ink, "font-size": 10, "font-weight": 600 }, info.type));
+    if (v) rowsG.appendChild(sv("text", { x: 92, y: yy + BAR / 2 + 4, fill: ink2, "font-size": 11 }, v.microType));
+    const g = sv("g", { "clip-path": "url(#mclip)" }); rowsG.appendChild(g);
+    g.appendChild(sv("line", { x1: LW, y1: yy + BAR / 2, x2: plotR, y2: yy + BAR / 2, stroke: css("--grid") }));
+    if (!v) return g;
+    const ext = v.ext.length;
+    for (const sgc of v.segs) {
+      if (!sgc.present || !sgc.len) continue;
+      const def = M.segments.find((s2) => s2.name === sgc.name); const st = segStyle(def);
+      const to = sgc.to - ext, from = sgc.from - ext; if (from > extent) continue;
+      const { x, w } = segX(to, sgc.len);
+      const r = sv("rect", { x, y: yy, width: Math.max(1, w), height: BAR, fill: st.fill, "fill-opacity": st.op, stroke, "stroke-width": 1 });
+      r.style.cursor = "pointer"; r.addEventListener("mousemove", (ev) => microTipRow(ev, c, v, sgc, def)); r.addEventListener("mouseleave", hideTip);
+      r.addEventListener("click", () => { microSel = { chrom: c, seg: sgc.name }; microFasta([[c, sgc.name]]); $("microSelInfo").textContent = `${c} ・ ${sgc.name}（${KIND_JA[def.kind]}）・ 3′末端から ${fmt(sgc.from)}–${fmt(sgc.to)} bp ・ バリアント ${sgc.var}`; });
+      g.appendChild(r);
+      if (stripes) for (const e of sgc.ev) { const ex = x + e[1] * px;
+        if (e[0] === "del") g.appendChild(sv("rect", { x: ex - 0.5, y: yy - 2, width: 1.2, height: BAR + 4, fill: cDel, "fill-opacity": 0.6 }));
+        else g.appendChild(sv("rect", { x: ex, y: yy + 1, width: Math.max(1, px), height: BAR - 2, fill: e[0] === "ins" ? cIns : cSub, "fill-opacity": e[0] === "ins" ? 1 : 0.75 })); }
+      if (w > 34 && def.kind !== "variable" && def.kind !== "outer") g.appendChild(sv("text", { x: x + w / 2, y: yy + BAR / 2 + 4, "text-anchor": "middle", fill: ink, "font-size": 10.5, "pointer-events": "none" }, `${sgc.name}${sgc.var && sgc.var !== "-" ? sgc.var : ""}`));
+      else if (w > 18 && def.kind === "variable") g.appendChild(sv("text", { x: x + w / 2, y: yy + BAR / 2 + 4, "text-anchor": "middle", fill: ink2, "font-size": 10, "pointer-events": "none" }, sgc.var));
+    }
+    if (ext > 0) {
+      rowsG.appendChild(sv("line", { x1: plotR + 2, y1: yy + BAR / 2, x2: plotR + GAP + 4, y2: yy + BAR / 2, stroke: muted, "stroke-dasharray": "4 3" }));
+      rowsG.appendChild(sv("text", { x: plotR + GAP / 2 + 2, y: yy + BAR / 2 + 4, "text-anchor": "middle", fill: ink }, "//"));
+      const er = sv("rect", { x: plotR + GAP + 4, y: yy, width: EXTW, height: BAR, rx: 6, fill: css("--page"), stroke }); er.style.cursor = "pointer";
+      er.addEventListener("mousemove", (ev) => showTip(ev, [{ t: `${c} extension ${ext} bp`, cls: "tv" }, { t: v.ext.slice(0, 120) + (ext > 120 ? "…" : ""), cls: "mono" }]));
+      er.addEventListener("mouseleave", hideTip);
+      er.addEventListener("click", () => { $("microOut").value = `>${c}_extension len=${ext} dist_from_3end=1-${ext}\n${wrap60(v.ext)}\n`; microName = `${c}_extension.fna`; });
+      rowsG.appendChild(er);
+      rowsG.appendChild(sv("text", { x: plotR + GAP + 4 + EXTW / 2, y: yy + BAR / 2 + 4, "text-anchor": "middle", fill: ink, "pointer-events": "none" }, `${ext} bp`));
+    }
+    return g;
+  };
+  for (const F of fams) {
+    rowsG.appendChild(sv("text", { x: 4, y: y + 14, fill: ink, "font-weight": 650, "font-size": 13 }, `Family ${F.family}`));
+    rowsG.appendChild(sv("text", { x: 92, y: y + 14, fill: ink2, "font-size": 11.5 }, `n = ${F.members.length}; mean identity in the conserved core ${F.identity}`));
+    y += 24;
+    for (const T of types.filter((t) => t.family === F.family)) {
+      rowsG.appendChild(sv("text", { x: 4, y: y + 12, fill: ink2, "font-size": 11.5 }, `${T.type} (n = ${T.members.length})  ${T.code}`));
+      y += 18;
+      for (const c of T.members) { drawRow(c, M.chroms[c], y); y += ROW; }
+    }
+    y += 8;
+  }
+  if (nonEl.length) {
+    rowsG.appendChild(sv("text", { x: 4, y: y + 14, fill: ink, "font-weight": 650, "font-size": 13 }, "Ends without the element"));
+    rowsG.appendChild(sv("text", { x: 200, y: y + 14, fill: ink2, "font-size": 11.5 }, `aligned at the 3′ end; dashed boxes = local-alignment hits of module sequences (terminal ${M.nonElement.scanBp} bp)`));
+    y += 26;
+    for (const c of nonEl) {
+      const g = drawRow(c, null, y);
+      for (const h of M.nonElement.hits.filter((h2) => h2.chrom === c)) {
+        if (h.dist_from > extent) continue; const def = M.segments.find((s2) => s2.name === h.segment); const st = segStyle(def);
+        const { x, w } = segX(h.dist_to, h.dist_to - h.dist_from + 1);
+        const r = sv("rect", { x, y, width: Math.max(2, w), height: BAR, fill: st.fill, "fill-opacity": st.op, stroke, "stroke-dasharray": "3 2" });
+        r.addEventListener("mousemove", (ev) => showTip(ev, [{ t: `${c} ・ ${h.segment} 候補 (${h.strand})`, cls: "tv" }, { t: `3′末端から ${h.dist_from}–${h.dist_to} bp ・ 一致率 ${(h.identity * 100).toFixed(0)}% ・ 被覆 ${(h.qcov * 100).toFixed(0)}%`, cls: "tk" }, { t: h.seq, cls: "mono" }]));
+        r.addEventListener("mouseleave", hideTip); g.appendChild(r);
+      }
+      y += ROW;
+    }
+  }
+  if (M.coreBp < extent) { // boundary of the conserved terminal core
+    const bx = plotR - M.coreBp * px;
+    svg.appendChild(sv("line", { x1: bx, y1: yCons - 6, x2: bx, y2: y, stroke: ink, "stroke-width": 1, "stroke-dasharray": "5 4", "pointer-events": "none" }));
+    svg.appendChild(sv("text", { x: bx, y: y + 14, "text-anchor": "middle", fill: ink, "font-size": 11 }, `core boundary (${fmt(M.coreBp)} bp)`));
+    y += 18;
+  }
+  const H = y + 10; svg.setAttribute("height", H); svg.setAttribute("viewBox", `0 0 ${width} ${H}`); svg.querySelector("#mbg").setAttribute("height", H);
+  host.appendChild(svg);
+  microLegend(); microTables();
+}
+function microTipCons(ev, sg) {
+  showTip(ev, [{ t: `${sg.name}  ${lenLabel(sg)}`, cls: "tv" }, { t: `${KIND_JA[sg.kind]} ・ コンセンサス ${sg.cons_dist_from}–${sg.cons_dist_to} bp（エレメント 3′端から）`, cls: "tk" },
+    { t: `保有 ${sg.n_present}/${D.micro.nAligned} ・ 平均一致率 ${(sg.mean_identity * 100).toFixed(1)}% ・ バリアント ${sg.n_variants} 種 ・ 列支持率 ${sg.support}`, cls: "tk" },
+    { t: sg.cons_seq.slice(0, 160) + (sg.cons_seq.length > 160 ? "…" : ""), cls: "mono" }]);
+}
+function microTipRow(ev, c, v, g, def) {
+  const L = CH[CHI[c]].length; const nsub = g.ev.filter((e) => e[0] === "sub").length, nins = g.ev.filter((e) => e[0] === "ins").length, ndel = g.ev.filter((e) => e[0] === "del").length;
+  showTip(ev, [{ t: `${c} ・ ${g.name}${g.var && g.var !== "-" ? " (variant " + g.var + ")" : ""}`, cls: "tv" },
+    { t: `${KIND_JA[def.kind]} ・ ${g.len} bp ・ 3′末端から ${fmt(g.from)}–${fmt(g.to)} bp ・ ゲノム ${fmt(L - g.to + 1)}–${fmt(L - g.from + 1)}`, cls: "tk" },
+    { t: `コンセンサスとの一致率 ${(g.id * 100).toFixed(1)}% ・ 置換 ${nsub} / 挿入 ${nins} / 欠失 ${ndel}`, cls: "tk" },
+    { t: `ファミリー ${v.family} ・ ミクロ型 ${v.microType}`, cls: "tk" },
+    { t: g.seq.slice(0, 160) + (g.seq.length > 160 ? "…" : ""), cls: "mono" }, { t: "クリックで配列を取得", cls: "tk" }]);
+}
+function microLegend() {
+  const lg = $("microLegend"); lg.replaceChildren();
+  const add = (color, op, text) => { const s = el("span"); const k = el("span", { class: "key" }); k.style.background = color; k.style.opacity = op; s.appendChild(k); s.appendChild(document.createTextNode(text)); lg.appendChild(s); };
+  const extent = +$("microExtent").value;
+  for (const sg of D.micro.segments.filter((g) => g.kind === "module" && g.cons_dist_from <= extent).reverse()) { const st = segStyle(sg); add(st.fill, Math.min(1, st.op + 0.3), sg.name); }
+  add(css("--seq2"), 0.75, "Shared block (S1, S2…)"); add(css("--t4"), 0.75, "Homopolymer"); add(css("--t3"), 0.45, "Variable region (V1, V2…)");
+  if (D.micro.segments.some((g) => g.kind === "outer")) { add(css("--muted"), 0.45, "Outer region (beyond the conserved core)"); add(css("--ink"), 1, "Dashed line: core boundary"); }
+  add(css("--t2"), 0.9, "Substitution"); add(css("--t5"), 1, "Insertion (bases absent from the consensus)"); add(css("--ink"), 0.6, "Deletion");
+}
+function microTables() {
+  const M = D.micro;
+  const tb = $("microSegTbl"); tb.replaceChildren(); const hr = el("tr");
+  for (const t of ["セグメント", "種類", "3′端から", "コンセンサス長", "長さ範囲", "保有", "一致率", "バリアント", "コンセンサス配列"]) hr.appendChild(el("th", {}, t)); tb.appendChild(hr);
+  for (const g of M.segments.slice().reverse()) { const tr = el("tr");
+    for (const [v, c] of [[g.name], [KIND_JA[g.kind]], [`${g.cons_dist_from}–${g.cons_dist_to}`], [g.cons_len, "num"], [lenLabel(g)], [`${g.n_present}/${M.nAligned}`, "num"], [(g.mean_identity * 100).toFixed(1) + "%", "num"], [g.n_variants, "num"], [g.cons_seq.length > 60 ? g.cons_seq.slice(0, 60) + "…" : g.cons_seq, "mono"]])
+      tr.appendChild(el("td", c ? { class: c } : {}, String(v)));
+    tr.style.cursor = "pointer"; tr.onclick = () => { microSel = { chrom: Object.keys(M.chroms)[0], seg: g.name }; microFasta(Object.keys(M.chroms).map((c2) => [c2, g.name])); };
+    tb.appendChild(tr); }
+  const tt = $("microTypeTbl"); tt.replaceChildren(); const h2 = el("tr");
+  for (const t of ["ミクロ型", "本数", "染色体", "セグメントのバリアント（3′側から）"]) h2.appendChild(el("th", {}, t)); tt.appendChild(h2);
+  for (const T of M.types) { const tr = el("tr"); tr.appendChild(el("td", {}, T.type)); tr.appendChild(el("td", { class: "num" }, String(T.members.length))); tr.appendChild(el("td", {}, T.members.join(", "))); tr.appendChild(el("td", { class: "mono" }, T.code)); tt.appendChild(tr); }
+}
+
+// ---- colouring MSA residues by the Step07 micro-structure segments (distance from the chromosome 3' end)
+const EXT_CODE = 255;
+let microDistMap = null;
+function microDistCodes() { // chrom -> Uint8Array indexed by dist (1 = last base): segment code (0 = none)
+  if (microDistMap) return microDistMap;
+  const Mi = D.micro; const segIdx = Object.fromEntries(Mi.segments.map((g, k) => [g.name, k + 1]));
+  microDistMap = {};
+  for (const [c, v] of Object.entries(Mi.chroms)) {
+    const maxTo = Math.max(v.ext.length, ...v.segs.filter((g) => g.len && g.to).map((g) => g.to));
+    const a = new Uint8Array(maxTo + 2);
+    for (let d = 1; d <= v.ext.length; d++) a[d] = EXT_CODE;
+    for (const g of v.segs) if (g.len && g.from) for (let d = g.from; d <= g.to; d++) a[d] = segIdx[g.name];
+    microDistMap[c] = a;
+  }
+  for (const h of Mi.nonElement.hits) {
+    let a = microDistMap[h.chrom];
+    if (!a || a.length < h.dist_to + 2) { const b = new Uint8Array(h.dist_to + 2); if (a) b.set(a); a = microDistMap[h.chrom] = b; }
+    for (let d = h.dist_from; d <= h.dist_to; d++) a[d] = segIdx[h.segment];
+  }
+  return microDistMap;
+}
+function msaSegCodes(M) { // per sequence: segment code of every alignment column (gaps stay 0)
+  if (M.segCodes) return M.segCodes;
+  const map = microDistCodes();
+  M.segCodes = M.names.map((n, i) => {
+    const s = M.seqs[i]; const a = new Uint8Array(M.L); const dm = map[n]; if (!dm) return a;
+    let nres = 0; for (let j = 0; j < M.L; j++) { if (s[j] === "-") continue; nres++; const d = M.lens[i] - nres + 1; if (d < dm.length) a[j] = dm[d]; }
+    return a;
+  });
+  return M.segCodes;
+}
+const identityAlpha = (p) => Math.max(0.08, Math.min(1, (p - 60) / 40)); // identity (%) -> colour intensity, same scale for every genome
+function blendHex(hex, bg, op) {
+  const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); const a = p(hex), b = p(bg);
+  return "#" + a.map((v, k) => Math.round(v * op + b[k] * (1 - op)).toString(16).padStart(2, "0")).join("");
+}
+function microColors() { // opaque versions of the micro-structure fills on the current surface
+  const bg = css("--surface"); const cols = new Array(256).fill(null);
+  D.micro.segments.forEach((g, k) => { const st = segStyle(g); cols[k + 1] = blendHex(st.fill, bg, Math.min(1, st.op + 0.15)); });
+  cols[EXT_CODE] = blendHex(css("--ink"), bg, 0.6); cols[0] = blendHex(css("--muted"), bg, 0.4);
+  return cols;
+}
+
+// ================= MSA =================
+let msaCache = {}, msaGeom = null;
+function msaKey() { return S.scale + "|" + S.msaGroup; }
+function fillMsaGroups() {
+  const sel = $("msaGroup"); const groups = D.msa.filter((m) => m.scale === S.scale).map((m) => m.group);
+  if (sel.dataset.scale !== S.scale) {
+    sel.replaceChildren(); for (const g of groups) { const m = D.msa.find((x) => x.scale === S.scale && x.group === g); sel.appendChild(el("option", { value: g }, `${g === "all" ? "全染色体" : "タイプ " + g}（n=${m.names.length}）`)); }
+    sel.dataset.scale = S.scale; if (!groups.includes(S.msaGroup)) S.msaGroup = "all"; sel.value = S.msaGroup;
+  }
+}
+function getMsa() {
+  const k = msaKey(); if (msaCache[k]) return msaCache[k];
+  const m = D.msa.find((x) => x.scale === S.scale && x.group === S.msaGroup);
+  const L = m.seqs[0].length; const N = m.seqs.length;
+  const cons = new Array(L); const maj = new Float32Array(L); const gap = new Float32Array(L);
+  const comp = [new Uint16Array(L), new Uint16Array(L), new Uint16Array(L), new Uint16Array(L)]; // A, C, G, T counts per column
+  const up = m.seqs.map((s) => s.toUpperCase());
+  for (let j = 0; j < L; j++) {
+    let a = 0, c = 0, g = 0, t = 0, o = 0, gp = 0;
+    for (let i = 0; i < N; i++) { const b = up[i].charCodeAt(j); if (b === 65) a++; else if (b === 67) c++; else if (b === 71) g++; else if (b === 84) t++; else if (b === 45) gp++; else o++; }
+    const mx = Math.max(a, c, g, t, o); maj[j] = (N - gp) ? mx / N : 0; gap[j] = gp / N;
+    comp[0][j] = a; comp[1][j] = c; comp[2][j] = g; comp[3][j] = t;
+    cons[j] = gp > N / 2 ? "-" : (mx === a ? "A" : mx === c ? "C" : mx === g ? "G" : mx === t ? "T" : "N");
+  }
+  const lens = m.seqs.map((s) => s.length - (s.match(/-/g) || []).length);
+  return (msaCache[k] = { ...m, L, N, up, cons: cons.join(""), maj, gap, lens, comp });
+}
+function msaOrder(M) {
+  if (!$("msaReorder").checked) return M.names.map((_, i) => i);
+  const vis = visibleChroms().map((c) => c.name); const idx = Object.fromEntries(M.names.map((n, i) => [n, i]));
+  const ord = vis.filter((n) => n in idx).map((n) => idx[n]); return ord.length ? ord : M.names.map((_, i) => i);
+}
+const MSA_FONT = FIG_FONT;
+// view of an alignment: displayed columns + coordinate of every displayed column on the reference chromosome
+// (bp; the reference's terminal-element 3' end = 0, inward negative, outward positive).
+function msaView(M) {
+  const key = (S.msaProj ? "p" : "f");
+  if (M.view && M.view.key === key) return M.view;
+  const hasEl = (n) => !!D.micro.chroms[n];
+  let ri = M.names.indexOf(D.meta.msaRef);
+  if (ri < 0 || !hasEl(M.names[ri])) { const c = M.names.filter(hasEl).sort()[0]; ri = c ? M.names.indexOf(c) : 0; }
+  const ref = M.names[ri], rs = M.seqs[ri], ext = hasEl(ref) ? D.micro.chroms[ref].ext.length : 0, len = M.lens[ri];
+  let first = -1, last = -1;
+  for (let j = 0; j < M.L; j++) if (rs[j] !== "-") { if (first < 0) first = j; last = j; }
+  const cols = [];
+  for (let j = 0; j < M.L; j++) if (!S.msaProj || rs[j] !== "-" || j < first || j > last) cols.push(j);
+  const n = cols.length, coord = new Float64Array(n), isRes = new Uint8Array(n);
+  let k = 0, pFirst = -1, pLast = -1, prev = 0;
+  for (let p = 0; p < n; p++) {
+    const j = cols[p];
+    if (rs[j] !== "-") { k++; prev = k - len + ext; coord[p] = prev; isRes[p] = 1; if (pFirst < 0) pFirst = p; pLast = p; }
+    else coord[p] = prev;
+  }
+  for (let p = 0; p < pFirst; p++) coord[p] = coord[pFirst] - (pFirst - p);
+  for (let p = pLast + 1; p < n; p++) coord[p] = coord[pLast] + (p - pLast);
+  return (M.view = { key, cols: Int32Array.from(cols), n, coord, isRes, ref, ri });
+}
+function coordToPos(V, v, side) { // first (side=0) / last (side=1) displayed position with coordinate >= / <= v
+  if (side === 0) { for (let p = 0; p < V.n; p++) if (V.coord[p] >= v) return p; return V.n - 1; }
+  for (let p = V.n - 1; p >= 0; p--) if (V.coord[p] <= v) return p; return 0;
+}
+const fmtCoord = (v) => (v > 0 ? "+" : "") + fmt(v);
+function initMsa() {
+  $("msaGroup").onchange = (e) => { S.msaGroup = e.target.value; S.msaC1 = 0; drawMsa(); };
+  for (const b of $("msaModeSeg").children) b.onclick = () => { S.msaMode = b.dataset.m; for (const x of $("msaModeSeg").children) x.setAttribute("aria-pressed", String(x === b)); drawMsa(); };
+  $("msaReorder").onchange = () => drawMsa();
+  $("msaProj").onchange = (e) => { S.msaProj = e.target.checked; S.msaC1 = 0; drawMsa(); };
+  $("msaRowH").value = S.msaRowH; $("msaRowGap").value = S.msaRowGap;
+  $("msaRowH").onchange = (e) => { S.msaRowH = Math.max(1, Math.min(40, +e.target.value || 1)); e.target.value = S.msaRowH; drawMsa(); };
+  $("msaRowGap").onchange = (e) => { S.msaRowGap = Math.max(0, Math.min(40, +e.target.value || 0)); e.target.value = S.msaRowGap; drawMsa(); };
+  const ov = $("msaOver"); let drag = null;
+  ov.addEventListener("mousedown", (ev) => { const r = ov.getBoundingClientRect(); drag = { x0: ev.clientX - r.left, x1: ev.clientX - r.left }; });
+  addEventListener("mousemove", (ev) => { if (!drag) return; const r = ov.getBoundingClientRect(); drag.x1 = ev.clientX - r.left; drawMsaOverview(drag); });
+  addEventListener("mouseup", () => {
+    if (!drag || !msaGeom) return; const d = drag; drag = null; const g = msaGeom;
+    let a = g.x2p(Math.min(d.x0, d.x1)), b = g.x2p(Math.max(d.x0, d.x1));
+    if (b - a < 2) { const w = g.detailCols; a = Math.max(1, Math.round(a - w / 2)); b = a + w - 1; }
+    setMsaCols(a, b);
+  });
+  ov.addEventListener("mousemove", (ev) => msaHover(ev, "over")); ov.addEventListener("mouseleave", hideTip);
+  const dt = $("msaDetail"); dt.addEventListener("mousemove", (ev) => msaHover(ev, "detail")); dt.addEventListener("mouseleave", hideTip);
+  $("msaLeft").onclick = () => { const w = S.msaC1 - S.msaC0 + 1; setMsaCols(S.msaC0 - w, S.msaC1 - w); };
+  $("msaRight").onclick = () => { const w = S.msaC1 - S.msaC0 + 1; setMsaCols(S.msaC0 + w, S.msaC1 + w); };
+  $("msaApply").onclick = () => { const V = msaView(getMsa()); setMsaCols(coordToPos(V, +$("msaC0").value, 0) + 1, coordToPos(V, +$("msaC1").value, 1) + 1); };
+  const fasta = (fn, name) => { const M = getMsa(); const r = fn(M); $("msaOut").value = r; $("msaOut").dataset.name = name; $("msaOutStatus").textContent = `${fmt(r.length)} 文字`; };
+  const rows = (M, sub) => msaOrder(M).map((i) => `>${M.names[i]} ${S.scale} ${S.msaGroup}\n${wrap60(sub(M.seqs[i]))}\n`).join("");
+  const selCols = (M) => { const V = msaView(M); return [V.cols[S.msaC0 - 1], V.cols[S.msaC1 - 1] + 1, V.coord[S.msaC0 - 1], V.coord[S.msaC1 - 1], V.ref]; };
+  const selName = (M, suf) => { const [, , c0, c1, ref] = selCols(M); return `msa_${S.scale}_${S.msaGroup}_${ref}${c0}..${c1}${suf}`; };
+  $("msaGetSel").onclick = () => fasta((M) => { const [a, b] = selCols(M); return rows(M, (s) => s.slice(a, b)); }, selName(getMsa(), ".fasta"));
+  $("msaGetSelUng").onclick = () => fasta((M) => { const [a, b] = selCols(M); return rows(M, (s) => s.slice(a, b).replace(/-/g, "")); }, selName(getMsa(), "_ungapped.fna"));
+  $("msaGetCons").onclick = () => fasta((M) => `>consensus_${S.scale}_${S.msaGroup} n=${M.N} majority_rule\n${wrap60(M.cons.replace(/-/g, ""))}\n`, `consensus_${S.scale}_${S.msaGroup}.fna`);
+  $("msaGetAll").onclick = () => fasta((M) => rows(M, (s) => s), `msa_${S.scale}_${S.msaGroup}.fasta`);
+  $("msaCopy").onclick = () => copyText($("msaOut").value, $("msaOutStatus"));
+  $("msaDl").onclick = () => download($("msaOut").dataset.name || "msa.fasta", $("msaOut").value);
+}
+function setMsaCols(a, b) { const V = msaView(getMsa()); const w = Math.max(10, b - a + 1); a = Math.max(1, Math.min(a, V.n - w + 1)); S.msaC0 = a; S.msaC1 = Math.min(V.n, a + w - 1); drawMsa(); }
+function msaLegend() {
+  const lg = $("msaLegend"); lg.replaceChildren();
+  const add = (color, text) => { const s = el("span"); const k = el("span", { class: "key" }); k.style.background = color; s.appendChild(k); s.appendChild(document.createTextNode(text)); lg.appendChild(s); };
+  if (S.msaMode === "micro") {
+    const mc = microColors();
+    D.micro.segments.filter((g) => g.kind === "module").reverse().forEach((g) => add(mc[D.micro.segments.indexOf(g) + 1], g.name));
+    const firstOf = (kind) => D.micro.segments.findIndex((g) => g.kind === kind) + 1;
+    if (firstOf("shared_block")) add(mc[firstOf("shared_block")], "Shared block (S1, S2…)");
+    if (firstOf("homopolymer")) add(mc[firstOf("homopolymer")], "Homopolymer");
+    if (firstOf("variable")) add(mc[firstOf("variable")], "Variable region (V1, V2…)");
+    if (firstOf("outer")) add(mc[firstOf("outer")], "Outer region (beyond the conserved core)");
+    add(mc[EXT_CODE], "Extension"); add(mc[0], `Unclassified (beyond ${fmtLen(D.micro.windowBp)} or no element)`); add(css("--surface"), "Gap (blank)");
+    add(css("--ink"), "Underline (detail view): base differs from the consensus");
+  }
+  else if (S.msaMode === "diff") { add(css("--seq3"), "Matches the consensus"); add(css("--t2"), "Mismatch"); add(css("--nGap"), "Gap"); }
+  else { for (const b of "ACGT") add(css("--n" + b), b); add(css("--nGap"), "Gap"); }
+  add(css("--fig-cons"), "Top: conservation (bar height = fraction of sequences with the majority base)");
+}
+function drawMsa() {
+  if (activeTab() !== "msa") return;
+  fillMsaGroups(); msaLegend();
+  const M = getMsa(); const V = msaView(M);
+  if (S.msaC1 === 0 || S.msaC1 > V.n) { // default: the 3'-most positions where most sequences are present
+    let p = V.n - 1; while (p > 0 && M.gap[V.cols[p]] >= 0.5) p--;
+    const w = Math.max(60, Math.floor(($("msaDetailHost").clientWidth - 90) / 9));
+    S.msaC1 = Math.min(V.n, p + 1 + 10); S.msaC0 = Math.max(1, S.msaC1 - w + 1);
+  }
+  $("msaStatus").textContent = `${M.N} 配列 ・ 整列長 ${fmt(M.L)} 列${S.msaProj ? `（表示 ${fmt(V.n)} 列）` : ""} ・ 平均保存度 ${(M.maj.reduce((a, b) => a + b, 0) / M.L).toFixed(3)} ・ 座標の基準 ${V.ref}`;
+  drawMsaOverview(); drawMsaDetail();
+}
+function msaAxis(ctx, V, x0, plotW, y, posToX) {
+  const lo = V.coord[0], hi = V.coord[V.n - 1];
+  const st = niceStep((hi - lo) / 9);
+  ctx.fillStyle = figInk(); ctx.strokeStyle = figInk(); ctx.lineWidth = 1; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.font = `11px ${MSA_FONT}`;
+  ctx.beginPath(); ctx.moveTo(x0, y + 0.5); ctx.lineTo(x0 + plotW, y + 0.5); ctx.stroke();
+  for (let v = Math.ceil(lo / st) * st; v <= hi; v += st) {
+    const p = coordToPos(V, v, 0); const x = posToX(p);
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + (v === 0 ? 7 : 4)); ctx.stroke();
+    ctx.font = `${v === 0 ? "bold " : ""}11px ${MSA_FONT}`; ctx.fillText(fmtCoord(v), x, y + 8);
+  }
+  ctx.font = `11px ${MSA_FONT}`; ctx.textAlign = "right";
+  ctx.fillText(`Position on ${V.ref} (bp); 3′ edge of the terminal element = 0`, x0 + plotW, y + 24);
+}
+function drawMsaOverview(drag) {
+  const M = getMsa(); const V = msaView(M); const ord = msaOrder(M);
+  const ink = figInk(); const LW = 64, CONS_H = 56;
+  const rh = S.msaRowH, pitch = S.msaRowH + S.msaRowGap;
+  const width = Math.max(600, $("msaOverHost").clientWidth); const plotW = width - LW - 8;
+  const top = CONS_H + 8; const height = top + ord.length * pitch + 44;
+  const ctx = fitCanvas($("msaOver"), width, height); ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  const ppx = V.n / plotW; // displayed positions per pixel
+  const x2p = (x) => Math.max(1, Math.min(V.n, Math.round((x - LW) * ppx) + 1));
+  const posToX = (p) => LW + (p + 0.5) / ppx;
+  msaGeom = { ...(msaGeom || {}), LW, plotW, ppx, x2p, pitch, top, ord, detailCols: msaGeom?.detailCols || 150 };
+  // conservation
+  ctx.fillStyle = ink; ctx.font = `11px ${MSA_FONT}`; ctx.textBaseline = "middle"; ctx.textAlign = "left"; ctx.fillText("Conservation", 4, CONS_H / 2);
+  // bar height = conservation (mean majority-base fraction), grey
+  ctx.fillStyle = css("--fig-cons");
+  for (let x = 0; x < plotW; x++) {
+    const c0 = Math.floor(x * ppx), c1 = Math.max(c0 + 1, Math.floor((x + 1) * ppx)); let s = 0, nn = 0;
+    for (let p = c0; p < c1 && p < V.n; p++) { s += M.maj[V.cols[p]]; nn++; }
+    const H = (nn ? s / nn : 0) * (CONS_H - 4); if (H > 0) ctx.fillRect(LW + x, CONS_H - H, 1, H);
+  }
+  // rows
+  const cMatch = css("--seq3"), cMis = css("--t2"), cGap = css("--nGap"), cN = { A: css("--nA"), C: css("--nC"), G: css("--nG"), T: css("--nT") };
+  const micro = S.msaMode === "micro"; const mcol = micro ? microColors() : null; const codes = micro ? msaSegCodes(M) : null;
+  const cc = new Uint16Array(256), touched = []; const fs = Math.max(7, Math.min(12, pitch));
+  ord.forEach((i, r) => {
+    const y = top + r * pitch; const s = M.up[i]; const sc = micro ? codes[i] : null;
+    if (pitch >= 6) { ctx.fillStyle = ink; ctx.font = `${fs}px ${MSA_FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(M.names[i], 4, y + rh / 2); }
+    for (let x = 0; x < plotW; x++) {
+      const c0 = Math.floor(x * ppx), c1 = Math.max(c0 + 1, Math.floor((x + 1) * ppx)); let gp = 0, mm = 0, tot = 0; const cnt = { A: 0, C: 0, G: 0, T: 0 };
+      for (let p = c0; p < c1 && p < V.n; p++) { const j = V.cols[p]; const b = s[j]; tot++; if (b === "-") gp++; else { if (b !== M.cons[j]) mm++; if (b in cnt) cnt[b]++; } }
+      if (!tot) continue;
+      if (gp / tot > 0.5) { if (micro) continue; ctx.fillStyle = cGap; } // micro mode: gaps stay blank
+      else if (micro) { // majority segment among the residues in this pixel
+        touched.length = 0; for (let p = c0; p < c1 && p < V.n; p++) { const j = V.cols[p]; if (s[j] !== "-") { const k = sc[j]; if (!cc[k]) touched.push(k); cc[k]++; } }
+        let best = 0, bc = -1; for (const k of touched) { if (cc[k] > bc) { bc = cc[k]; best = k; } cc[k] = 0; } ctx.fillStyle = mcol[best];
+      }
+      else if (S.msaMode === "diff") ctx.fillStyle = mm / (tot - gp) > 0.25 ? cMis : cMatch;
+      else { let bb = "A"; for (const k in cnt) if (cnt[k] > cnt[bb]) bb = k; ctx.fillStyle = cN[bb]; }
+      ctx.fillRect(LW + x, y, 1, rh);
+    }
+  });
+  msaAxis(ctx, V, LW, plotW, top + ord.length * pitch + 4, posToX);
+  if (drag) { ctx.fillStyle = css("--sel"); ctx.fillRect(Math.min(drag.x0, drag.x1), 0, Math.abs(drag.x1 - drag.x0), height); }
+}
+function drawMsaDetail() {
+  const M = getMsa(); const V = msaView(M); const ord = msaOrder(M);
+  const host = $("msaDetailHost"); const LW = 64, CW = 9, RH = 13, PITCH = RH + S.msaRowGap, TOP = 34;
+  const ncols = S.msaC1 - S.msaC0 + 1; const width = Math.max(host.clientWidth, LW + ncols * CW + 8); const height = TOP + ord.length * PITCH + 4;
+  msaGeom.detailCols = Math.max(20, Math.floor((host.clientWidth - LW - 8) / CW));
+  const ctx = fitCanvas($("msaDetail"), width, height); ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  msaGeom.detail = { LW, CW, PITCH, RH, TOP, ord };
+  $("msaC0").value = V.coord[S.msaC0 - 1]; $("msaC1").value = V.coord[S.msaC1 - 1];
+  $("msaDetailStatus").textContent = `${V.ref} 座標 ${fmtCoord(V.coord[S.msaC0 - 1])} 〜 ${fmtCoord(V.coord[S.msaC1 - 1])}（${ncols} 列）・ 概観をクリック／ドラッグで移動`;
+  const ink = figInk(); const cN = { A: css("--nA"), C: css("--nC"), G: css("--nG"), T: css("--nT") }; const cGap = css("--nGap"); const cCons = css("--fig-cons");
+  const LETTER = `bold 10px ${MSA_FONT}`;
+  ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  // ruler (reference coordinate every 10) + conservation bar + consensus
+  for (let p = S.msaC0; p <= S.msaC1; p++) {
+    const x = LW + (p - S.msaC0) * CW; const v = M.maj[V.cols[p - 1]]; const c = V.coord[p - 1];
+    if (v > 0) { ctx.fillStyle = cCons; ctx.fillRect(x, 22 - v * 12, CW - 1, v * 12); }
+    if (c % 10 === 0 && (V.isRes[p - 1] || c > 0 || p === 1 || V.coord[p - 2] !== c)) { ctx.fillStyle = ink; ctx.font = `${c === 0 ? "bold " : ""}9.5px ${MSA_FONT}`; ctx.fillText(fmtCoord(c), x + CW / 2, 4); }
+    ctx.fillStyle = ink; ctx.font = LETTER; ctx.fillText(M.cons[V.cols[p - 1]], x + CW / 2, 29);
+  }
+  ctx.textAlign = "left"; ctx.fillStyle = ink; ctx.font = `11px ${MSA_FONT}`; ctx.fillText("Consensus", 4, 29);
+  const micro = S.msaMode === "micro"; const mcol = micro ? microColors() : null; const codes = micro ? msaSegCodes(M) : null;
+  ord.forEach((i, r) => {
+    const y = TOP + r * PITCH; const s = M.seqs[i];
+    ctx.textAlign = "left"; ctx.fillStyle = ink; ctx.font = `11px ${MSA_FONT}`; ctx.fillText(M.names[i], 4, y + RH / 2);
+    ctx.textAlign = "center"; ctx.font = LETTER;
+    for (let p = S.msaC0; p <= S.msaC1; p++) {
+      const j = V.cols[p - 1]; const b = s[j]; const U = b.toUpperCase(); const x = LW + (p - S.msaC0) * CW;
+      if (b === "-") { ctx.fillStyle = cGap; ctx.fillRect(x, y + RH / 2 - 1, CW, 2); continue; }
+      const same = U === M.cons[j];
+      if (micro) { ctx.fillStyle = mcol[codes[i][j]]; ctx.fillRect(x, y, CW - 1, RH); ctx.fillStyle = ink; if (!same) ctx.fillRect(x + 1, y + RH - 2, CW - 3, 1.5); }
+      else if (S.msaMode === "diff") { ctx.fillStyle = same ? "transparent" : cN[U] || css("--muted"); if (!same) ctx.fillRect(x, y, CW - 1, RH); ctx.fillStyle = ink; }
+      else { ctx.fillStyle = cN[U] || css("--muted"); ctx.globalAlpha = b === U ? 1 : 0.6; ctx.fillRect(x, y, CW - 1, RH); ctx.globalAlpha = 1; ctx.fillStyle = ink; }
+      ctx.fillText(S.msaMode === "diff" && same ? "·" : b, x + CW / 2, y + RH / 2 + 0.5);
+    }
+  });
+}
+function residueDist(M, i, col) { // dist from 3' end of the residue at/left of alignment column `col` (1-based)
+  const s = M.seqs[i]; let nres = 0; for (let j = 0; j < col; j++) if (s[j] !== "-") nres++; return M.lens[i] - nres + 1;
+}
+function msaHover(ev, where) {
+  const M = getMsa(); const V = msaView(M); const g = msaGeom; if (!g) return;
+  const cv = where === "over" ? $("msaOver") : $("msaDetail"); const r = cv.getBoundingClientRect(); const x = ev.clientX - r.left, y = ev.clientY - r.top;
+  let pos, ri;
+  if (where === "over") { if (x < g.LW) return hideTip(); pos = g.x2p(x); ri = Math.floor((y - g.top) / g.pitch); }
+  else { const d = g.detail; if (x < d.LW) return hideTip(); pos = S.msaC0 + Math.floor((x - d.LW) / d.CW); ri = Math.floor((y - d.TOP) / d.PITCH); if (pos > S.msaC1) return hideTip(); }
+  const col = V.cols[pos - 1] + 1;
+  const rows = [{ t: `${V.ref} 座標 ${fmtCoord(V.coord[pos - 1])} bp${V.isRes[pos - 1] ? "" : `（${V.ref} はギャップ）`}`, cls: "tv" },
+    { t: `整列の列 ${fmt(col)} / ${fmt(M.L)} ・ 保存度 ${(M.maj[col - 1] * 100).toFixed(0)}% ・ ギャップ ${(M.gap[col - 1] * 100).toFixed(0)}% ・ consensus ${M.cons[col - 1]}`, cls: "tk" }];
+  if (ri >= 0 && ri < g.ord.length) {
+    const i = g.ord[ri]; const b = M.seqs[i][col - 1]; const d = residueDist(M, i, col);
+    rows.push({ t: `${M.names[i]}: ${b === "-" ? "ギャップ" : b}  ・  3′末端から ${fmt(b === "-" ? d - 1 : d)} bp 付近` });
+    if (b !== "-") { const k = msaSegCodes(M)[i][col - 1]; const sg = k && k !== EXT_CODE ? D.micro.segments[k - 1] : null;
+      rows.push({ t: `ミクロ構造: ${k === EXT_CODE ? "extension（エレメントより外側）" : sg ? `${sg.name}（${KIND_JA[sg.kind]}）` : "未分類"}`, cls: "tk" }); }
+  }
+  showTip(ev, rows);
+}
+
+// ================= SIMILARITY =================
+let simGeom = null;
+function initSim() {
+  const cv = $("simCanvas");
+  cv.addEventListener("mousemove", (ev) => { const h = simHit(ev); if (!h) return hideTip(); const v = D.sim[S.scale].matrix[CHI[h.a.name]][CHI[h.b.name]];
+    showTip(ev, [{ t: v.toFixed(3), cls: "tv" }, { t: `${h.a.name} (${h.a.types[S.scale]}) × ${h.b.name} (${h.b.types[S.scale]})`, cls: "tk" }, { t: `${S.scale} 窓・クリックで HSP 詳細`, cls: "tk" }]); });
+  cv.addEventListener("mouseleave", hideTip);
+  cv.addEventListener("click", (ev) => { const h = simHit(ev); if (h) showPair(h.a, h.b); });
+}
+function simHit(ev) { const g = simGeom; if (!g) return null; const r = $("simCanvas").getBoundingClientRect(); const x = ev.clientX - r.left - g.x0, y = ev.clientY - r.top - g.y0;
+  const i = Math.floor(y / g.cs), j = Math.floor(x / g.cs); if (i < 0 || j < 0 || i >= g.list.length || j >= g.list.length) return null; return { a: g.list[i], b: g.list[j] }; }
+function drawSim() {
+  if (activeTab() !== "sim") return;
+  const list = visibleChroms(); const n = list.length;
+  const DW = S.order === "cluster" && S.filter === "all" ? 90 : 0; // dendrogram only when every chromosome is shown const LW = 70; const x0 = DW + LW, y0 = 66;
+  const avail = $("simCanvas").parentElement.clientWidth - x0 - 10; const cs = Math.max(8, Math.min(16, Math.floor(avail / n)));
+  const width = x0 + n * cs + 10, height = y0 + n * cs + 10;
+  const ctx = fitCanvas($("simCanvas"), width, height); ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  simGeom = { x0, y0, cs, list };
+  const M = D.sim[S.scale].matrix;
+  const cols = [0, 1, 2, 3, 4, 5].map((i) => css("--seq" + i));
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    const v = M[CHI[list[i].name]][CHI[list[j].name]]; const k = v <= 0.02 ? 0 : Math.min(5, 1 + Math.floor(v * 4.999));
+    ctx.fillStyle = cols[k]; ctx.fillRect(x0 + j * cs, y0 + i * cs, cs - 1, cs - 1);
+  }
+  ctx.font = `10.5px ${FIG_FONT}`; ctx.textBaseline = "middle";
+  list.forEach((c, i) => {
+    ctx.fillStyle = typeColor(c.types[S.scale]); ctx.fillRect(x0 - 8, y0 + i * cs + 1, 5, cs - 3); ctx.fillRect(x0 + i * cs + 1, y0 - 8, cs - 3, 5);
+    ctx.fillStyle = figInk(); ctx.textAlign = "right"; ctx.fillText(c.name, x0 - 11, y0 + i * cs + cs / 2);
+    ctx.save(); ctx.translate(x0 + i * cs + cs / 2, y0 - 11); ctx.rotate(-Math.PI / 2); ctx.textAlign = "left"; ctx.fillText(c.name, 0, 0); ctx.restore();
+  });
+  if (DW) drawDendro(ctx, list, DW, y0, cs);
+  const lg = $("simLegend"); lg.replaceChildren(); const r1 = el("span"); r1.appendChild(document.createTextNode("Similarity 0")); const g1 = el("span", { class: "ramp" });
+  g1.style.background = `linear-gradient(90deg, ${cols.join(",")})`; r1.appendChild(g1); r1.appendChild(document.createTextNode("1")); lg.appendChild(r1);
+  lg.appendChild(el("span", {}, `Window ${S.scale}; pairs with similarity ≥ 0.5: ${D.sim[S.scale].nPairs50}`));
+}
+function drawDendro(ctx, list, DW, y0, cs) {
+  const L = D.sim[S.scale]; const names = L.names; const N = names.length; const Z = L.linkage;
+  const pos = {}; list.forEach((c, i) => { pos[CHI[c.name]] = y0 + i * cs + cs / 2; });
+  const maxH = Math.max(...Z.map((z) => z[2]), 1e-6); const hx = (h) => DW - 6 - (h / maxH) * (DW - 12);
+  const node = {}; for (let i = 0; i < N; i++) node[CHI[names[i]]] = { y: pos[CHI[names[i]]], h: 0 };
+  // map scipy leaf index -> our chrom index via names
+  const leafIdx = (k) => CHI[names[k]];
+  const get = (k) => (k < N ? node[leafIdx(k)] : node["n" + k]);
+  ctx.strokeStyle = css("--muted"); ctx.lineWidth = 1;
+  Z.forEach((z, t) => {
+    const a = get(z[0]), b = get(z[1]); const h = z[2]; const x = hx(h);
+    ctx.beginPath(); ctx.moveTo(hx(a.h), a.y); ctx.lineTo(x, a.y); ctx.lineTo(x, b.y); ctx.lineTo(hx(b.h), b.y); ctx.stroke();
+    node["n" + (N + t)] = { y: (a.y + b.y) / 2, h };
+  });
+  const cut = D.meta.distanceCut; ctx.strokeStyle = css("--selline"); ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(hx(cut), y0 - 4); ctx.lineTo(hx(cut), y0 + list.length * cs); ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle = figInk(); ctx.font = `9.5px ${FIG_FONT}`; ctx.textAlign = "center"; ctx.fillText("cut " + cut, hx(cut), y0 - 14);
+}
+function showPair(a, b) {
+  const hs = D.hsps[S.scale].filter((h) => h[0] === CHI[a.name] && h[1] === CHI[b.name]);
+  const v = D.sim[S.scale].matrix[CHI[a.name]][CHI[b.name]];
+  $("pairTitle").textContent = `${a.name} × ${b.name}`;
+  $("pairSub").textContent = `${S.scale} 窓 ・ 類似度 ${v.toFixed(3)} ・ HSP ${hs.length} 本（${a.name} をクエリ）。座標は 3′末端からの距離。`;
+  const W = Math.min(scaleBp(S.scale), Math.max(a.winLen, 1)), Wb = Math.min(scaleBp(S.scale), b.winLen);
+  const size = 300, P = 44; const ctx = fitCanvas($("pairPlot"), size + P + 10, size + P + 10);
+  ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, size + P + 10, size + P + 10);
+  ctx.strokeStyle = css("--axis"); ctx.strokeRect(P + 0.5, 0.5, size, size);
+  const sx = (d) => P + size - (d / W) * size, sy = (d) => size - (d / Wb) * size; // 3' end at right / bottom-right
+  ctx.strokeStyle = css("--grid"); ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(sx(0), sy(0)); ctx.lineTo(sx(Math.min(W, Wb)), sy(Math.min(W, Wb))); ctx.stroke(); ctx.setLineDash([]);
+  ctx.lineWidth = 2;
+  for (const h of hs) { ctx.strokeStyle = h[7] === "+" ? css("--t1") : css("--t2"); ctx.beginPath();
+    if (h[7] === "+") { ctx.moveTo(sx(h[2]), sy(h[4])); ctx.lineTo(sx(h[3]), sy(h[5])); } else { ctx.moveTo(sx(h[2]), sy(h[5])); ctx.lineTo(sx(h[3]), sy(h[4])); } ctx.stroke(); }
+  ctx.lineWidth = 1; ctx.fillStyle = figInk(); ctx.font = `10px ${FIG_FONT}`; ctx.textAlign = "center"; ctx.textBaseline = "top";
+  ctx.fillText(`${a.name}  ← inward · 3′ end →`, P + size / 2, size + 6); ctx.fillText(fmt(W) + " bp", P + 12, size + 20); ctx.fillText("0", P + size - 4, size + 20);
+  ctx.save(); ctx.translate(12, size / 2); ctx.rotate(-Math.PI / 2); ctx.fillText(`${b.name}  ← 3′ end · inward →`, 0, 0); ctx.restore();
+  // key: coloured line sample + black text
+  ctx.fillStyle = css("--t1"); ctx.fillRect(P + 6, 10, 14, 2); ctx.fillStyle = css("--t2"); ctx.fillRect(P + 116, 10, 14, 2);
+  ctx.textAlign = "left"; ctx.fillStyle = figInk(); ctx.fillText("Same orientation", P + 24, 6); ctx.fillText("Inverted", P + 134, 6);
+  const tb = $("pairTbl"); tb.replaceChildren(); const hr = el("tr");
+  for (const t of [`${a.name} 3′から`, `${b.name} 3′から`, "長さ", "一致率%", "向き"]) hr.appendChild(el("th", {}, t)); tb.appendChild(hr);
+  for (const h of hs.slice().sort((x, y) => x[2] - y[2])) { const tr = el("tr");
+    for (const [v2, c] of [[`${fmt(h[2])}–${fmt(h[3])}`, ""], [`${fmt(h[4])}–${fmt(h[5])}`, ""], [fmt(h[3] - h[2] + 1), "num"], [h[6].toFixed(1), "num"], [h[7], ""]]) tr.appendChild(el("td", c ? { class: c } : {}, v2));
+    tb.appendChild(tr); }
+}
+
+// ================= MOTIF =================
+let motifGeom = null;
+function initMotif() {
+  $("motifApply").onclick = () => { S.motifN = Math.max(10, Math.min(400, +$("motifN").value)); drawMotif(); };
+  $("motifGet").onclick = () => { $("tabs").querySelector("[data-tab=tracks]").click(); showSelection(visibleChroms(), 1, S.motifN); $("seqOut").scrollIntoView({ behavior: "smooth", block: "center" }); };
+  const cv = $("motifCanvas");
+  cv.addEventListener("mousemove", (ev) => { const g = motifGeom; if (!g) return; const r = cv.getBoundingClientRect(); const x = ev.clientX - r.left, y = ev.clientY - r.top;
+    const d = S.motifN - Math.floor((x - g.LW) / g.CW); const ri = Math.floor((y - g.top) / g.RH);
+    if (d < 1 || d > S.motifN) return hideTip();
+    const rows = [{ t: `3′末端から ${d} bp`, cls: "tv" }]; const f = g.freq[d - 1]; rows.push({ t: "ACGT".split("").map((b, k) => `${b} ${(f[k] * 100).toFixed(0)}%`).join("  "), cls: "tk" });
+    if (ri >= 0 && ri < g.list.length) { const c = g.list[ri]; const s = D.seq[c.name]; rows.push({ t: `${c.name} (${c.types[S.scale]}): ${s[s.length - d]}` }); }
+    showTip(ev, rows); });
+  cv.addEventListener("mouseleave", hideTip);
+}
+function drawElement() {
+  const E = D.element; const L = E.seq.length; const n = CH.filter((c) => c.element).length; const nEnd = CH.filter((c) => c.element && c.elemOverhang <= E.maxOverhang).length;
+  $("elemSub").textContent = `エレメントをもつ末端を 3′端で揃えた整列で、変異の密度が急に上がる位置（変化点）までの保存された中心部 ${fmt(L)} bp のコンセンサス。${CH.length} 本中 ${n} 本の 3′末端 5 kb に存在し、うち ${nEnd} 本はエレメントの 3′端から ≤${E.maxOverhang} bp で配列が終わる。下線＝逆向き反復（ヘアピン候補）のステム。右端が 3′末端。`;
+  const mark = new Array(L).fill(0); E.irs.forEach((r, k) => { if (k > 3) return; const [st, lp, dfrom, dto] = r; const a = L - dto, b = L - dfrom; for (let i = a; i < a + st; i++) mark[i] = 1; for (let i = b - st + 1; i <= b; i++) mark[i] = 1; });
+  const host = $("elemSeq"); host.replaceChildren(); const cN = { A: "--nA", C: "--nC", G: "--nG", T: "--nT" };
+  for (let i = 0; i < L; i++) { const sp = el("span", {}, E.seq[i]); sp.style.color = css(cN[E.seq[i]] || "--ink"); sp.style.fontWeight = "600"; if (mark[i]) { sp.style.textDecoration = "underline"; sp.style.textDecorationThickness = "2px"; sp.style.background = "var(--wash)"; } if ((L - i) % 10 === 1 && L - i > 1) sp.title = `3′端から ${L - i} bp`; host.appendChild(sp); if ((i + 1) % 100 === 0) host.appendChild(el("br")); }
+  const tb = $("elemIrTbl"); tb.replaceChildren(); const hr = el("tr"); for (const t of ["ステム長", "ループ長", "3′端からの位置", "ヘアピン配列"]) hr.appendChild(el("th", {}, t)); tb.appendChild(hr);
+  for (const r of E.irs) { const tr = el("tr"); tr.appendChild(el("td", { class: "num" }, r[0])); tr.appendChild(el("td", { class: "num" }, r[1])); tr.appendChild(el("td", {}, `${r[2]}–${r[3]}`)); tr.appendChild(el("td", { class: "mono" }, r[4])); tb.appendChild(tr); }
+}
+function drawMotif() {
+  if (activeTab() !== "motif") return;
+  drawElement();
+  const N = S.motifN; $("motifN").value = N; const list = visibleChroms(); $("elemGet").onclick = () => copyText(`>terminal_element len=${D.element.seq.length}\n${wrap60(D.element.seq)}\n`, $("elemStatus"));
+  const LW = 120, CW = Math.max(7, Math.min(12, Math.floor(($("p-motif").clientWidth - LW - 60) / N))), RH = 14, FH = 70, top = FH + 26;
+  const width = LW + N * CW + 10, height = top + list.length * RH + 6;
+  const ctx = fitCanvas($("motifCanvas"), width, height); ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  const cN = { A: css("--nA"), C: css("--nC"), G: css("--nG"), T: css("--nT") };
+  const freq = []; for (let d = 1; d <= N; d++) { const f = [0, 0, 0, 0]; for (const c of list) { const s = D.seq[c.name]; const k = "ACGT".indexOf(s[s.length - d].toUpperCase()); if (k >= 0) f[k]++; } freq.push(f.map((v) => v / list.length)); }
+  motifGeom = { LW, CW, RH, top, list, freq };
+  for (let d = 1; d <= N; d++) { const x = LW + (N - d) * CW; let y = FH; "ACGT".split("").forEach((b, k) => { const h = freq[d - 1][k] * (FH - 4); ctx.fillStyle = cN[b]; ctx.fillRect(x, y - h, CW - 1, h); y -= h; }); }
+  ctx.fillStyle = figInk(); ctx.font = `10.5px ${FIG_FONT}`; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText("Base composition", LW - 6, FH / 2);
+  ctx.textAlign = "center"; ctx.font = `9.5px ${FIG_FONT}`;
+  for (let d = 10; d <= N; d += 10) ctx.fillText(String(d), LW + (N - d) * CW + CW / 2, FH + 12);
+  ctx.textAlign = "right"; ctx.fillText("← inward   Distance from 3′ end (bp)   3′ end →", LW + N * CW, FH + 22);
+  ctx.textBaseline = "middle";
+  list.forEach((c, r) => {
+    const y = top + r * RH; const s = D.seq[c.name]; ctx.textAlign = "right"; ctx.fillStyle = typeColor(c.types[S.scale]); ctx.fillRect(4, y + 2, 5, RH - 4);
+    ctx.fillStyle = figInk(); ctx.font = `10.5px ${FIG_FONT}`; ctx.fillText(`${c.name} ${c.types[S.scale]}`, LW - 6, y + RH / 2); ctx.font = `bold 10px ${FIG_FONT}`; ctx.textAlign = "center";
+    for (let d = 1; d <= N; d++) { const b = s[s.length - d]; const U = b.toUpperCase(); const x = LW + (N - d) * CW; ctx.fillStyle = cN[U] || css("--muted"); ctx.globalAlpha = b === U ? 1 : 0.6; ctx.fillRect(x, y + 1, CW - 1, RH - 2); ctx.globalAlpha = 1; ctx.fillStyle = figInk(); if (CW >= 8) ctx.fillText(b, x + CW / 2, y + RH / 2 + 0.5); }
+    if (c.element && c.elemOverhang >= 0 && c.elemOverhang < N) { const x = LW + (N - c.elemOverhang) * CW - 0.5; ctx.fillStyle = css("--f-terminal_element"); ctx.fillRect(x - 1, y - 1, 3, RH + 2); }
+  });
+  const lg = $("motifLegend"); lg.replaceChildren(); for (const b of "ACGT") { const s = el("span"); const k = el("span", { class: "key" }); k.style.background = cN[b]; s.appendChild(k); s.appendChild(document.createTextNode(b)); lg.appendChild(s); }
+  const ek = el("span"); const kk = el("span", { class: "key" }); kk.style.background = css("--f-terminal_element"); kk.style.width = "3px"; ek.appendChild(kk); ek.appendChild(document.createTextNode("3′ edge of the terminal element (overhang to the right)")); lg.appendChild(ek);
+  lg.appendChild(el("span", {}, "Pale = lower case (soft-masked); left colour bar = end type"));
+}
+
+// ================= INTERNAL =================
+let CLASS_LABEL = {};
+const CLASS_COLOR = { "3p_terminal": "--t1", "5p_terminal": "--t2", interior: "--t3" };
+let intGeom = null, intRows = [];
+function initInternal() {
+  const ex = D.meta.internalExcludeKb;
+  CLASS_LABEL = { "3p_terminal": `Other 3′ end (≤${ex} kb)`, "5p_terminal": `5′ end (≤${ex} kb)`, interior: "Interior" };
+  const q = $("intQuery"); q.appendChild(el("option", { value: "" }, "すべて"));
+  for (const c of CH) q.appendChild(el("option", { value: c.name }, c.name));
+  q.onchange = () => drawInternal(); $("intQLo").onchange = $("intQHi").onchange = () => drawInternal();
+  const tg = $("intClassToggles");
+  for (const k of D.internalClasses) { const lab = el("label"); const cb = el("input", { type: "checkbox" }); cb.checked = true; cb.onchange = () => { cb.checked ? S.intClasses.add(k) : S.intClasses.delete(k); drawInternal(); };
+    const key = el("span", { class: "key" }); key.dataset.cls = k; lab.appendChild(cb); lab.appendChild(document.createTextNode(" ")); lab.appendChild(key); lab.appendChild(document.createTextNode(CLASS_LABEL[k])); tg.appendChild(lab); }
+  $("internalSub").textContent = `各染色体の 3′末端 ${D.meta.internalQueryKb} kb を BLASTN でゲノム全体に検索（自身の末端へのヒットは除外）。各染色体上の位置を表示。`;
+  $("intDl").onclick = () => { const head = "query\tq_dist_from\tq_dist_to\tsubject\ts_start\ts_end\tclass\tpident\tstrand\tbitscore\n";
+    download("internal_hits_filtered.tsv", head + intRows.map((h) => [CH[h[0]].name, h[1], h[2], CH[h[3]].name, h[4], h[5], D.internalClasses[h[6]], h[7], h[8], h[9]].join("\t")).join("\n") + "\n"); };
+  const cv = $("karyo");
+  cv.addEventListener("mousemove", (ev) => { const g = intGeom; if (!g) return; const r = cv.getBoundingClientRect(); const x = ev.clientX - r.left, y = ev.clientY - r.top;
+    const ri = Math.floor((y - g.top) / g.RH); if (ri < 0 || ri >= CH.length) return hideTip(); const c = CH[ri];
+    const pos = (x - g.LW) / g.plotW * g.maxLen; const tol = 4 / g.plotW * g.maxLen;
+    const hits = intRows.filter((h) => h[3] === ri && Math.min(h[4], h[5]) - tol <= pos && Math.max(h[4], h[5]) + tol >= pos).slice(0, 6);
+    const rows = [{ t: `${c.name} ・ ${fmt(Math.max(0, Math.round(pos)))} bp`, cls: "tv" }, { t: `長さ ${fmtLen(c.length)} ・ ヒット ${intRows.filter((h) => h[3] === ri).length}`, cls: "tk" }];
+    for (const h of hits) rows.push({ t: `${CH[h[0]].name} 3′${fmt(h[1])}–${fmt(h[2])} → ${fmt(Math.min(h[4], h[5]))}–${fmt(Math.max(h[4], h[5]))} (${h[8]}) ${h[7]}%`, cls: "tk" });
+    showTip(ev, rows); });
+  cv.addEventListener("mouseleave", hideTip);
+}
+function drawInternal() {
+  if (activeTab() !== "internal") return;
+  for (const k of document.querySelectorAll("#intClassToggles .key")) k.style.background = css(CLASS_COLOR[k.dataset.cls]);
+  const q = $("intQuery").value; const qi = q ? CHI[q] : -1; const qlo = +$("intQLo").value || 1, qhi = +$("intQHi").value || 1e9;
+  const clsIdx = new Set([...S.intClasses].map((k) => D.internalClasses.indexOf(k)));
+  intRows = D.internal.filter((h) => (qi < 0 || h[0] === qi) && clsIdx.has(h[6]) && h[2] >= qlo && h[1] <= qhi);
+  const width = Math.max(600, $("p-internal").clientWidth - 30); const LW = 70, RH = 12, top = 20; const plotW = width - LW - 10; const maxLen = Math.max(...CH.map((c) => c.length));
+  const height = top + CH.length * RH + 24;
+  const ctx = fitCanvas($("karyo"), width, height); ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, width, height);
+  intGeom = { LW, RH, top, plotW, maxLen };
+  ctx.font = `10.5px ${FIG_FONT}`; ctx.textBaseline = "middle";
+  CH.forEach((c, i) => { const y = top + i * RH; ctx.fillStyle = css("--grid"); ctx.fillRect(LW, y + RH / 2 - 2, (c.length / maxLen) * plotW, 4);
+    ctx.fillStyle = figInk(); ctx.font = `${i === qi ? "bold " : ""}10.5px ${FIG_FONT}`; ctx.textAlign = "right"; ctx.fillText(c.name, LW - 6, y + RH / 2); });
+  ctx.font = `10.5px ${FIG_FONT}`;
+  const order = [0, 1, 2].filter((k) => clsIdx.has(k));
+  for (const k of order.reverse()) { ctx.fillStyle = css(CLASS_COLOR[D.internalClasses[k]]);
+    for (const h of intRows) { if (h[6] !== k) continue; const y = top + h[3] * RH; const a = Math.min(h[4], h[5]), b = Math.max(h[4], h[5]); ctx.fillRect(LW + (a / maxLen) * plotW, y + 1, Math.max(2, ((b - a) / maxLen) * plotW), RH - 2); } }
+  ctx.fillStyle = figInk(); ctx.textAlign = "center"; const st = niceStep(maxLen / 8);
+  for (let p = 0; p <= maxLen; p += st) ctx.fillText(fmtLen(p), LW + (p / maxLen) * plotW, top + CH.length * RH + 12);
+  ctx.textAlign = "left"; ctx.fillText(`${fmt(intRows.length)} hits (chromosomes drawn 5′ left → 3′ right)`, LW, 8);
+  const tb = $("intTbl"); tb.replaceChildren(); const hr = el("tr");
+  for (const t of ["クエリ", "クエリ 3′から", "ヒット先", "開始", "終了", "区分", "一致率%", "向き", "bitscore"]) hr.appendChild(el("th", {}, t)); tb.appendChild(hr);
+  for (const h of intRows.slice().sort((a, b) => b[9] - a[9]).slice(0, 400)) { const tr = el("tr");
+    for (const [v, c] of [[CH[h[0]].name], [`${fmt(h[1])}–${fmt(h[2])}`], [CH[h[3]].name], [fmt(h[4]), "num"], [fmt(h[5]), "num"], [CLASS_LABEL[D.internalClasses[h[6]]]], [h[7].toFixed(1), "num"], [h[8]], [fmt(h[9]), "num"]]) tr.appendChild(el("td", c ? { class: c } : {}, v));
+    tb.appendChild(tr); }
+  if (intRows.length > 400) { const tr = el("tr"); tr.appendChild(el("td", { colspan: 9, class: "note" }, `上位 400 件（bitscore 順）を表示。全件は「TSV 保存」から。`)); tb.appendChild(tr); }
+}
+
+// ================= SUMMARY TABLE =================
+let sumSort = { key: "order", asc: true };
+const SUM_COLS = [
+  ["name", "染色体"], ["length", "長さ"], ["gc", "GC"], ["softmask", "マスク率"], ["typeCur", "タイプ(現スケール)"], ["type", "タイプ(主)"],
+  ["offset", "保存領域までのオフセット(bp)"], ["consEnd", "保存領域の内側端(bp)"], ["consLen", "保存長(bp)"], ["maxShare", "最大共有本数"], ["orient", "向き(Step00)"], ["elemTxt", "末端エレメント"], ["elemOverhang", "はみ出し(bp)"], ["nTRNA", "tRNA(50kb内)"], ["nTR", "縦列反復"], ["intHits", "内部ヒット"], ["last30", "最末端 30 bp"],
+];
+function initTable() { $("sumDl").onclick = () => { const rows = sumRows(); download("chrom_end_summary.tsv", SUM_COLS.map((c) => c[1]).join("\t") + "\n" + rows.map((r) => SUM_COLS.map((c) => r[c[0]]).join("\t")).join("\n") + "\n"); }; }
+function sumRows() { return visibleChroms().map((c, i) => ({ ...c, order: i, typeCur: c.types[S.scale], elemTxt: c.element ? `あり (${c.elemPident}%)` : "なし", elemOverhang: c.element ? c.elemOverhang : "" })); }
+function drawTable() {
+  if (activeTab() !== "table") return;
+  const rows = sumRows(); const k = sumSort.key;
+  rows.sort((a, b) => (typeof a[k] === "number" ? a[k] - b[k] : String(a[k]).localeCompare(String(b[k]), "en", { numeric: true })) * (sumSort.asc ? 1 : -1));
+  const tb = $("sumTbl"); tb.replaceChildren(); const hr = el("tr");
+  for (const [key, lab] of SUM_COLS) { const th = el("th", {}, lab + (sumSort.key === key ? (sumSort.asc ? " ▲" : " ▼") : "")); th.onclick = () => { sumSort = { key, asc: sumSort.key === key ? !sumSort.asc : true }; drawTable(); }; hr.appendChild(th); }
+  tb.appendChild(hr);
+  for (const r of rows) { const tr = el("tr");
+    for (const [key] of SUM_COLS) { const v = r[key]; let td;
+      if (key === "typeCur" || key === "type") { td = el("td"); const ch = el("span", { class: "chip" }, v); ch.style.background = typeColor(v); td.appendChild(ch); }
+      else if (key === "last30") td = el("td", { class: "mono" }, v);
+      else if (typeof v === "number") td = el("td", { class: "num" }, key === "gc" || key === "softmask" ? v.toFixed(3) : fmt(v));
+      else td = el("td", {}, v);
+      tr.appendChild(td); }
+    tr.style.cursor = "pointer"; tr.onclick = () => { S.sel = { chrom: r.name, lo: 1, hi: Math.min(1000, r.winLen) }; $("tabs").querySelector("[data-tab=tracks]").click(); showSelection([CH[CHI[r.name]]], 1, S.sel.hi); };
+    tb.appendChild(tr); }
+}
+
+load().catch((e) => { $("loading").textContent = "データの読み込みに失敗しました: " + e; console.error(e); });
+</script>
+</body>
+</html>

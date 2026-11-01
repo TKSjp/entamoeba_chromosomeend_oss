@@ -1,0 +1,107 @@
+# Chromosome 3'-end structure pipeline : parameters for one genome
+# 実行: bash script/run_all.sh <このファイル名(拡張子なし)> [ステップ番号...]
+# パスはプロジェクトルート（script/ の親ディレクトリ）からの相対パス
+
+input_fasta: input/Eh_30rc.fna
+genome_label: Eh_30rc
+result_dir: result/Eh_30rc
+log_file: log.txt
+conda_env: claude_chr_end
+threads: 8
+exclude_contigs: [Chr37]   # 解析から除外する配列（プラスミド）。Step00 で取り除き、Step01 以降は使わない
+
+# Step00: コンティグの向き判定（基準染色体の3'末端モチーフが3'側/5'側のどちらにあるか）
+orient:
+  enabled: true
+  apply: false             # true: 5'側にモチーフがあるコンティグを逆相補にして Step01 以降に使う / false: 判定のみ
+  ref_chrom: Chr01         # 向きを正とみなす基準染色体
+  ref_bp: 300              # 基準の3'末端からこの長さを末端モチーフとする
+  search_window_kb: 5      # 各コンティグ両端のこの範囲で探す
+  max_dist_bp: 2000        # モチーフの3'端が末端からこの距離以内
+  min_qcov: 0.5            # モチーフの被覆率
+  evalue: 1.0e-10
+
+# 3'末端を切り出す窓サイズ (kb)。染色体長が窓より短い場合は全長を使う
+windows_kb: [1, 2, 5, 20, 50]
+
+# Step02: k-mer 共有プロファイル
+kmer:
+  k: 25                 # canonical k-mer（両鎖をまとめて数える）
+  min_other_chrs: 2     # 「末端保存」とみなす最小の共有染色体数（自分以外）
+  max_gap: 200          # 保存領域内で許容する非保存ギャップ (bp)
+  bin_bp: 50            # 図・要約用のビン幅
+  max_offset: 2000      # 末端からこの距離以内に保存領域の開始があれば末端保存とみなす
+  min_run: 50           # 保存領域の開始と判定する連続保存長 (bp)
+  low_complexity_min_trimers: 8   # 3-mer の種類がこれ未満の k-mer（ポリT・2塩基反復など）は染色体間/内の類似から除外
+
+# Step03: BLASTN
+blast:
+  task: megablast
+  evalue: 1.0e-10
+  min_hsp_len: 50
+  internal_query_kb: 5  # ゲノム内部コピー探索のクエリ窓 (kb)
+  internal_exclude_kb: 50  # 各染色体の3'末端（または5'末端）からこの範囲内のヒットは「末端」扱い（最大窓に合わせる）
+
+# Step04: クラスタリングと MAFFT
+cluster:
+  linkage: average
+  distance_cut: 0.5     # 1 - similarity でこの距離以下を同一タイプにまとめる
+  similarity_scale_kb: 5  # 末端タイプ分けに使う窓
+mafft:
+  options: "--auto --preservecase"   # 向きは染色体のまま（3末端=右端）に固定
+  per_type_min_members: 2
+
+# Step05: 構成要素の注釈
+trf:
+  params: "2 7 7 80 10 50 500"   # Match Mismatch Delta PM PI Minscore MaxPeriod
+trnascan:
+  options: "-E -q"
+annot:
+  gc_bin_bp: 100
+  self_blast_min_len: 30
+  terminal_motif_bp: 60
+
+# Step06: 共通末端エレメント
+terminal_element:
+  seed_window_kb: 5       # 仮のエレメント（seed）: このスケールの最大タイプの MAFFT コンセンサスの
+  seed_bp: 300            #   3'側この長さ。エレメントをもつ末端（seed carriers）を探すためだけに使う
+  core_probe_kb: 5        # seed carriers の末端この長さを seed 3'端で揃えて整列し、保存された中心部を決める
+  core_mafft_options: "--localpair --maxiterate 1000 --preservecase"
+  core_min_seg_bp: 50     # 変化点の両側の最小長。変異サイトの判定は micro と同じ基準（core_support, ignore_insertion_below）
+                          # 末端エレメント = 中心部（3'端から変化点まで）のコンセンサス
+  min_stem: 7             # エレメント内の逆向き反復（完全一致ステム）の最小長
+  max_loop: 12
+  evalue: 1.0e-5
+  min_hit_len: 40
+  search_window_kb: 5     # 各染色体の3'末端のこの範囲でエレメントを探す
+  edge_tolerance: 10      # エレメント3'端から何 bp 以内までのアラインメントを「3'端を含む」とみなすか
+  element_min_qcov: 0.5   # 3'端を含むヒットがエレメントのこの割合以上を覆うとき「エレメントあり」
+  capped_max_overhang: 20 # はみ出しがこれ以下なら「エレメントで終わる」とみなす
+  overhang_show_bp: 60
+  full_copy_qcov: 0.8     # ゲノム内コピーのうちエレメントの80%以上を覆い、
+  full_copy_min_pident: 80  # かつ一致率がこれ以上のものを完全長コピーとする（未満は分岐した類縁配列として別に数える）
+
+# Step07: ミクロ構造（保存された中心部のモジュール分割と分類）
+micro:
+  window_margin_bp: 500      # 解析窓 = 保存された中心部（Step06 のエレメント長）+ この余白。中心部より外側は「外側の領域」
+  mafft_options: "--localpair --maxiterate 1000 --preservecase"
+  core_support: 0.85         # 列支持率（多数派塩基をもつ配列の割合）がこれ未満の列＝変異サイト
+  link_bp: 10                # この距離以内の変異サイトを1つの可変領域にまとめる
+  min_variable_columns: 2    # これ未満の列にしか及ばない可変領域（孤立した SNP）は区切りにせず、モジュール内の置換として扱う
+  ignore_insertion_below: 0.2  # この割合未満の末端にしかない挿入列は区間の境界にしない（その末端の挿入として表示）
+  min_module_bp: 15          # 可変領域に挟まれたこれ以上の保存区間＝コアモジュール T1, T2…
+  shared_search_min_bp: 100  # これ以上長い可変領域の中で部分共有ブロック S を探す
+  smooth_bp: 9               # S 判定用の支持率平滑化幅
+  shared_support: 0.6        # 平滑化支持率がこれ以上 → 部分共有ブロック S（一部の末端だけが共有）
+  min_shared_bp: 20
+  homopolymer_min: 10        # 同一塩基の連続がこれ以上 → ホモポリマー区間（PolyT など）
+  present_min_cov: 0.5       # セグメントのコンセンサス長に対する被覆がこれ以上で「あり」
+  variant_identity: 0.9      # セグメント配列をバリアントにまとめる一致率（MSA 列ベース）
+  family_identity: 0.93      # 中心部の MSA 一致率でファミリー（A, B…）に分ける閾値
+  scan_min_module_bp: 50     # エレメントのない末端では、この長さ以上のモジュールだけを解析窓と同じ長さの末端で探す
+  scan_identity: 0.85
+  scan_coverage: 0.7
+
+# Step08: ビューア
+viewer:
+  msa_ref_chrom: Chr01       # MAFFT タブの横軸の基準（末端エレメント3'端 = 0）。エレメントがない/グループにいない場合は名前順で最初のエレメント保有染色体

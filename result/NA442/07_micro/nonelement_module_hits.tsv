@@ -1,0 +1,10 @@
+chrom	segment	strand	dist_from	dist_to	identity	qcov	seq
+Chr03	T8	-	2960	3013	0.87	0.85	aagaaagaaataagaagtaaaataataagaggagaataagaagaaaagaataaa
+Chr04	T8	+	421	476	0.964	0.933	tttgatttaatcttttaatcttattctcctcttatttcacttcttatttcattatt
+Chr13	T8	-	3524	3577	0.852	0.85	aagaaagaaataagaagtaaaataataagaggggaataagaagaaaagaataaa
+Chr21	T8	-	516	569	0.87	0.85	aagaaagaaataagaagtaaaataataagaggagaataagaagaaaagaataaa
+Chr22	T8	-	1415	1468	0.87	0.85	aagaaagaaataagaagtaaaataataagaggagaataagaagaaaagaataaa
+Chr25	T8	-	3416	3469	0.87	0.85	aagaaagaaataagaagtaaaataataagaggagaataagaagaaaagaataaa
+Chr28	T8	+	225	283	0.881	0.933	tttgatttaatcttttatcttcttatttcacttcttatttcacttcttatttctttatt
+Chr28	T8	-	3837	3890	0.87	0.85	aagaaagaaataagaagtaaaataataagaggagaataagaagaaaagaataaa
+Chr31	T8	-	3745	3804	0.967	1.0	gaaaaagaaagaaataacaagtgaaataagaagagaataagattaaaagattaaatcaaa

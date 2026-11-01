@@ -1,0 +1,36 @@
+chrom	has_element	dist_from	dist_to	pident	qcov	has_3p_edge	overhang_bp	overhang_seq	n_hits_in_window	end_type
+Chr01	1	1	3982	99.6	1.0	1	-1		123	T1
+Chr02	1	1	4000	99.7	1.001	1	-1		129	T1
+Chr03	0	2778	4116	67.9	0.356	0	858	cttttgaatttcttttctttttaaatttttatcttcaattaatttttctttattatattt...	165	T2
+Chr04	0	224	854	81.2	0.163	0	-3138		142	T2
+Chr05	1	1	4012	98.1	1.005	1	-6		122	T1
+Chr06	0	1112	1814	68.3	0.185	0	-243		77	U
+Chr07	1	1	3982	99.4	1.0	1	0		123	T1
+Chr08	0	691	1124	86.0	0.109	0	-2287		130	T5
+Chr09	0	765	3812	71.2	0.774	0	568	tagtacactaaaatgaaataataaaacatataaataatagaataataaataatagaaata...	129	T4
+Chr10	1	1	3995	99.8	1.0	1	0		130	T1
+Chr11	1	1	4018	98.1	1.006	1	0		120	T1
+Chr12	1	1	4011	98.3	1.006	1	0		123	T1
+Chr13	0	1	415	89.0	0.105	0	-3586		151	T2
+Chr14	0								9	U
+Chr15	1	1	3994	99.8	1.0	1	-1		126	T1
+Chr16	0	3859	4360	68.7	0.129	0	1725	AACACATGATAGTGATTTAAAAACAGCTAAAGAAAAAGTGATACAGAATAAAAAACTATA...	55	U
+Chr17	0	1873	2227	87.4	0.089	0	-1171		103	U
+Chr18	0	2356	2501	74.3	0.038	0	437	tatttattttaatagggaaccaaaataaacaaagaaataatgaatctaaataaaaaacac...	7	U
+Chr19	1	1	4017	98.1	1.006	1	-1		122	T1
+Chr20	0	4741	5000	86.6	0.066	0	1763	gagaaatttaaccaattaaaaaaacagagaataaataagagaaatattgaattaacaggt...	99	U
+Chr21	0	1826	4349	67.7	0.681	0	1135	gaagaaataagaaagatagagaaagaataacaagtgaaggaaagaatgataatagtagag...	142	T6
+Chr22	0	1787	4133	66.9	0.614	0	1060	ctatttctttattctcttttattattattgttttatttttttatttatttgatatttaga...	144	T6
+Chr23	1	1	3995	99.7	1.0	1	0		128	T1
+Chr24	0	179	372	71.8	0.052	0	-3122		148	U
+Chr25	0	3234	4572	67.9	0.356	0	1314	cttttgaatttcttttctttttaaatttttatcttcaattaatttttctttattatattt...	151	T2
+Chr26	0	1604	3054	68.5	0.391	0	1374	tactactacactattttgaattattaaatcatataaataatacattaataaataatagaa...	157	U
+Chr27	1	1	3983	99.5	1.0	1	0		128	T1
+Chr28	0	28	664	78.3	0.169	0	-3314		170	T2
+Chr29	0	690	1123	84.2	0.109	0	-2296		142	T5
+Chr30	1	1	3995	99.7	1.0	1	0		130	T1
+Chr31	0	257	2477	70.7	0.579	0	-653		85	T4
+Chr32	0	1670	1816	73.9	0.039	0	120	cacacaaaacactaaaatatttccatccttcgattcccaccagttatggattggttataa...	34	T3
+Chr33	0	2192	2327	74.6	0.036	0	1053	tcttcttctttctgtttcatcaatcctatcaaatattccttctcctcttttaattgcttc...	32	T3
+Chr34	0	3561	3648	75.3	0.023	0	1642	atgttagaaatgaacatctaatcttttttattaataaagattatgatataaaagaaaaga...	32	U
+Chr35	0	2009	2127	75.8	0.03	0	-321		33	T3

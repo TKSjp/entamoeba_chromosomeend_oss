@@ -1,0 +1,24 @@
+chrom	family	micro_type	element_code	kb_haplotype	kb_code	end_type	extension_bp	polyT_len
+Chr01	D	D1	T1a V1b T2a V2b T3a V3c T4b V4d	K20	T1a V1b T2a V2b T3a V3c T4b V4d S1a S2b S3b S4c S5b	T4	0	21
+Chr02	E	E1	T1a V1a T2a V2a T3a V3a T4a V4e	K11	T1a V1a T2a V2a T3a V3a T4a V4e S1b S2d S3f S4e S5c	U	0	15
+Chr03	C	C1	T1a V1b T2a V2b T3a V3a T4a V4b	K16	T1a V1b T2a V2b T3a V3a T4a V4b S1c S2a S3a S4a S5a	T1	1	27
+Chr04	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K6	T1a V1a T2a V2a T3a V3a T4a V4b S1d S2c S3d S4f S5d	T2	0	23
+Chr05	B	B3	T1a V1b T2a V2b T3a V3a T4a V4a	K15	T1a V1b T2a V2b T3a V3a T4a V4a S1c S2a S3c S4d S5a	T1	0	25
+Chr07	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K9	T1a V1a T2a V2a T3a V3a T4a V4b S1d S2e S3d S4g S5e	T2	0	22
+Chr08	A	A4	T1a V1a T2a V2a T3a V3a T4a V4f	K12	T1a V1a T2a V2a T3a V3a T4a V4f S1d S2c S3d S4b S5f	T2	607	23
+Chr10	C	C3	T1a V1b T2a V2b T3a V3d T4a V4b	K21	T1a V1b T2a V2b T3a V3d T4a V4b S1c S2a S3a S4a S5a	T1	2	22
+Chr13	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K8	T1a V1a T2a V2a T3a V3a T4a V4b S1d S2e S3d S4b S5e	T2	1	25
+Chr14	B	B1	T1a V1b T2a V2b T3a V3b T4a V4a	K1	T1a V1b T2a V2b T3a V3b T4a V4a S1c S2a S3a S4a S5a	T1	1	30
+Chr16	C	C1	T1a V1b T2a V2b T3a V3a T4a V4b	K17	T1a V1b T2a V2b T3a V3a T4a V4b S1d S2f S3d S4b S5g	T2	207	22
+Chr17	B	B1	T1a V1b T2a V2b T3a V3b T4a V4a	K1	T1a V1b T2a V2b T3a V3b T4a V4a S1c S2a S3a S4a S5a	T1	10	31
+Chr18	A	A2	T1a V1a T2a V2a T3a V3a T4a V4a	K3	T1a V1a T2a V2a T3a V3a T4a V4a S1c S2a S3c S4a S5a	T1	1	30
+Chr20	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K7	T1a V1a T2a V2a T3a V3a T4a V4b S1d S2c S3d S4h S5e	T2	2	23
+Chr21	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K4	T1a V1a T2a V2a T3a V3a T4a V4b S1a S2b S3b S4c S5b	U	0	28
+Chr22	B	B1	T1a V1b T2a V2b T3a V3b T4a V4a	K1	T1a V1b T2a V2b T3a V3b T4a V4a S1c S2a S3a S4a S5a	T1	0	28
+Chr23	A	A1	T1a V1a T2a V2a T3a V3a T4a V4b	K5	T1a V1a T2a V2a T3a V3a T4a V4b S1c S2a S3e S4a S5a	T1	0	23
+Chr24	B	B1	T1a V1b T2a V2b T3a V3b T4a V4a	K19	T1a V1b T2a V2b T3a V3b T4a V4a S1c S2a S3a S4a S5h	T1	2	30
+Chr25	A	A2	T1a V1a T2a V2a T3a V3a T4a V4a	K2	T1a V1a T2a V2a T3a V3a T4a V4a S1c S2a S3a S4a S5a	T1	0	31
+Chr27	C	C2	T1a V1b T2a V2b T3a V3a T4a V4c	K18	T1a V1b T2a V2b T3a V3a T4a V4c S1c S2a S3e S4a S5a	T1	0	27
+Chr29	A	A5	T1a V1a T2a V2c T3a V3a T4a V4a	K14	T1a V1a T2a V2c T3a V3a T4a V4a S1c S2a S3a S4a S5a	T1	0	31
+Chr30	B	B2	T1a V1a T2a V2b T3a V3a T4a V4a	K13	T1a V1a T2a V2b T3a V3a T4a V4a S1c S2a S3c S4d S5a	T1	0	31
+Chr33	A	A3	T1a V1a T2a V2a T3a V3a T4a V4c	K10	T1a V1a T2a V2a T3a V3a T4a V4c S1c S2a S3g S4a S5a	T1	0	31

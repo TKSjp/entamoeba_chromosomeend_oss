@@ -1,0 +1,461 @@
+chrom	segment	kind	present	length	dist_from	dist_to	genome_start	genome_end	identity	coverage	seq	variant
+Chr01	O6	outer	1	132	609	740	2071966	2072097	0.341	0.822	aagacgaacgaaaaataatccagtcttaataggagagccaggagttggtaaaacagcagtagttgaaggacttgcacaaagaattgttaaaggggatgttccaagtaatttgcaatgtcgagttattggatt	
+Chr01	S5	shared_block	1	22	587	608	2072098	2072119	0.455	1.0	agatatgggagcattaatagca	b
+Chr01	O5	outer	1	26	561	586	2072120	2072145	0.471	1.0	ggagcacaatatagaggacaatttga	
+Chr01	S4	shared_block	1	26	535	560	2072146	2072171	0.37	0.963	agaaagattaaaagcagtaataaaag	c
+Chr01	O4	outer	1	6	529	534	2072172	2072177	0.0	1.0	aagtta	
+Chr01	S3	shared_block	1	27	502	528	2072178	2072204	0.593	1.0	aagaaagtaaaatacctattatattgt	b
+Chr01	O3	outer	1	39	463	501	2072205	2072243	0.5	1.0	ttatagatgaaattcacacagtattaggagctggagcaa	
+Chr01	S2	shared_block	1	34	429	462	2072244	2072277	0.412	1.0	caggagaaggagcaatggatgcagctaatatttt	b
+Chr01	O2	outer	1	24	405	428	2072278	2072301	0.556	0.944	aaaaccaatgttatcaagaggaga	
+Chr01	S1	shared_block	1	132	273	404	2072302	2072433	0.355	0.795	attacgatgtattggagcaacaacgttagaggaatatagaaaatatgttgaaaaagatccagcatttgaaagacgattccaacaagtttatgtaagtgaaccaagtgtagaagatacattatatattcttcg	a
+Chr01	O1	outer	1	15	258	272	2072434	2072448	0.556	0.778	aggaataagagagtg	
+Chr01	PolyT	homopolymer	1	21	237	257	2072449	2072469	0.778	0.778	ttttttttttttttttttttt	
+Chr01	V4	variable	1	23	214	236	2072470	2072492	0.87	1.0	aagtcttttttgattcagagcat	d
+Chr01	T4	module	1	15	199	213	2072493	2072507	0.8	1.0	ccacgtttacacacg	b
+Chr01	V3	variable	1	9	190	198	2072508	2072516	0.333	1.0	tgtgcatac	c
+Chr01	T3	module	1	25	165	189	2072517	2072541	0.92	1.0	acaaaatgaatgatacaagtgatct	a
+Chr01	V2	variable	1	28	137	164	2072542	2072569	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr01	T2	module	1	52	85	136	2072570	2072621	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr01	V1	variable	1	43	42	84	2072622	2072664	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr01	T1	module	1	41	1	41	2072665	2072705	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr02	O6	outer	1	161	580	740	1856513	1856673	0.422	0.896	caatgttcatcattaagaacaattaatataccaacaagtataagtagaataggaagtagttgtttttatttatgttcatcattaaaatcaattaatattccaacaagtgttagtaaattaggatatgaatgtttttataaatgttcatcattaaaatcaat	
+Chr02	S5	shared_block	1	22	558	579	1856674	1856695	0.636	1.0	taatataccaacaagtataagt	c
+Chr02	O5	outer	1	27	531	557	1856696	1856722	0.765	1.0	aaaataggagatagatgtttttttgag	
+Chr02	S4	shared_block	1	28	503	530	1856723	1856750	0.556	1.0	tgtaagtcattagaaacaattaatatac	e
+Chr02	O4	outer	1	6	497	502	1856751	1856756	0.667	1.0	caacaa	
+Chr02	S3	shared_block	1	27	470	496	1856757	1856783	0.519	1.0	gtgttagtgaaataggatatgaatgtt	f
+Chr02	O3	outer	1	24	446	469	1856784	1856807	0.545	1.0	ttaaaggatgttcatcattaacat	
+Chr02	S2	shared_block	1	34	412	445	1856808	1856841	0.5	1.0	caattaatataccaacaagtataagtagaatagg	d
+Chr02	O2	outer	1	26	386	411	1856842	1856867	0.444	1.0	atatgaatgtttttctggatgtccag	
+Chr02	S1	shared_block	1	137	249	385	1856868	1857004	0.41	0.819	aggatttaaagaaaaaCAAAGTATTAAGAAAGAAATATTATAATGATGATTGTGTCATTGTTTAAGTGAAGAAGaaaattaaaatttgatttgaatttaaaagaataagtaaaaAAGAATAATCAAAGTAATTTTTA	b
+Chr02	O1	outer	1	15	234	248	1857005	1857019	0.5	0.778	AAGAAGTAGAGAGAA	
+Chr02	PolyT	homopolymer	1	15	219	233	1857020	1857034	0.481	0.556	AGttttttttttttt	
+Chr02	V4	variable	1	23	196	218	1857035	1857057	0.739	1.0	aaggctttttaaaatgaccgcat	e
+Chr02	T4	module	1	15	181	195	1857058	1857072	1.0	1.0	ccacgtttcaccacg	a
+Chr02	V3	variable	1	9	172	180	1857073	1857081	1.0	1.0	tttgataca	a
+Chr02	T3	module	1	25	147	171	1857082	1857106	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr02	V2	variable	1	11	136	146	1857107	1857117	0.909	1.0	aaaaaaagacc	a
+Chr02	T2	module	1	52	84	135	1857118	1857169	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr02	V1	variable	1	42	42	83	1857170	1857211	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr02	T1	module	1	41	1	41	1857212	1857252	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr03	O6	outer	0	1	741	741	1725393	1725393	0.007	0.007	a	-
+Chr03	S5	shared_block	1	20	721	740	1725394	1725413	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr03	O5	outer	1	17	704	720	1725414	1725430	1.0	1.0	aatcaatgtttcattga	
+Chr03	S4	shared_block	1	27	677	703	1725431	1725457	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr03	O4	outer	1	3	674	676	1725458	1725460	1.0	1.0	cat	
+Chr03	S3	shared_block	1	27	647	673	1725461	1725487	0.926	1.0	aaattaattaattgtttcatttattat	a
+Chr03	O3	outer	1	21	626	646	1725488	1725508	0.955	0.955	tcattttatttaaattatatt	
+Chr03	S2	shared_block	1	34	592	625	1725509	1725542	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr03	O2	outer	1	18	574	591	1725543	1725560	1.0	1.0	attatttaacgtttttaa	
+Chr03	S1	shared_block	1	166	408	573	1725561	1725726	0.97	1.0	attacttcatcaaatatacagtagaaatagaattatatcatctttctgattatgtccaatcattatacatatttattatcttttaattatttattcattatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccataccttcttttat	c
+Chr03	O1	outer	1	143	265	407	1725727	1725869	0.667	1.0	aaacacaaatattttggtaattttgatttctatttatttcatttcttctccgtgttgaattgataagaagaataaattaaataatttcagttcattcaactggacatttattataaataatttcaactatgtaAATGAAAGTG	
+Chr03	PolyT	homopolymer	1	27	238	264	1725870	1725896	1.0	1.0	ttttttttttttttttttttttttttt	
+Chr03	V4	variable	1	23	215	237	1725897	1725919	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr03	T4	module	1	15	200	214	1725920	1725934	1.0	1.0	ccacgtttcaccacg	a
+Chr03	V3	variable	1	9	191	199	1725935	1725943	1.0	1.0	tttgataca	a
+Chr03	T3	module	1	25	166	190	1725944	1725968	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr03	V2	variable	1	28	138	165	1725969	1725996	0.909	1.0	aaaaaaagacctattccaaaaatagaca	b
+Chr03	T2	module	1	52	86	137	1725997	1726048	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr03	V1	variable	1	43	43	85	1726049	1726091	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr03	T1	module	1	41	2	42	1726092	1726132	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr04	O6	outer	1	148	593	740	1709988	1710135	0.496	0.993	ttttatatattaatattgttcttccttgaatgaaatgaagaggtatttcattaggattatttaaccattcattaaataattttaataaatatttctttggttgttctaaatatttaatcaaaatcattgtattttatcattttcattt	
+Chr04	S5	shared_block	1	22	571	592	1710136	1710157	0.682	1.0	taatttcaaattaacaataaat	d
+Chr04	O5	outer	1	22	549	570	1710158	1710179	0.471	1.0	ttaatagcacactctagttcat	
+Chr04	S4	shared_block	1	28	521	548	1710180	1710207	0.481	1.0	tgggagtgattatagacatactattatt	f
+Chr04	O4	outer	1	6	515	520	1710208	1710213	0.333	1.0	aattct	
+Chr04	S3	shared_block	1	22	493	514	1710214	1710235	0.593	0.815	gttttcatttaatatttcatat	d
+Chr04	O3	outer	1	11	482	492	1710236	1710246	0.455	0.5	aaattaatatt	
+Chr04	S2	shared_block	1	32	450	481	1710247	1710278	0.471	0.941	catgaagtctatattggtgttagtttcataga	c
+Chr04	O2	outer	1	28	422	449	1710279	1710306	0.556	1.0	ttcatttccagaaattaatagatgagat	
+Chr04	S1	shared_block	1	162	260	421	1710307	1710468	0.494	0.97	attatttggatattcatcttctttagatttatttaaatgttgcattttccatatttcatcattttataattccatcttattcttttcaaattattctttcttgcttctatttctattcttttcatctttcggaggtatttataatagtttattttttttttt	d
+Chr04	O1	outer	1	18	242	259	1710469	1710486	0.444	1.0	aagtgttttgaaagagcg	
+Chr04	PolyT	homopolymer	1	23	219	241	1710487	1710509	0.852	0.852	ttttttttttttttttttttttt	
+Chr04	V4	variable	1	23	196	218	1710510	1710532	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr04	T4	module	1	15	181	195	1710533	1710547	1.0	1.0	ccacgtttcaccacg	a
+Chr04	V3	variable	1	9	172	180	1710548	1710556	1.0	1.0	tttgataca	a
+Chr04	T3	module	1	25	147	171	1710557	1710581	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr04	V2	variable	1	11	136	146	1710582	1710592	0.909	1.0	aaaaaaagacc	a
+Chr04	T2	module	1	52	84	135	1710593	1710644	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr04	V1	variable	1	42	42	83	1710645	1710686	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr04	T1	module	1	41	1	41	1710687	1710727	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr05	O6	outer	1	131	610	740	1553912	1554042	0.941	0.97	ctaaagaataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaatataa	
+Chr05	S5	shared_block	1	22	588	609	1554043	1554064	0.955	1.0	tgaaataaaaagaatgataaat	a
+Chr05	O5	outer	1	17	571	587	1554065	1554081	0.824	1.0	aatcaatgtttcaacaa	
+Chr05	S4	shared_block	1	27	544	570	1554082	1554108	0.889	1.0	ataaaatattgtttaactttgatattt	d
+Chr05	O4	outer	1	3	541	543	1554109	1554111	0.667	1.0	ctt	
+Chr05	S3	shared_block	1	27	514	540	1554112	1554138	0.815	1.0	acattaatgaaatattacatttattta	c
+Chr05	O3	outer	1	21	493	513	1554139	1554159	0.727	0.955	ttgtttattttaaataatatt	
+Chr05	S2	shared_block	1	34	459	492	1554160	1554193	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr05	O2	outer	1	18	441	458	1554194	1554211	1.0	1.0	attatttaacgtttttaa	
+Chr05	S1	shared_block	1	167	274	440	1554212	1554378	0.982	1.0	attatttcatcaaatatacagaagaaatagaattatatcatctttctgattatgtccaatcattatacatatttattatctttttaattatttattctttatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccataccttcttttat	c
+Chr05	O1	outer	1	12	262	273	1554379	1554390	0.667	0.667	aaagagaaagtg	
+Chr05	PolyT	homopolymer	1	25	237	261	1554391	1554415	0.926	0.926	ttttttttttttttttttttttttt	
+Chr05	V4	variable	1	23	214	236	1554416	1554438	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr05	T4	module	1	15	199	213	1554439	1554453	1.0	1.0	ccacgtttcaccacg	a
+Chr05	V3	variable	1	9	190	198	1554454	1554462	1.0	1.0	tttgataca	a
+Chr05	T3	module	1	25	165	189	1554463	1554487	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr05	V2	variable	1	28	137	164	1554488	1554515	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr05	T2	module	1	52	85	136	1554516	1554567	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr05	V1	variable	1	43	42	84	1554568	1554610	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr05	T1	module	1	41	1	41	1554611	1554651	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr07	O6	outer	1	145	596	740	1435289	1435433	0.481	1.0	tatatattaatattgttcttccttgaatgaaatgaatatgtatttcattaggattgtttaaccattcattaaataattttaataaatacttcattggttgttctaattatttaatccaaaatccttgtattttatcaatttccgg	
+Chr07	S5	shared_block	1	22	574	595	1435434	1435455	0.5	1.0	tgtcttccagttagcaatgaat	e
+Chr07	O5	outer	1	22	552	573	1435456	1435477	0.529	1.0	ttaatatcacaatctagttcat	
+Chr07	S4	shared_block	1	28	524	551	1435478	1435505	0.519	1.0	ttggagtgattatacatattctattatt	g
+Chr07	O4	outer	1	6	518	523	1435506	1435511	0.333	1.0	aattct	
+Chr07	S3	shared_block	1	22	496	517	1435512	1435533	0.593	0.815	attttcaattaatatttcatat	d
+Chr07	O3	outer	1	11	485	495	1435534	1435544	0.455	0.5	aaattaatatt	
+Chr07	S2	shared_block	1	32	453	484	1435545	1435576	0.529	0.941	cagtaaatctatattagtattagtttcataga	e
+Chr07	O2	outer	1	28	425	452	1435577	1435604	0.556	1.0	ttcatttccagaaattaatagatgagat	
+Chr07	S1	shared_block	1	164	261	424	1435605	1435768	0.5	0.976	attatctgggtattcatcttctttagatttatttagatgttgtctttttccgtatttcatcattttatatttcaatcttattcttttcaaattattctttcttgcttctatttctattcttttcatcattcggaggtatttataatagtttatttttttttttt	d
+Chr07	O1	outer	1	20	241	260	1435769	1435788	0.444	1.0	aagtcattttaaaaagagtg	
+Chr07	PolyT	homopolymer	1	22	219	240	1435789	1435810	0.815	0.815	tttttttttttttttttttttt	
+Chr07	V4	variable	1	23	196	218	1435811	1435833	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr07	T4	module	1	15	181	195	1435834	1435848	1.0	1.0	ccacgtttcaccacg	a
+Chr07	V3	variable	1	9	172	180	1435849	1435857	1.0	1.0	tttgataca	a
+Chr07	T3	module	1	25	147	171	1435858	1435882	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr07	V2	variable	1	11	136	146	1435883	1435893	0.909	1.0	aaaaaaagacc	a
+Chr07	T2	module	1	52	84	135	1435894	1435945	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr07	V1	variable	1	42	42	83	1435946	1435987	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr07	T1	module	1	41	1	41	1435988	1436028	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr08	O6	outer	1	148	1200	1347	1364806	1364953	0.481	1.0	tttatatattaatattgttcttccttgaatgaaatgaagaggtatttcattaggattgtttaaccattcattaaataattttattaaatacttctttggttgttctaattatttaatcaaaaatccttgtattttatcaatttcattt	
+Chr08	S5	shared_block	1	22	1178	1199	1364954	1364975	0.545	1.0	tactttcaaattagcagtaaat	f
+Chr08	O5	outer	1	22	1156	1177	1364976	1364997	0.529	1.0	ttaatagcacagtctagttcat	
+Chr08	S4	shared_block	1	28	1128	1155	1364998	1365025	0.519	1.0	ttggagtgattatagacattctatcatt	b
+Chr08	O4	outer	1	6	1122	1127	1365026	1365031	0.333	1.0	aattct	
+Chr08	S3	shared_block	1	22	1100	1121	1365032	1365053	0.63	0.815	attttcatttaatatttcatat	d
+Chr08	O3	outer	1	11	1089	1099	1365054	1365064	0.455	0.5	aaattaatatt	
+Chr08	S2	shared_block	1	32	1057	1088	1365065	1365096	0.471	0.941	catgaagtctatattggtgttagtttcataga	c
+Chr08	O2	outer	1	28	1029	1056	1365097	1365124	0.556	1.0	ttcatttccagaaattaatagatgagat	
+Chr08	S1	shared_block	1	162	867	1028	1365125	1365286	0.5	0.97	attatttggatattcatcttctttagatttatttaaatgttgcattttccatatttcatcattttataattccatcttattcttttcaaattattctttcttgcttctatttctattcttttcatctttcataagtatttataatagtttattttttttttt	d
+Chr08	O1	outer	1	18	849	866	1365287	1365304	0.389	1.0	ttaagtgttttgaaagcg	
+Chr08	PolyT	homopolymer	1	23	826	848	1365305	1365327	0.852	0.852	ttttttttttttttttttttttt	
+Chr08	V4	variable	1	23	803	825	1365328	1365350	0.739	1.0	aaggcattctgatttgaccgcat	f
+Chr08	T4	module	1	15	788	802	1365351	1365365	1.0	1.0	ccacgtttcaccacg	a
+Chr08	V3	variable	1	9	779	787	1365366	1365374	1.0	1.0	tttgataca	a
+Chr08	T3	module	1	25	754	778	1365375	1365399	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr08	V2	variable	1	11	743	753	1365400	1365410	0.909	1.0	aaaaaaagacc	a
+Chr08	T2	module	1	52	691	742	1365411	1365462	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr08	V1	variable	1	42	649	690	1365463	1365504	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr08	T1	module	1	41	608	648	1365505	1365545	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr10	O6	outer	1	136	607	742	1197771	1197906	0.956	1.0	cttatctaaagaataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataacgagaaataatgtaatttaaacaaaa	
+Chr10	S5	shared_block	1	20	587	606	1197907	1197926	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr10	O5	outer	1	17	570	586	1197927	1197943	0.882	1.0	aatcaatgtttcaataa	
+Chr10	S4	shared_block	1	27	543	569	1197944	1197970	0.963	1.0	ataaaatattatttaactttcatattt	a
+Chr10	O4	outer	1	3	540	542	1197971	1197973	1.0	1.0	cat	
+Chr10	S3	shared_block	1	27	513	539	1197974	1198000	0.963	1.0	aaattaattaattatttcatttattat	a
+Chr10	O3	outer	1	22	491	512	1198001	1198022	0.955	1.0	tcattttatttaaattattgtt	
+Chr10	S2	shared_block	1	34	457	490	1198023	1198056	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr10	O2	outer	1	17	440	456	1198057	1198073	0.944	0.944	attatttacgtttttaa	
+Chr10	S1	shared_block	1	167	273	439	1198074	1198240	0.976	1.0	attatttcatcaaatatacagaagaaatagaattatatcatctttctgattatgttcaatcattatacatatttattatctttttaattatttcttctttatgataaatagtactgataaaatattttctagttcctatttatcaataaatccataccttcttttat	c
+Chr10	O1	outer	1	12	261	272	1198241	1198252	0.667	0.667	aaagagaaagtg	
+Chr10	PolyT	homopolymer	1	22	239	260	1198253	1198274	0.815	0.815	tttttttttttttttttttttt	
+Chr10	V4	variable	1	23	216	238	1198275	1198297	0.87	1.0	aagtcatttttttttcagagcat	b
+Chr10	T4	module	1	15	201	215	1198298	1198312	1.0	1.0	ccacgtttcaccacg	a
+Chr10	V3	variable	1	9	192	200	1198313	1198321	0.889	1.0	tttcataca	d
+Chr10	T3	module	1	25	167	191	1198322	1198346	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr10	V2	variable	1	28	139	166	1198347	1198374	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr10	T2	module	1	52	87	138	1198375	1198426	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr10	V1	variable	1	43	44	86	1198427	1198469	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr10	T1	module	1	41	3	43	1198470	1198510	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr13	O6	outer	1	144	598	741	991056	991199	0.459	1.0	atatattaatattgtccttccttgaataaaatgaggaggtatttcattgggattgcttaaccattcattaagtaattttattaaatatttctttggttgttctaaatatttaatccaaaatctttgtattttgtcaactcccag	
+Chr13	S5	shared_block	1	22	576	597	991200	991221	0.545	1.0	tgcattccagttagcaatgaat	e
+Chr13	O5	outer	1	22	554	575	991222	991243	0.588	1.0	ttaatatcacaatctaattcat	
+Chr13	S4	shared_block	1	28	526	553	991244	991271	0.519	1.0	ttggagtgattatagacattctatcatt	b
+Chr13	O4	outer	1	6	520	525	991272	991277	0.333	1.0	aattct	
+Chr13	S3	shared_block	1	22	498	519	991278	991299	0.593	0.815	attttcaattaatatttcatat	d
+Chr13	O3	outer	1	11	487	497	991300	991310	0.455	0.5	aaattaatatt	
+Chr13	S2	shared_block	1	32	455	486	991311	991342	0.529	0.941	caggaaatctatattagtattagtttcataga	e
+Chr13	O2	outer	1	28	427	454	991343	991370	0.556	1.0	ttcatttccagaaattaataatggagat	
+Chr13	S1	shared_block	1	163	264	426	991371	991533	0.494	0.976	attatctggatattcatcttctttagatttatttagatgttgtctttttccgtatttcatcattttatatttcaatcttattcttttccaattattctttcttgcttctatttctattcttttcatcattcggaggtatttataatagtttatttttttttta	d
+Chr13	O1	outer	1	19	245	263	991534	991552	0.444	1.0	agtcattttaaaaagagtg	
+Chr13	PolyT	homopolymer	1	25	220	244	991553	991577	0.926	0.926	ttttttttttttttttttttttttt	
+Chr13	V4	variable	1	23	197	219	991578	991600	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr13	T4	module	1	15	182	196	991601	991615	1.0	1.0	ccacgtttcaccacg	a
+Chr13	V3	variable	1	9	173	181	991616	991624	1.0	1.0	tttgataca	a
+Chr13	T3	module	1	25	148	172	991625	991649	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr13	V2	variable	1	11	137	147	991650	991660	0.909	1.0	aaaaaaagacc	a
+Chr13	T2	module	1	52	85	136	991661	991712	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr13	V1	variable	1	42	43	84	991713	991754	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr13	T1	module	1	41	2	42	991755	991795	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr14	O6	outer	1	125	617	741	948867	948991	0.911	0.926	aataataacaaataaataaagaaaataaataagaaagaatgattaattgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr14	S5	shared_block	1	20	597	616	948992	949011	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr14	O5	outer	1	17	580	596	949012	949028	1.0	1.0	aatcaatgtttcattga	
+Chr14	S4	shared_block	1	27	553	579	949029	949055	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr14	O4	outer	1	3	550	552	949056	949058	1.0	1.0	cat	
+Chr14	S3	shared_block	1	27	523	549	949059	949085	0.963	1.0	aaattaattaattatttcatttattat	a
+Chr14	O3	outer	1	22	501	522	949086	949107	0.955	1.0	tcattttatttaaattattgtt	
+Chr14	S2	shared_block	1	34	467	500	949108	949141	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr14	O2	outer	1	18	449	466	949142	949159	0.944	1.0	attatttaatgtttttaa	
+Chr14	S1	shared_block	1	166	283	448	949160	949325	0.976	1.0	attatttcatcaaatatacagaagaaatagaattatatcatctttctgattatgttcaatcattatacatatttattatctttttattatttattctttatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccatacgttcttttat	c
+Chr14	O1	outer	1	13	270	282	949326	949338	0.667	0.667	aaagagaaagtgt	
+Chr14	PolyT	homopolymer	1	30	240	269	949339	949368	1.0	1.0	tttttttttttttttttttttttttttttt	
+Chr14	V4	variable	1	23	217	239	949369	949391	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr14	T4	module	1	15	202	216	949392	949406	1.0	1.0	ccacgtttcaccacg	a
+Chr14	V3	variable	1	11	191	201	949407	949417	0.333	1.0	cttgcacacgg	b
+Chr14	T3	module	1	25	166	190	949418	949442	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr14	V2	variable	1	28	138	165	949443	949470	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr14	T2	module	1	52	86	137	949471	949522	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr14	V1	variable	1	43	43	85	949523	949565	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr14	T1	module	1	41	2	42	949566	949606	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr16	O6	outer	1	127	821	947	759905	760031	0.393	0.867	tccttgaataaaatgaggaggtatttcattaggattgtttaaccattcattaaataattttaataaatacttctttggttgttctaaatatttaatccaaaatccttgtattttatcaatttcattt	
+Chr16	S5	shared_block	1	22	799	820	760032	760053	0.545	1.0	tactttcaaattatcaatgaat	g
+Chr16	O5	outer	1	22	777	798	760054	760075	0.529	1.0	ttaatagcacagtctagttcat	
+Chr16	S4	shared_block	1	28	749	776	760076	760103	0.519	1.0	ttggagtgattatagacattctatcatt	b
+Chr16	O4	outer	1	6	743	748	760104	760109	0.333	1.0	aattct	
+Chr16	S3	shared_block	1	22	721	742	760110	760131	0.593	0.815	actttcaattaatatttcatat	d
+Chr16	O3	outer	1	11	710	720	760132	760142	0.455	0.5	aaattaatatt	
+Chr16	S2	shared_block	1	34	676	709	760143	760176	0.588	1.0	tagataaaatctatattagtgttagtttcataga	f
+Chr16	O2	outer	1	28	648	675	760177	760204	0.5	1.0	ttcctttccagaaattaatagtggagat	
+Chr16	S1	shared_block	1	163	485	647	760205	760367	0.482	0.976	attatctggatattcatcttctttagacttatttaggtgttgtctttttccatatttcatcattttataattccatcttattcttttcaaattattttttcttgcttctatttctattattttcatctttcggaggtatttataatagtttatttttttttta	d
+Chr16	O1	outer	1	19	466	484	760368	760386	0.444	1.0	agtcattttaaaaagagtg	
+Chr16	PolyT	homopolymer	1	22	444	465	760387	760408	0.815	0.815	tttttttttttttttttttttt	
+Chr16	V4	variable	1	23	421	443	760409	760431	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr16	T4	module	1	15	406	420	760432	760446	1.0	1.0	ccacgtttcaccacg	a
+Chr16	V3	variable	1	9	397	405	760447	760455	1.0	1.0	tttgataca	a
+Chr16	T3	module	1	25	372	396	760456	760480	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr16	V2	variable	1	28	344	371	760481	760508	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr16	T2	module	1	52	292	343	760509	760560	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr16	V1	variable	1	43	249	291	760561	760603	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr16	T1	module	1	41	208	248	760604	760644	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr17	O6	outer	1	124	627	750	715811	715934	0.911	0.919	ataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr17	S5	shared_block	1	20	607	626	715935	715954	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr17	O5	outer	1	17	590	606	715955	715971	1.0	1.0	aatcaatgtttcattga	
+Chr17	S4	shared_block	1	27	563	589	715972	715998	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr17	O4	outer	1	3	560	562	715999	716001	1.0	1.0	cat	
+Chr17	S3	shared_block	1	27	533	559	716002	716028	0.963	1.0	aaattaatgaaatatttcatttattat	a
+Chr17	O3	outer	1	22	511	532	716029	716050	0.955	1.0	tcattttatttaaattattgtt	
+Chr17	S2	shared_block	1	34	477	510	716051	716084	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr17	O2	outer	1	18	459	476	716085	716102	0.944	1.0	attatttaatgtttttaa	
+Chr17	S1	shared_block	1	166	293	458	716103	716268	0.982	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgtccaatcattatacatatttattatcttttaattatttattctttatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccatacgttcttttat	c
+Chr17	O1	outer	1	13	280	292	716269	716281	0.667	0.667	aaagagaaagtgt	
+Chr17	PolyT	homopolymer	1	31	249	279	716282	716312	1.0	1.0	ttttttttttttttttttttttttttttttt	
+Chr17	V4	variable	1	23	226	248	716313	716335	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr17	T4	module	1	15	211	225	716336	716350	1.0	1.0	ccacgtttcaccacg	a
+Chr17	V3	variable	1	11	200	210	716351	716361	0.333	1.0	cttgcacacgg	b
+Chr17	T3	module	1	25	175	199	716362	716386	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr17	V2	variable	1	28	147	174	716387	716414	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr17	T2	module	1	52	95	146	716415	716466	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr17	V1	variable	1	43	52	94	716467	716509	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr17	T1	module	1	41	11	51	716510	716550	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr18	O6	outer	1	146	596	741	500334	500479	0.904	0.926	gacgttccatcttcgaaccccatatctcaagaataataacaaataataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr18	S5	shared_block	1	20	576	595	500480	500499	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr18	O5	outer	1	17	559	575	500500	500516	0.882	1.0	aatcaatgtttcaataa	
+Chr18	S4	shared_block	1	27	532	558	500517	500543	0.963	1.0	ataaaatattatttaactttcatattt	a
+Chr18	O4	outer	1	3	529	531	500544	500546	0.667	1.0	ctt	
+Chr18	S3	shared_block	1	27	502	528	500547	500573	0.852	1.0	acattaatgaaatatttcatttattta	c
+Chr18	O3	outer	1	22	480	501	500574	500595	0.773	1.0	ttgtttattttaaattattgtt	
+Chr18	S2	shared_block	1	34	446	479	500596	500629	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr18	O2	outer	1	18	428	445	500630	500647	0.944	1.0	attatttaatgtttttaa	
+Chr18	S1	shared_block	1	166	262	427	500648	500813	0.988	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgttcaatcattatacatatttattatctttttattatttattctttatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccatacgttcttttat	c
+Chr18	O1	outer	1	12	250	261	500814	500825	0.667	0.667	aaagagaaagtg	
+Chr18	PolyT	homopolymer	1	30	220	249	500826	500855	1.0	1.0	tttttttttttttttttttttttttttttt	
+Chr18	V4	variable	1	23	197	219	500856	500878	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr18	T4	module	1	15	182	196	500879	500893	1.0	1.0	ccacgtttcaccacg	a
+Chr18	V3	variable	1	9	173	181	500894	500902	1.0	1.0	tttgataca	a
+Chr18	T3	module	1	25	148	172	500903	500927	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr18	V2	variable	1	11	137	147	500928	500938	0.909	1.0	aaaaaaagacc	a
+Chr18	T2	module	1	52	85	136	500939	500990	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr18	V1	variable	1	42	43	84	500991	501032	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr18	T1	module	1	41	2	42	501033	501073	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr20	O6	outer	1	147	596	742	438051	438197	0.481	1.0	tttatatattaatattgtccttccttgaataaaatgaggaggtatttcattaggattattcaaccattcattaaataattttaataaatatttcattggttgttctaattatttaatccaaaatcattgtattttatcaactcccgg	
+Chr20	S5	shared_block	1	22	574	595	438198	438219	0.545	1.0	tgccttccagttagcaataaat	e
+Chr20	O5	outer	1	22	552	573	438220	438241	0.588	1.0	ttaatatcacagtctagttcat	
+Chr20	S4	shared_block	1	28	524	551	438242	438269	0.556	1.0	tgggagtgattattgatattctattatt	h
+Chr20	O4	outer	1	6	518	523	438270	438275	0.333	1.0	aattct	
+Chr20	S3	shared_block	1	22	496	517	438276	438297	0.556	0.815	gctttcaattaatatttcatat	d
+Chr20	O3	outer	1	11	485	495	438298	438308	0.455	0.5	aaattaatatt	
+Chr20	S2	shared_block	1	32	453	484	438309	438340	0.5	0.941	caggaaatctatattagtgttagtttcataga	c
+Chr20	O2	outer	1	28	425	452	438341	438368	0.556	1.0	ttcatttccagaaattaatagtggagat	
+Chr20	S1	shared_block	1	162	263	424	438369	438530	0.482	0.97	attatctggatattcatcttatttagatttatttagatgttgcactttccatatttcatcattttataattccatcttattcttttccaattattctttcttgcttctatttctattcttttcatctttctgaggtatttatagtagtttatttgttttttt	d
+Chr20	O1	outer	1	19	244	262	438531	438549	0.389	1.0	tttaagtgttttgaaagcg	
+Chr20	PolyT	homopolymer	1	23	221	243	438550	438572	0.852	0.852	ttttttttttttttttttttttt	
+Chr20	V4	variable	1	23	198	220	438573	438595	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr20	T4	module	1	15	183	197	438596	438610	1.0	1.0	ccacgtttcaccacg	a
+Chr20	V3	variable	1	9	174	182	438611	438619	1.0	1.0	tttgataca	a
+Chr20	T3	module	1	25	149	173	438620	438644	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr20	V2	variable	1	11	138	148	438645	438655	0.909	1.0	aaaaaaagacc	a
+Chr20	T2	module	1	52	86	137	438656	438707	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr20	V1	variable	1	42	44	85	438708	438749	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr20	T1	module	1	41	3	43	438750	438790	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr21	O6	outer	1	143	598	740	320800	320942	0.37	0.874	cgtattttatcaagacgaacgaaaaataatccagtcttaataggagagccaggagttggtaaaacagcagtagttgaaggacttgcacaaagaattgttaaaggggatgttccaagtaatttgcaatgtcgagttattggatt	
+Chr21	S5	shared_block	1	22	576	597	320943	320964	0.455	1.0	agatatgggagcattaatagca	b
+Chr21	O5	outer	1	26	550	575	320965	320990	0.471	1.0	ggagcacaatatagaggacaatttga	
+Chr21	S4	shared_block	1	26	524	549	320991	321016	0.37	0.963	agaaagattaaaagcagtaataaaag	c
+Chr21	O4	outer	1	6	518	523	321017	321022	0.0	1.0	aagtta	
+Chr21	S3	shared_block	1	27	491	517	321023	321049	0.593	1.0	aagaaagtaaaatacctattatattgt	b
+Chr21	O3	outer	1	39	452	490	321050	321088	0.5	1.0	ttatagatgaaattcacacagtattaggagctggagcaa	
+Chr21	S2	shared_block	1	34	418	451	321089	321122	0.412	1.0	caggagaaggagcaatggatgcagctaatatttt	b
+Chr21	O2	outer	1	24	394	417	321123	321146	0.556	0.944	aaaaccaatgttatcaagaggaga	
+Chr21	S1	shared_block	1	132	262	393	321147	321278	0.355	0.795	attacgatgtattggagcaacaacgttagaggaatatagaaaatatgttgaaaaagatccagcatttgaaagacgattccaacaagtttatgtaagtgaaccaagtgtagaagatacattatatattcttcg	a
+Chr21	O1	outer	1	15	247	261	321279	321293	0.556	0.778	aggaataagagagtg	
+Chr21	PolyT	homopolymer	1	28	219	246	321294	321321	1.0	1.0	tttttttttttttttttttttttttttt	
+Chr21	V4	variable	1	23	196	218	321322	321344	0.826	1.0	AAGTCATTtttttttcatcgcat	b
+Chr21	T4	module	1	15	181	195	321345	321359	1.0	1.0	ccacgtttcaccacg	a
+Chr21	V3	variable	1	9	172	180	321360	321368	1.0	1.0	tttgataca	a
+Chr21	T3	module	1	25	147	171	321369	321393	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr21	V2	variable	1	11	136	146	321394	321404	0.909	1.0	aaaaaaagacc	a
+Chr21	T2	module	1	52	84	135	321405	321456	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr21	V1	variable	1	42	42	83	321457	321498	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr21	T1	module	1	41	1	41	321499	321539	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr22	O6	outer	1	128	613	740	286298	286425	0.933	0.948	aagaataataacaaataaataaagaaaataaataagaaagaatgattaattgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr22	S5	shared_block	1	20	593	612	286426	286445	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr22	O5	outer	1	17	576	592	286446	286462	1.0	1.0	aatcaatgtttcattga	
+Chr22	S4	shared_block	1	27	549	575	286463	286489	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr22	O4	outer	1	3	546	548	286490	286492	1.0	1.0	cat	
+Chr22	S3	shared_block	1	27	519	545	286493	286519	0.963	1.0	aaattaattaattatttcatttattat	a
+Chr22	O3	outer	1	22	497	518	286520	286541	0.955	1.0	tcattttatttaaattattgtt	
+Chr22	S2	shared_block	1	34	463	496	286542	286575	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr22	O2	outer	1	18	445	462	286576	286593	0.944	1.0	attatttaatgtttttaa	
+Chr22	S1	shared_block	1	166	279	444	286594	286759	0.982	1.0	attatttcatcaaatatacagaagaaatagaattatatcatctttctgattatgttcaatcattatacatatttattatctttttattatttattctttatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccataccttcttttat	c
+Chr22	O1	outer	1	12	267	278	286760	286771	0.667	0.667	aaagagaaagtg	
+Chr22	PolyT	homopolymer	1	28	239	266	286772	286799	1.0	1.0	tttttttttttttttttttttttttttt	
+Chr22	V4	variable	1	23	216	238	286800	286822	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr22	T4	module	1	15	201	215	286823	286837	1.0	1.0	ccacgtttcaccacg	a
+Chr22	V3	variable	1	11	190	200	286838	286848	0.333	1.0	cttgcacacgg	b
+Chr22	T3	module	1	25	165	189	286849	286873	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr22	V2	variable	1	28	137	164	286874	286901	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr22	T2	module	1	52	85	136	286902	286953	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr22	V1	variable	1	43	42	84	286954	286996	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr22	T1	module	1	41	1	41	286997	287037	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr23	O6	outer	1	151	590	740	284667	284817	0.97	1.0	gtcatcttcgaatcccttatctcaagaataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr23	S5	shared_block	1	22	568	589	284818	284839	0.955	1.0	tgaaataaaaagaatgataaat	a
+Chr23	O5	outer	1	17	551	567	284840	284856	0.882	1.0	aatcaatgtttcaaaga	
+Chr23	S4	shared_block	1	27	524	550	284857	284883	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr23	O4	outer	1	3	521	523	284884	284886	0.667	1.0	ctt	
+Chr23	S3	shared_block	1	27	494	520	284887	284913	0.926	1.0	acattaatgaaatatttcatttattat	e
+Chr23	O3	outer	1	22	472	493	284914	284935	0.955	1.0	tcattttatttaaattattgtt	
+Chr23	S2	shared_block	1	34	438	471	284936	284969	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr23	O2	outer	1	18	420	437	284970	284987	0.889	1.0	tttatttaatgtttttaa	
+Chr23	S1	shared_block	1	166	254	419	284988	285153	0.994	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgttcaatcattatacatatttattaacttttaattatttattctttatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccataccttcttttat	c
+Chr23	O1	outer	1	12	242	253	285154	285165	0.667	0.667	aaagagaaagtg	
+Chr23	PolyT	homopolymer	1	23	219	241	285166	285188	0.852	0.852	ttttttttttttttttttttttt	
+Chr23	V4	variable	1	23	196	218	285189	285211	0.826	1.0	aagtcatttttttttcatcgcat	b
+Chr23	T4	module	1	15	181	195	285212	285226	1.0	1.0	ccacgtttcaccacg	a
+Chr23	V3	variable	1	9	172	180	285227	285235	1.0	1.0	tttgataca	a
+Chr23	T3	module	1	25	147	171	285236	285260	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr23	V2	variable	1	11	136	146	285261	285271	0.909	1.0	aaaaaaagacc	a
+Chr23	T2	module	1	52	84	135	285272	285323	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr23	V1	variable	1	42	42	83	285324	285365	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr23	T1	module	1	41	1	41	285366	285406	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr24	O6	outer	1	123	620	742	271225	271347	0.896	0.911	taataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaatgaaa	
+Chr24	S5	shared_block	1	22	598	619	271348	271369	0.909	1.0	taaaataaaaagaatgataaat	h
+Chr24	O5	outer	1	17	581	597	271370	271386	0.882	1.0	aatcaatgtttcaataa	
+Chr24	S4	shared_block	1	27	554	580	271387	271413	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr24	O4	outer	1	3	551	553	271414	271416	1.0	1.0	cat	
+Chr24	S3	shared_block	1	27	524	550	271417	271443	0.963	1.0	aaattaatgaaatatttcatttattat	a
+Chr24	O3	outer	1	22	502	523	271444	271465	0.864	1.0	tcattctatttaaaataatatt	
+Chr24	S2	shared_block	1	34	468	501	271466	271499	0.971	1.0	tatttaaaatataaactatcatattttatattaa	a
+Chr24	O2	outer	1	17	451	467	271500	271516	0.944	0.944	attatttacgtttttaa	
+Chr24	S1	shared_block	1	167	284	450	271517	271683	0.97	1.0	attatttcatcaaatatacagaaaaaatacaattatatcatctttctgattatgttcaatcattatttatatttattatctttttaattatttcttctttatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccatacgttcttttat	c
+Chr24	O1	outer	1	13	271	283	271684	271696	0.667	0.667	aaagagaaagtgt	
+Chr24	PolyT	homopolymer	1	30	241	270	271697	271726	1.0	1.0	tttttttttttttttttttttttttttttt	
+Chr24	V4	variable	1	23	218	240	271727	271749	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr24	T4	module	1	15	203	217	271750	271764	1.0	1.0	ccacgtttcaccacg	a
+Chr24	V3	variable	1	11	192	202	271765	271775	0.333	1.0	cttgcacacgg	b
+Chr24	T3	module	1	25	167	191	271776	271800	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr24	V2	variable	1	28	139	166	271801	271828	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr24	T2	module	1	52	87	138	271829	271880	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr24	V1	variable	1	43	44	86	271881	271923	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr24	T1	module	1	41	3	43	271924	271964	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr25	O6	outer	1	136	605	740	250212	250347	0.97	1.0	cctatctcaagaataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaataataatgagaaataatgtaatttaaataaaa	
+Chr25	S5	shared_block	1	20	585	604	250348	250367	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr25	O5	outer	1	17	568	584	250368	250384	0.882	1.0	aatcaatgtttcaataa	
+Chr25	S4	shared_block	1	27	541	567	250385	250411	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr25	O4	outer	1	3	538	540	250412	250414	0.667	1.0	ctt	
+Chr25	S3	shared_block	1	27	511	537	250415	250441	0.889	1.0	acattaatgaattatttcatttattat	a
+Chr25	O3	outer	1	23	488	510	250442	250464	0.909	1.0	tcattctatttaaaattattgtt	
+Chr25	S2	shared_block	1	34	454	487	250465	250498	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr25	O2	outer	1	17	437	453	250499	250515	0.944	0.944	attatttacgtttttaa	
+Chr25	S1	shared_block	1	166	271	436	250516	250681	0.994	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgttcaatcattatacatatttattatcttttaattatttattctttatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccataccttcttttat	c
+Chr25	O1	outer	1	21	250	270	250682	250702	0.611	0.667	aaagagaaagcgttttttttt	
+Chr25	PolyT	homopolymer	1	31	219	249	250703	250733	1.0	1.0	ttttttttttttttttttttttttttttttt	
+Chr25	V4	variable	1	23	196	218	250734	250756	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr25	T4	module	1	15	181	195	250757	250771	1.0	1.0	ccacgtttcaccacg	a
+Chr25	V3	variable	1	9	172	180	250772	250780	1.0	1.0	tttgataca	a
+Chr25	T3	module	1	25	147	171	250781	250805	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr25	V2	variable	1	11	136	146	250806	250816	0.909	1.0	aaaaaaagacc	a
+Chr25	T2	module	1	52	84	135	250817	250868	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr25	V1	variable	1	42	42	83	250869	250910	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr25	T1	module	1	41	1	41	250911	250951	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr27	O6	outer	0	1	740	740	224671	224671	0.007	0.007	a	-
+Chr27	S5	shared_block	1	20	720	739	224672	224691	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr27	O5	outer	1	17	703	719	224692	224708	0.882	1.0	aatcaatgtttcaataa	
+Chr27	S4	shared_block	1	27	676	702	224709	224735	0.926	1.0	ataaaatattatttaatattcatattt	a
+Chr27	O4	outer	1	3	673	675	224736	224738	0.667	1.0	ctt	
+Chr27	S3	shared_block	1	27	646	672	224739	224765	0.926	1.0	acattaatgaaatatttcatttattat	e
+Chr27	O3	outer	1	22	624	645	224766	224787	0.955	1.0	tcattttatttaaattattgtt	
+Chr27	S2	shared_block	1	34	590	623	224788	224821	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr27	O2	outer	1	18	572	589	224822	224839	1.0	1.0	attatttaacgtttttaa	
+Chr27	S1	shared_block	1	166	406	571	224840	225005	0.976	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctaatgatattcaatcattatacatatttattatcttttaattatttattcattatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccataccttcttttat	c
+Chr27	O1	outer	1	143	263	405	225006	225148	0.667	1.0	aaacacaaatattttggtaattttgatttctatttatttcatttcttctccgtgttgaattgataagaagaataaattaaataatttcagttcattcaactggacatttattataaataatttcaactatgtaAATGAAAGTG	
+Chr27	PolyT	homopolymer	1	27	236	262	225149	225175	1.0	1.0	ttttttttttttttttttttttttttt	
+Chr27	V4	variable	1	23	213	235	225176	225198	0.87	1.0	aagtctttctgatttaacagcat	c
+Chr27	T4	module	1	15	198	212	225199	225213	1.0	1.0	ccacgtttcaccacg	a
+Chr27	V3	variable	1	9	189	197	225214	225222	1.0	1.0	tttgataca	a
+Chr27	T3	module	1	25	164	188	225223	225247	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr27	V2	variable	1	28	136	163	225248	225275	0.909	1.0	aaaaaaagacctattccaaaaatagaca	b
+Chr27	T2	module	1	52	84	135	225276	225327	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr27	V1	variable	1	43	41	83	225328	225370	0.762	1.0	cttttctagtatgagttatttttgggccaaatgccacgtgtcg	b
+Chr27	T1	module	1	40	1	40	225371	225410	0.976	0.976	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgt	a
+Chr29	O6	outer	1	145	596	740	121349	121493	0.956	1.0	cccttatctcaagaataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaataatcaatattaataaagtaatgaaatgaatactgatgagaaataatgtaatttaaacaaaa	
+Chr29	S5	shared_block	1	20	576	595	121494	121513	0.909	0.909	tgaaataaaaaatgataaat	a
+Chr29	O5	outer	1	17	559	575	121514	121530	0.941	1.0	aatcaatgtttcaatga	
+Chr29	S4	shared_block	1	27	532	558	121531	121557	0.889	1.0	ataaaatattatttaataatcatattt	a
+Chr29	O4	outer	1	3	529	531	121558	121560	0.667	1.0	caa	
+Chr29	S3	shared_block	1	27	502	528	121561	121587	0.889	1.0	aaattaattaattatttcatttattta	a
+Chr29	O3	outer	1	21	481	501	121588	121608	0.727	0.955	ttgtttattttaaataatatt	
+Chr29	S2	shared_block	1	34	447	480	121609	121642	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr29	O2	outer	1	18	429	446	121643	121660	1.0	1.0	attatttaacgtttttaa	
+Chr29	S1	shared_block	1	166	263	428	121661	121826	0.97	1.0	attatttcatcaaatatacagaagaaatagaattatatcatctttctgattatgtccaatcattatacatatttattatcttttaattatttattcattatgatgaatagtactgataaaatattttctagttcctatttatcaataaatccatacgttcttttat	c
+Chr29	O1	outer	1	13	250	262	121827	121839	0.667	0.667	aaagagaaagtgt	
+Chr29	PolyT	homopolymer	1	31	219	249	121840	121870	1.0	1.0	ttttttttttttttttttttttttttttttt	
+Chr29	V4	variable	1	23	196	218	121871	121893	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr29	T4	module	1	15	181	195	121894	121908	1.0	1.0	ccacgtttcaccacg	a
+Chr29	V3	variable	1	9	172	180	121909	121917	1.0	1.0	tttgataca	a
+Chr29	T3	module	1	25	147	171	121918	121942	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr29	V2	variable	1	11	136	146	121943	121953	0.909	1.0	aaaaatcgacc	c
+Chr29	T2	module	1	52	84	135	121954	122005	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr29	V1	variable	1	42	42	83	122006	122047	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr29	T1	module	1	41	1	41	122048	122088	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr30	O6	outer	1	125	616	740	115140	115264	0.904	0.926	aataataacaaataaataaagaaaataaataagaaagaatgattatttgttgtactttcaaataaataaatattaataaattaatgaaatgaatattaatgagaaataatgtaatttaaatataa	
+Chr30	S5	shared_block	1	22	594	615	115265	115286	0.955	1.0	tgaaataaaaagaatgataaat	a
+Chr30	O5	outer	1	17	577	593	115287	115303	0.824	1.0	aatcaatgtttcaacaa	
+Chr30	S4	shared_block	1	27	550	576	115304	115330	0.889	1.0	ataaaatattgtttaactttgatattt	d
+Chr30	O4	outer	1	3	547	549	115331	115333	0.667	1.0	ctt	
+Chr30	S3	shared_block	1	27	520	546	115334	115360	0.815	1.0	acattaatgaaatattacatttattta	c
+Chr30	O3	outer	1	21	499	519	115361	115381	0.727	0.955	ttgtttattttaaataatatt	
+Chr30	S2	shared_block	1	34	465	498	115382	115415	1.0	1.0	tatttaaaatataaattatcatattttatattaa	a
+Chr30	O2	outer	1	18	447	464	115416	115433	1.0	1.0	attatttaacgtttttaa	
+Chr30	S1	shared_block	1	166	281	446	115434	115599	0.988	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgtccaatcattatacatatttattatcttttaattatttattctttatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccatacgttcttttat	c
+Chr30	O1	outer	1	14	267	280	115600	115613	0.667	0.667	aaagagaaagtgtt	
+Chr30	PolyT	homopolymer	1	31	236	266	115614	115644	1.0	1.0	ttttttttttttttttttttttttttttttt	
+Chr30	V4	variable	1	23	213	235	115645	115667	0.522	1.0	aagcatttttaaaaatccaactg	a
+Chr30	T4	module	1	15	198	212	115668	115682	1.0	1.0	ccacgtttcaccacg	a
+Chr30	V3	variable	1	9	189	197	115683	115691	1.0	1.0	tttgataca	a
+Chr30	T3	module	1	25	164	188	115692	115716	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr30	V2	variable	1	28	136	163	115717	115744	0.909	1.0	aaaaatcgacctattccaaaaatagaca	b
+Chr30	T2	module	1	52	84	135	115745	115796	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr30	V1	variable	1	42	42	83	115797	115838	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr30	T1	module	1	41	1	41	115839	115879	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a
+Chr33	O6	outer	0	10	731	740	82073	82082	0.074	0.074	ttaaataaaa	-
+Chr33	S5	shared_block	1	22	709	730	82083	82104	0.955	1.0	tgaaataaaaagaatgataaat	a
+Chr33	O5	outer	1	17	692	708	82105	82121	0.941	1.0	aatcaatgtttcaatga	
+Chr33	S4	shared_block	1	27	665	691	82122	82148	0.963	1.0	ataaaatattatttaactttcatattt	a
+Chr33	O4	outer	1	3	662	664	82149	82151	1.0	1.0	cat	
+Chr33	S3	shared_block	1	27	635	661	82152	82178	0.852	1.0	aaattaattaattgtttcatttattta	g
+Chr33	O3	outer	1	21	614	634	82179	82199	0.727	0.955	ttgtttattttaaataatatt	
+Chr33	S2	shared_block	1	34	580	613	82200	82233	0.971	1.0	tatttaaaacataaattatcatattttatattaa	a
+Chr33	O2	outer	1	17	563	579	82234	82250	0.944	0.944	attatttacgtttttaa	
+Chr33	S1	shared_block	1	166	397	562	82251	82416	0.994	1.0	attatttcatcaaatatacagaagaaatacaattatatcatctttctgattatgttcaatcattatacatatttattatcttttaattatttattcattatgatgaatagtactgataaaatattttctggttcctatttatcaataaatccataccttcttttat	c
+Chr33	O1	outer	1	147	250	396	82417	82563	0.667	1.0	aaacacaaatattttggtaattttgatttctatttatttcatttcttctccgtgttgaattgataagaagaataaattaaataatttcagttcattcaactggacatttattataaataatttcaactatgtaAATGAAAGTGtttt	
+Chr33	PolyT	homopolymer	1	31	219	249	82564	82594	1.0	1.0	ttttttttttttttttttttttttttttttt	
+Chr33	V4	variable	1	23	196	218	82595	82617	0.87	1.0	aagtctttctgatttaacagcat	c
+Chr33	T4	module	1	15	181	195	82618	82632	1.0	1.0	ccacgtttcaccacg	a
+Chr33	V3	variable	1	9	172	180	82633	82641	1.0	1.0	tttgataca	a
+Chr33	T3	module	1	25	147	171	82642	82666	1.0	1.0	caaaaatgaatgatacaagtgatct	a
+Chr33	V2	variable	1	11	136	146	82667	82677	0.909	1.0	aaaaaaagacc	a
+Chr33	T2	module	1	52	84	135	82678	82729	1.0	1.0	tattccaaaaatagcacacgaggaattcctcgtacctcggaattcccacagt	a
+Chr33	V1	variable	1	42	42	83	82730	82771	1.0	1.0	tgtatttagtatgatctatttttgggcgactgccacgtttca	a
+Chr33	T1	module	1	41	1	41	82772	82812	1.0	1.0	ccacgtgtcgtctgcagcaattctgcgaattgctgaccgta	a

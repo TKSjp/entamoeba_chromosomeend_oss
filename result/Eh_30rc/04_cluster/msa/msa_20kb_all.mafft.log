@@ -1,0 +1,94 @@
+inputfile = orig
+36 x 20000 - 20000 d
+nthread = 8
+nthreadpair = 8
+nthreadtb = 8
+ppenalty_ex = 0
+stacksize: 8176 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+    1 / 36 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=0) ... 
+    0 / 36   10 / 36   20 / 36   30 / 36
+done.
+
+Progressive alignment 1/2... 
+STEP     1 / 35 (thread    0) fSTEP     2 / 35 (thread    2) fSTEP     4 / 35 (thread    4) fSTEP     5 / 35 (thread    1) fSTEP     7 / 35 (thread    6) f
+Reallocating..done. *alloclen = 41079
+STEP     3 / 35 (thread    3) fSTEP    11 / 35 (thread    4) fSTEP     9 / 35 (thread    0) fSTEP     6 / 35 (thread    5) fSTEP    15 / 35 (thread    5) fSTEP     8 / 35 (thread    7) f
+Reallocating..done. *alloclen = 42560
+STEP    10 / 35 (thread    2) fSTEP    13 / 35 (thread    1) fSTEP    18 / 35 (thread    4) fSTEP    12 / 35 (thread    6) fSTEP    21 / 35 (thread    1) f
+Reallocating..done. *alloclen = 44746
+STEP    22 / 35 (thread    6) fSTEP    14 / 35 (thread    3) fSTEP    20 / 35 (thread    5) f
+Reallocating..done. *alloclen = 47468
+STEP    16 / 35 (thread    0) f
+Reallocating..done. *alloclen = 48475
+STEP    17 / 35 (thread    7) f
+Reallocating..done. *alloclen = 50287
+STEP    23 / 35 (thread    4) fSTEP    27 / 35 (thread    6) fSTEP    19 / 35 (thread    2) f
+Reallocating..done. *alloclen = 59558
+STEP    24 / 35 (thread    3) fSTEP    31 / 35 (thread    4) f
+len1=20000, len2=30839, Switching to the memsave mode
+STEP    25 / 35 (thread    1) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 74888
+STEP    26 / 35 (thread    0) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 76359
+STEP    28 / 35 (thread    5) fmDP 00001 / 00001 STEP    29 / 35 (thread    7) fmDP 00001 / 00001 STEP    30 / 35 (thread    6) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 79143
+STEP    32 / 35 (thread    2) fmDP 00001 / 00001 STEP    33 / 35 (thread    4) fmDP 00001 / 00001 STEP    34 / 35 (thread    1) fmDP 00001 / 00001 STEP    35 / 35 (thread    3) fmDP 00001 / 00001 
+done.
+
+Making a distance matrix from msa.. 
+    0 / 36 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+    0 / 36   10 / 36   20 / 36   30 / 36
+done.
+
+Progressive alignment 2/2... 
+STEP     1 / 35 (thread    0) fSTEP     2 / 35 (thread    1) fSTEP     3 / 35 (thread    2) fSTEP     8 / 35 (thread    4) fSTEP     4 / 35 (thread    5) f
+Reallocating..done. *alloclen = 41077
+STEP     9 / 35 (thread    0) fSTEP    11 / 35 (thread    1) fSTEP     5 / 35 (thread    6) fSTEP     6 / 35 (thread    7) fSTEP    14 / 35 (thread    6) f
+Reallocating..done. *alloclen = 42560
+STEP    10 / 35 (thread    2) fSTEP     7 / 35 (thread    3) fSTEP    17 / 35 (thread    3) fSTEP    13 / 35 (thread    5) fSTEP    12 / 35 (thread    4) fSTEP    20 / 35 (thread    6) f
+Reallocating..done. *alloclen = 44746
+STEP    19 / 35 (thread    2) fSTEP    21 / 35 (thread    4) fSTEP    15 / 35 (thread    0) fSTEP    16 / 35 (thread    7) f
+Reallocating..done. *alloclen = 48698
+STEP    18 / 35 (thread    1) fSTEP    22 / 35 (thread    5) fSTEP    25 / 35 (thread    0) fSTEP    23 / 35 (thread    6) f
+Reallocating..done. *alloclen = 52322
+
+len1=31322, len2=20000, Switching to the memsave mode
+STEP    27 / 35 (thread    7) fmDP 00001 / 00001 STEP    24 / 35 (thread    3) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 54673
+STEP    29 / 35 (thread    1) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 57489
+STEP    26 / 35 (thread    4) fmDP 00001 / 00001 STEP    28 / 35 (thread    2) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 61420
+STEP    30 / 35 (thread    5) fmDP 00001 / 00001 
+Reallocating..done. *alloclen = 76142
+STEP    31 / 35 (thread    0) fmDP 00001 / 00001 STEP    32 / 35 (thread    6) fmDP 00001 / 00001 STEP    33 / 35 (thread    7) fmDP 00001 / 00001 STEP    34 / 35 (thread    3) fmDP 00001 / 00001 STEP    35 / 35 (thread    1) fmDP 00001 / 00001 
+done.
+
+disttbfast (nuc) Version 7.526
+alg=M, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+
+Strategy:
+ FFT-NS-2 (Fast but rough)
+ Progressive method (guide trees were built 2 times.)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

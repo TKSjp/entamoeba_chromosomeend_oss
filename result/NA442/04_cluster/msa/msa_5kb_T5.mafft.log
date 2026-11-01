@@ -1,0 +1,248 @@
+inputfile = orig
+2 x 5000 - 5000 d
+nthread = 8
+nthreadpair = 8
+nthreadtb = 8
+ppenalty_ex = 0
+stacksize: 8176 kb
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+
+
+Making a distance matrix ..
+    1 / 2 (thread    0)
+done.
+
+Constructing a UPGMA tree (efffree=1) ... 
+    0 / 2
+done.
+
+Progressive alignment 1/1... 
+STEP     1 / 1 (thread    0) f
+done.
+
+disttbfast (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+distout=h
+generating a scoring matrix for nucleotide (dist=200) ... done
+    0 / 2 (thread    0)dndpre (nuc) Version 7.526
+alg=X, model=DNA200 (2), 1.53 (4.59), 0.37 (1.11), noshift, amax=0.0
+8 thread(s)
+
+minimumweight = 0.000010
+autosubalignment = 0.000000
+nthread = 8
+randomseed = 0
+blosum 62 / kimura 200
+poffset = 0
+niter = 2
+sueff_global = 0.100000
+nadd = 2
+generating a scoring matrix for nucleotide (dist=200) ... done
+
+    0 / 2
+Segment   1/ 37    1- 112
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   2/ 37  112- 263
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   3/ 37  263- 414
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   4/ 37  414- 565
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   5/ 37  565- 716
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   6/ 37  716- 867
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   7/ 37  867-1018
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   8/ 37 1018-1169
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment   9/ 37 1169-1273
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  10/ 37 1273-1344
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  11/ 37 1344-1456
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  12/ 37 1456-1607
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  13/ 37 1607-1758
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  14/ 37 1758-1909
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  15/ 37 1909-2060
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  16/ 37 2060-2211
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  17/ 37 2211-2362
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  18/ 37 2362-2513
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  19/ 37 2513-2664
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  20/ 37 2664-2815
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  21/ 37 2815-2966
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  22/ 37 2966-3117
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  23/ 37 3117-3268
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  24/ 37 3268-3419
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  25/ 37 3419-3570
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  26/ 37 3570-3721
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  27/ 37 3721-3872
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  28/ 37 3872-3966
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  29/ 37 3966-4086
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  30/ 37 4086-4237
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  31/ 37 4237-4320
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  32/ 37 4320-4406
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  33/ 37 4406-4557
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  34/ 37 4557-4708
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  35/ 37 4708-4859
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  36/ 37 4859-4992
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+Segment  37/ 37 4992-5059
+001-0000-1 (thread    1) identical     
+Converged.
+
+Reached 1
+done
+dvtditr (nuc) Version 7.526
+alg=A, model=DNA200 (2), 1.53 (4.59), -0.00 (-0.00), noshift, amax=0.0
+8 thread(s)
+
+
+Strategy:
+ FFT-NS-i (Standard)
+ Iterative refinement method (max. 2 iterations)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

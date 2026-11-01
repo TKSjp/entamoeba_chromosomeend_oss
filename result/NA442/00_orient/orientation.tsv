@@ -1,0 +1,36 @@
+chrom	length	3p_found	3p_pident	3p_qcov	3p_dist_to_end	3p_bitscore	5p_found	5p_pident	5p_qcov	5p_dist_to_end	5p_bitscore	call	flipped
+Chr01	1883874	1	100.0	1.0	0	542.0	0					as_is	0
+Chr02	1766056	1	100.0	1.0	0	542.0	0					as_is	0
+Chr03	1548852	0					0					none	0
+Chr04	1499984	0					0					none	0
+Chr05	1496236	1	100.0	0.983	0	533.0	0					as_is	0
+Chr06	1494157	0					0					none	0
+Chr07	1490031	1	100.0	1.0	1	542.0	0					as_is	0
+Chr08	1475527	0					0					none	0
+Chr09	1444935	0					0					none	0
+Chr10	1422712	1	100.0	1.0	1	542.0	0					as_is	0
+Chr11	1155773	1	100.0	1.0	1	542.0	0					as_is	0
+Chr12	1089029	1	100.0	1.0	1	542.0	0					as_is	0
+Chr13	1037556	0					0					none	0
+Chr14	827521	0					0					none	0
+Chr15	818830	1	100.0	1.0	0	542.0	0					as_is	0
+Chr16	620961	0					0					none	0
+Chr17	565530	0					0					none	0
+Chr18	544544	0					0					none	0
+Chr19	464752	1	100.0	1.0	0	542.0	0					as_is	0
+Chr20	461938	0					0					none	0
+Chr21	441687	0					0					none	0
+Chr22	425808	0					0					none	0
+Chr23	400190	1	100.0	1.0	1	542.0	0					as_is	0
+Chr24	347491	0					0					none	0
+Chr25	341864	0					0					none	0
+Chr26	304494	0					0					none	0
+Chr27	300450	0					1	99.7	1.0	1	537.0	flip	1
+Chr28	285598	0					0					none	0
+Chr29	260827	0					0					none	0
+Chr30	213733	1	99.7	1.0	1	537.0	0					as_is	0
+Chr31	208887	0					0					none	0
+Chr32	134874	0					0					none	0
+Chr33	93021	0					0					none	0
+Chr34	92084	0					0					none	0
+Chr35	31389	0					0					none	0
